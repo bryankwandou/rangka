@@ -1,5 +1,7 @@
 # Rangka
 
+[Situs & tutorial](https://rangka.vercel.app) · [Unduh .zip](https://github.com/bryankwandou/rangka/archive/refs/heads/main.zip) · lisensi MIT
+
 Skill untuk Claude (dan model lain) yang menyusun kerangka dokumen sebelum menulis:
 skripsi, proposal, laporan, landing page, brosur, README, naskah video, pitch deck,
 sampai mind map belajar.
@@ -29,7 +31,8 @@ rangka/
 │   ├── checklist.md              pemeriksaan universal
 │   ├── sources.md                daftar sumber yang boleh dikutip
 │   └── examples.md               tiga contoh keluaran
-└── evals/evals.json              enam kasus uji
+├── evals/evals.json              sembilan kasus uji
+└── site/index.html               halaman tutorial (sumber situs)
 ```
 
 ## Pemasangan
@@ -37,7 +40,7 @@ rangka/
 **Claude Code** — salin folder ke direktori skills:
 
 ```bash
-cp -r rangka ~/.claude/skills/rangka
+git clone https://github.com/bryankwandou/rangka ~/.claude/skills/rangka
 ```
 
 **Claude.ai** — zip folder `rangka`, lalu unggah di Settings → Capabilities → Skills.
