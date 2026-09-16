@@ -65,6 +65,9 @@ Tujuan penelitian = pertanyaan yang diubah jadi kalimat pernyataan, satu lawan s
 ## Pilih template
 
 - Pengguna minta **proposal**, **cek kesiapan judul**, atau belum mulai penelitian → pakai A3 (12 butir). Jangan tampilkan A4.
+- Dalam bahasa Inggris: "thesis proposal", "research proposal", "proposal outline" → A3.
+  "full thesis outline", "chapter outline", "thesis structure" → A4. Bila keduanya muncul,
+  kata **proposal** menang.
 - Pengguna minta **kerangka skripsi/tesis utuh** → pakai A4 (bab), dan isi Bab 3 dengan butir 5–12 dari A3 secara ringkas. Jangan tampilkan dua kerangka terpisah.
 - **Artikel jurnal** → IMRaD (akhir A4).
 - Skripsi, tesis, dan proposal selalu mode **Lengkap**, kecuali pengguna minta "versi cepat".

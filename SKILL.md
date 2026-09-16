@@ -18,7 +18,8 @@ hand drafting and wording to the `lugas` skill if it is installed.
 
 1. **Never invent facts.** No made-up numbers, sources, quotes, survey results, customer
    names, or regulations. Anything the user must supply is written as `[ISI: ...]`.
-   Anything you are not sure of is written as `[CEK: ...]`.
+   Anything you are not sure of is written as `[CEK: ...]`. If the user writes in English,
+   use `[FILL: ...]` and `[VERIFY: ...]` instead, throughout the whole output.
 2. **Citations only from `references/sources.md`**, or sources the user gave. If a claim
    needs a source that is not there, write `[CEK: sumber untuk ...]`. Never guess a year,
    volume, or page.

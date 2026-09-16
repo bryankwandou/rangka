@@ -24,6 +24,8 @@ Aturan:
 4. **Teks simpul tanpa tanda kurung (), [], {}** dan tanpa titik dua. Di Mermaid mindmap
    tanda kurung mengubah bentuk simpul dan bisa membuat diagram gagal dirender. Satu-satunya
    pengecualian adalah `root((Topik))`. Indentasi 2 spasi per tingkat, konsisten.
+   Ejaan dan tanda hubung istilah milik pengguna dipertahankan apa adanya, mis. `demand-pull`
+   tetap `demand-pull`.
 5. Hubungan antarcabang (sebab-akibat, lawan) ditulis di catatan, karena Mermaid mindmap
    tidak menggambar garis silang.
 
