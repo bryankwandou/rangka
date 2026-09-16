@@ -1,6 +1,6 @@
 # Rangka
 
-[Situs & tutorial](https://rangka.vercel.app) · [Unduh .zip](https://github.com/bryankwandou/rangka/archive/refs/heads/main.zip) · lisensi MIT
+[Situs & tutorial](https://rangka-skill.vercel.app) · [Unduh .zip](https://github.com/bryankwandou/rangka/archive/refs/heads/main.zip) · lisensi MIT
 
 Skill untuk Claude (dan model lain) yang menyusun kerangka dokumen sebelum menulis:
 skripsi, proposal, laporan, landing page, brosur, README, naskah video, pitch deck,
