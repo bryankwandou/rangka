@@ -1,0 +1,673 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rangka — kerangka dulu, baru menulis</title>
+<meta name="description" content="Skill terbuka untuk Claude dan model AI lain: memetakan masalah, menyusun kerangka, lalu memeriksanya sebelum satu paragraf ditulis. Skripsi, laporan, landing page, brosur, README, naskah video.">
+<meta property="og:title" content="Rangka — kerangka dulu, baru menulis">
+<meta property="og:description" content="Empat langkah, enam keluarga dokumen, dua belas butir cek. Tidak mengarang angka.">
+<meta property="og:type" content="website">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231c1a17'/%3E%3Cpath d='M9 7v18M9 7h9a5 5 0 010 10H9m7 0l6 8' stroke='%23e8b04a' stroke-width='3' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f7f4ee;--paper:#fffdf9;--paper-2:#f1ece3;--ink:#1c1a17;--muted:#6b645a;
+  --line:#e3ddd2;--accent:#b7791f;--accent-ink:#8a5a12;--soft:#f3e6cc;--code:#efe9df;
+  --ok:#2f7a4f;--wait:#9a7310;--bad:#a63d2f;
+  --mono:"JETBRAINS MONO","JetBrains Mono",ui-monospace,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#15130f;--paper:#1d1a16;--paper-2:#191612;--ink:#ede7dc;--muted:#a39a8c;
+  --line:#332e27;--accent:#e8b04a;--accent-ink:#e8b04a;--soft:#3a2f1b;--code:#26221c;
+  --ok:#6cc08c;--wait:#d8b45c;--bad:#e08b7b;
+}}
+:root[data-theme="dark"]{
+  --bg:#15130f;--paper:#1d1a16;--paper-2:#191612;--ink:#ede7dc;--muted:#a39a8c;
+  --line:#332e27;--accent:#e8b04a;--accent-ink:#e8b04a;--soft:#3a2f1b;--code:#26221c;
+  --ok:#6cc08c;--wait:#d8b45c;--bad:#e08b7b;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:74px}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 Inter,system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1040px;margin:0 auto;padding:0 16px}
+a{color:inherit}
+
+/* nav */
+#nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(12px);background:color-mix(in srgb,var(--bg) 86%,transparent);border-bottom:1px solid transparent;transition:border-color .2s}
+#nav.stuck{border-bottom-color:var(--line)}
+#nav .wrap{display:flex;align-items:center;gap:14px;height:62px}
+.brand{display:flex;gap:9px;align-items:center;font-weight:600;letter-spacing:-.01em;text-decoration:none;margin-right:auto}
+.brand svg{width:26px;height:26px;display:block}
+#nav nav{display:flex;gap:4px}
+#nav nav a{color:var(--muted);text-decoration:none;font-size:14px;padding:7px 10px;border-radius:8px}
+#nav nav a:hover{color:var(--ink);background:var(--paper)}
+.iconbtn{border:1px solid var(--line);background:var(--paper);color:var(--muted);border-radius:8px;height:34px;min-width:34px;padding:0 9px;font:500 13px Inter,sans-serif;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:5px}
+.iconbtn:hover{color:var(--ink);border-color:var(--accent)}
+@media (max-width:760px){#nav nav{display:none}}
+
+/* type */
+h1,h2,h3{font-family:Fraunces,Georgia,serif;letter-spacing:-.022em;line-height:1.08;font-weight:600}
+h1{font-size:clamp(38px,6.6vw,68px);margin:0 0 20px;font-weight:700}
+h1 em{font-style:normal;color:var(--accent)}
+h2{font-size:clamp(27px,3.8vw,40px);margin:0}
+h3{font-size:18px;margin:0 0 6px;letter-spacing:-.01em}
+.eyebrow{font:500 11px/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--accent-ink);margin:0}
+.lead{font-size:19px;color:var(--muted);max-width:640px;margin:0}
+p{margin:12px 0}
+section{padding:78px 0;border-top:1px solid var(--line)}
+section.alt{background:var(--paper-2)}
+.head{margin-bottom:34px}
+.head .lead{margin-top:14px}
+
+/* hero */
+.hero{padding:76px 0 68px}
+.hero .lead{font-size:20px}
+.cta{display:flex;gap:11px;flex-wrap:wrap;margin:32px 0 0}
+.btn{padding:12px 20px;border-radius:10px;text-decoration:none;font-weight:600;font-size:15px;border:1px solid transparent;cursor:pointer;transition:transform .12s ease,opacity .15s}
+.btn:active{transform:scale(.975)}
+.primary{background:var(--ink);color:var(--bg)}
+.ghost{border-color:var(--line);color:var(--ink);background:transparent}
+.ghost:hover{background:var(--paper)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:14px;overflow:hidden;margin-top:48px}
+.stats div{background:var(--paper);padding:18px 20px}
+.stats b{display:block;font-family:Fraunces,serif;font-size:30px;line-height:1;margin-bottom:6px}
+.stats small{color:var(--muted);font-size:13px}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(14px);transition:opacity .55s ease,transform .55s ease}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}}
+
+/* generic cards */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:20px}
+.card p{color:var(--muted);font-size:15px;margin:8px 0 0}
+.card b.num{display:block;font:500 12px/1 var(--mono);letter-spacing:.12em;color:var(--accent-ink);margin-bottom:10px}
+
+/* split compare */
+.compare{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}
+.compare .card{position:relative}
+.tag{display:inline-block;font:500 11px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;padding:5px 8px;border-radius:6px;margin-bottom:12px}
+.tag.no{background:color-mix(in srgb,var(--bad) 16%,transparent);color:var(--bad)}
+.tag.yes{background:var(--soft);color:var(--accent-ink)}
+.compare ul{margin:0;padding-left:18px;color:var(--muted);font-size:15px}
+.compare li{margin:7px 0}
+
+/* tabs */
+.tabs{display:flex;gap:6px;flex-wrap:wrap}
+.tab{border:1px solid var(--line);background:transparent;color:var(--muted);padding:8px 15px;border-radius:999px;font:500 14px Inter,sans-serif;cursor:pointer}
+.tab:hover{color:var(--ink)}
+.tab[aria-selected="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.panel{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:24px;margin-top:14px}
+.panel h3{font-family:Inter,sans-serif;font-weight:600}
+.panel .sub{color:var(--muted);font-size:14px;margin:0 0 14px}
+.panel ol{margin:0;padding-left:20px;color:var(--muted)}
+.panel ol li{margin:8px 0}
+
+/* builder */
+.builder{display:grid;grid-template-columns:320px 1fr;gap:16px;align-items:start}
+@media (max-width:820px){.builder{grid-template-columns:1fr}}
+.controls{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:20px}
+.field{margin-bottom:15px}
+.field label{display:block;font:500 12px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:7px}
+.field input,.field select{width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:9px;background:var(--bg);color:var(--ink);font:15px Inter,sans-serif}
+.field input:focus,.field select:focus{outline:2px solid var(--accent);outline-offset:1px;border-color:var(--accent)}
+.hint{font-size:13px;color:var(--muted);margin:0}
+.out{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:0;overflow:hidden}
+.out .bar{display:flex;align-items:center;gap:8px;padding:11px 14px;border-bottom:1px solid var(--line);background:var(--paper-2)}
+.dot{width:9px;height:9px;border-radius:50%;background:var(--line)}
+.out .bar span{font:500 12px var(--mono);color:var(--muted);margin-right:auto}
+.out pre{margin:0;padding:18px;max-height:460px;overflow:auto;font:13.5px/1.7 var(--mono);white-space:pre-wrap;word-break:break-word}
+.isi{background:var(--soft);color:var(--accent-ink);border-radius:4px;padding:0 4px}
+.cek{background:color-mix(in srgb,var(--muted) 18%,transparent);border-radius:4px;padding:0 4px}
+
+/* table */
+.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:14px;background:var(--paper)}
+table{width:100%;border-collapse:collapse;font-size:15px;min-width:520px}
+td,th{text-align:left;padding:11px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:last-child td{border-bottom:0}
+th{color:var(--muted);font-weight:500;font-size:12px;font-family:var(--mono);letter-spacing:.09em;text-transform:uppercase;background:var(--paper-2)}
+td code,.mono{font-family:var(--mono);font-size:13px}
+.st{font:500 12px var(--mono);white-space:nowrap}
+.st.ok{color:var(--ok)}.st.wait{color:var(--wait)}.st.bad{color:var(--bad)}
+
+/* code */
+pre.code{background:var(--code);border:1px solid var(--line);border-radius:11px;padding:15px 16px;overflow-x:auto;font:13.5px/1.6 var(--mono);margin:12px 0;position:relative}
+.copy{position:absolute;top:7px;right:7px;border:1px solid var(--line);background:var(--paper);color:var(--muted);border-radius:6px;font:12px Inter,sans-serif;padding:3px 9px;cursor:pointer}
+.copy:hover{color:var(--ink);border-color:var(--accent)}
+.mark{background:var(--soft);color:var(--accent-ink);padding:2px 7px;border-radius:5px;font-family:var(--mono);font-size:13.5px}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:26px}
+
+/* faq */
+details{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:15px 18px;margin-bottom:10px}
+details[open]{border-color:var(--accent)}
+summary{cursor:pointer;font-weight:600;list-style:none}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";float:right;color:var(--accent);font-family:var(--mono)}
+details[open] summary::after{content:"−"}
+details p{color:var(--muted);font-size:15px;margin:10px 0 2px}
+
+footer{padding:44px 0 66px;color:var(--muted);font-size:14px;border-top:1px solid var(--line)}
+footer .row{display:flex;gap:18px;flex-wrap:wrap;justify-content:space-between}
+</style>
+</head>
+<body>
+
+<div id="nav">
+  <div class="wrap">
+    <a class="brand" href="#top"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="7" fill="currentColor"/><path d="M9 7v18M9 7h9a5 5 0 010 10H9m7 0l6 8" stroke="#e8b04a" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Rangka</a>
+    <nav>
+      <a href="#cara" data-i18n="nav_how">Cara kerja</a>
+      <a href="#coba" data-i18n="nav_try">Coba</a>
+      <a href="#genre" data-i18n="nav_genre">Genre</a>
+      <a href="#cek" data-i18n="nav_check">Cek</a>
+      <a href="#pasang" data-i18n="nav_install">Pasang</a>
+      <a href="https://github.com/bryankwandou/rangka">GitHub</a>
+    </nav>
+    <button class="iconbtn" id="lang" aria-label="Language">EN</button>
+    <button class="iconbtn" id="theme" aria-label="Theme">◐</button>
+  </div>
+</div>
+
+<div class="wrap hero" id="top">
+  <p class="eyebrow" data-i18n="hero_eyebrow">Skill terbuka · MIT</p>
+  <h1 style="margin-top:18px" data-i18n-html="hero_h1">Susun <em>kerangka</em> dulu.<br>Tulisannya menyusul.</h1>
+  <p class="lead" data-i18n="hero_lead">Rangka adalah skill untuk Claude dan model AI lain. Sebelum satu paragraf ditulis, ia memetakan masalah, menyusun kerangka per bagian, lalu memeriksanya dengan dua belas butir. Berlaku untuk skripsi, laporan, landing page, brosur, README, dan naskah video.</p>
+  <div class="cta">
+    <a class="btn primary" href="#pasang" data-i18n="hero_cta1">Pasang sekarang</a>
+    <a class="btn ghost" href="#coba" data-i18n="hero_cta2">Lihat keluarannya</a>
+  </div>
+  <div class="stats">
+    <div><b>4</b><small data-i18n="stat1">langkah, sama untuk semua jenis</small></div>
+    <div><b>6</b><small data-i18n="stat2">keluarga dokumen</small></div>
+    <div><b>12</b><small data-i18n="stat3">butir cek universal</small></div>
+    <div><b>0</b><small data-i18n="stat4">angka karangan</small></div>
+  </div>
+</div>
+
+<section id="cara">
+  <div class="wrap">
+    <div class="head">
+      <p class="eyebrow" data-i18n="why_eyebrow">Masalahnya</p>
+      <h2 class="rv" style="margin-top:12px" data-i18n="why_title">Tulisan lemah jarang gagal di kalimat.</h2>
+      <p class="lead rv" data-i18n="why_lead">Ia gagal karena tidak pernah diputuskan siapa pembacanya, masalah apa yang dijawab, dan apa yang harus dibuktikan tiap bagian. Meminta AI "tuliskan bab 1" melewatkan semua keputusan itu.</p>
+    </div>
+    <div class="compare">
+      <div class="card rv">
+        <span class="tag no" data-i18n="cmp_no">Langsung menulis</span>
+        <ul>
+          <li data-i18n="cmp_no1">Latar belakang tiga halaman, rumusan masalah tidak nyambung</li>
+          <li data-i18n="cmp_no2">Angka dan sumber muncul entah dari mana</li>
+          <li data-i18n="cmp_no3">Bab 4 tidak menjawab rumusan di bab 1</li>
+          <li data-i18n="cmp_no4">Revisi berarti membongkar ulang, bukan menyunting</li>
+        </ul>
+      </div>
+      <div class="card rv">
+        <span class="tag yes" data-i18n="cmp_yes">Kerangka dulu</span>
+        <ul>
+          <li data-i18n="cmp_yes1">Gap dirumuskan sebelum satu kalimat ditulis</li>
+          <li data-i18n="cmp_yes2">Yang belum ada datanya ditandai, bukan dikarang</li>
+          <li data-i18n="cmp_yes3">Tiap bagian punya tugas yang bisa dicek</li>
+          <li data-i18n="cmp_yes4">Salah struktur ketahuan saat masih murah diperbaiki</li>
+        </ul>
+      </div>
+    </div>
+
+    <h2 class="rv" style="margin:56px 0 8px" data-i18n="steps_title">Empat langkah, semua jenis tulisan</h2>
+    <div class="cards" style="margin-top:26px">
+      <div class="card rv"><b class="num">01 · PETA INTI</b><h3 data-i18n="s1t">Seharusnya vs kenyataan</h3><p data-i18n="s1p">Das Sollen, Das Sein, kesenjangan, pembaca, klaim inti, bukti, tindakan yang diharapkan.</p></div>
+      <div class="card rv"><b class="num">02 · KERANGKA</b><h3 data-i18n="s2t">Template per genre</h3><p data-i18n="s2p">Tiap bagian mendapat empat baris: tugas, isi, bukti, perkiraan panjang.</p></div>
+      <div class="card rv"><b class="num">03 · CEK</b><h3 data-i18n="s3t">Tabel, bukan klaim</h3><p data-i18n="s3p">Dua belas butir universal plus butir khusus genre. Tiga status saja: lolos, menunggu data, gagal.</p></div>
+      <div class="card rv"><b class="num">04 · JUDUL</b><h3 data-i18n="s4t">Ditulis paling akhir</h3><p data-i18n="s4p">Diturunkan dari klaim inti, plus daftar data yang masih harus kamu lengkapi.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="coba" class="alt">
+  <div class="wrap">
+    <div class="head">
+      <p class="eyebrow" data-i18n="try_eyebrow">Coba di halaman ini</p>
+      <h2 class="rv" style="margin-top:12px" data-i18n="try_title">Bentuk keluarannya seperti ini.</h2>
+      <p class="lead rv" data-i18n="try_lead">Isi tiga kolom, lalu lihat kerangka kosongnya terbentuk. Halaman ini hanya menunjukkan bentuk; isi, bukti, dan pemeriksaan dikerjakan oleh modelnya.</p>
+    </div>
+    <div class="builder">
+      <div class="controls rv">
+        <div class="field">
+          <label for="b-genre" data-i18n="f_genre">Jenis dokumen</label>
+          <select id="b-genre"></select>
+        </div>
+        <div class="field">
+          <label for="b-topic" data-i18n="f_topic">Topik</label>
+          <input id="b-topic" value="penggunaan QRIS di pasar tradisional Yogyakarta">
+        </div>
+        <div class="field">
+          <label for="b-reader" data-i18n="f_reader">Pembaca</label>
+          <input id="b-reader" value="dosen pembimbing">
+        </div>
+        <div class="field" style="margin-bottom:8px">
+          <label for="b-mode" data-i18n="f_mode">Mode</label>
+          <select id="b-mode">
+            <option value="cepat">Cepat</option>
+            <option value="lengkap" selected>Lengkap</option>
+          </select>
+        </div>
+        <p class="hint" data-i18n="f_hint">Mode cepat tetap menjalankan seluruh butir cek genre. Butir genre tidak pernah dilewati.</p>
+      </div>
+      <div class="out rv">
+        <div class="bar"><i class="dot"></i><i class="dot"></i><i class="dot"></i><span>kerangka.md</span><button class="iconbtn" id="b-copy" data-i18n="copy">Salin</button></div>
+        <pre id="b-out"></pre>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="genre">
+  <div class="wrap">
+    <div class="head">
+      <p class="eyebrow" data-i18n="gen_eyebrow">Enam keluarga</p>
+      <h2 class="rv" style="margin-top:12px" data-i18n="gen_title">Struktur berbeda, alur kerja sama.</h2>
+      <p class="lead rv" data-i18n="gen_lead">Tiap keluarga punya file rujukan sendiri dengan template dan butir ceknya. Model hanya membuka yang dibutuhkan.</p>
+    </div>
+    <div class="tabs" role="tablist" id="tabs"></div>
+    <div class="panel" id="panel" role="tabpanel"></div>
+  </div>
+</section>
+
+<section id="cek" class="alt">
+  <div class="wrap">
+    <div class="head">
+      <p class="eyebrow" data-i18n="chk_eyebrow">Langkah 3</p>
+      <h2 class="rv" style="margin-top:12px" data-i18n="chk_title">Dua belas butir, tiga status.</h2>
+      <p class="lead rv" data-i18n="chk_lead">Hasil pemeriksaan selalu berupa tabel. "Sudah bagus" bukan status yang sah.</p>
+    </div>
+    <div class="tablewrap rv">
+      <table id="chk">
+        <thead><tr><th>#</th><th data-i18n="th_item">Butir</th><th data-i18n="th_how">Cara cek</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <div class="grid2" style="margin-top:36px">
+      <div class="rv">
+        <h3 data-i18n="stt">Tiga status yang sah</h3>
+        <p><span class="st ok">Lolos</span> — <span data-i18n="st_ok">terpenuhi.</span></p>
+        <p><span class="st wait">Menunggu data</span> — <span data-i18n="st_wait">struktur benar, tapi butuh data darimu. Judul boleh diberikan dengan label sementara.</span></p>
+        <p><span class="st bad">Gagal</span> — <span data-i18n="st_bad">struktur salah. Kerangka diperbaiki dulu, judul ditunda.</span></p>
+      </div>
+      <div class="rv">
+        <h3 data-i18n="mkt">Dua tanda yang dipakai</h3>
+        <p><span class="mark">[ISI: jumlah sampel]</span><br><span data-i18n="mk_isi">data yang hanya kamu punya. Tidak pernah diisi tebakan.</span></p>
+        <p><span class="mark">[CEK: pedoman kampus]</span><br><span data-i18n="mk_cek">hal yang harus kamu pastikan ke sumber aslinya sebelum dikirim.</span></p>
+        <p class="hint" data-i18n="mk_en">Bila kamu menulis dalam bahasa Inggris, keluarannya memakai [FILL] dan [VERIFY].</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="head">
+      <p class="eyebrow" data-i18n="hon_eyebrow">Batas</p>
+      <h2 class="rv" style="margin-top:12px" data-i18n="hon_title">Yang tidak dilakukan.</h2>
+    </div>
+    <div class="tablewrap rv">
+      <table>
+        <tbody>
+          <tr><td data-i18n="hon1">Menulis skripsi utuh untuk dikumpulkan</td><td data-i18n="hon1b">Tidak. Kerangka, lalu bantuan per bagian dengan datamu.</td></tr>
+          <tr><td data-i18n="hon2">Menjamin skor Turnitin atau detektor AI</td><td data-i18n="hon2b">Tidak ada alat yang bisa menjamin itu, termasuk ini.</td></tr>
+          <tr><td data-i18n="hon3">Mengarang angka, responden, atau testimoni</td><td data-i18n="hon3b">Ditolak. Ditandai [ISI] supaya kamu tahu apa yang dicari.</td></tr>
+          <tr><td data-i18n="hon4">Menyebut teori dengan tahun yang belum dicek</td><td data-i18n="hon4b">Nama teori boleh, tahun dan jurnal harus lewat [CEK].</td></tr>
+          <tr><td data-i18n="hon5">Menghaluskan kalimat</td><td data-i18n="hon5b">Tugas skill pasangannya, lugas.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section id="pasang" class="alt">
+  <div class="wrap">
+    <div class="head">
+      <p class="eyebrow" data-i18n="ins_eyebrow">Pasang</p>
+      <h2 class="rv" style="margin-top:12px" data-i18n="ins_title">Bekerja dengan alat yang sudah kamu pakai.</h2>
+    </div>
+    <div class="tabs" role="tablist" id="itabs"></div>
+    <div class="panel" id="ipanel" role="tabpanel"></div>
+    <h3 style="margin:38px 0 0;font-family:Fraunces,serif;font-size:22px" data-i18n="ins_try">Lalu minta seperti biasa</h3>
+    <pre class="code"><code data-i18n="ins_prompt">Susun kerangka skripsi tentang penggunaan QRIS di pasar tradisional Yogyakarta.</code></pre>
+    <pre class="code"><code data-i18n="ins_prompt2">Buat kerangka landing page untuk jasa les privat matematika SMA, mode cepat.</code></pre>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="head">
+      <p class="eyebrow">FAQ</p>
+      <h2 class="rv" style="margin-top:12px" data-i18n="faq_title">Sebelum kamu mencoba.</h2>
+    </div>
+    <div class="rv">
+      <details><summary data-i18n="q1">Apakah ini menulis skripsi saya?</summary><p data-i18n="a1">Tidak. Yang dihasilkan adalah kerangka: peta masalah, struktur bagian, dan daftar apa yang harus kamu cari. Prosanya tetap kamu yang menulis, dengan datamu sendiri.</p></details>
+      <details><summary data-i18n="q2">Kenapa judulnya dibuat terakhir?</summary><p data-i18n="a2">Judul yang ditulis lebih dulu memaksa isi mengikuti janji yang belum tentu bisa ditepati. Setelah kerangka lolos cek, judul hanya merangkum klaim inti yang sudah ada buktinya.</p></details>
+      <details><summary data-i18n="q3">Bagaimana kalau data saya belum lengkap?</summary><p data-i18n="a3">Kerangka tetap bisa disusun. Bagian yang butuh datamu ditandai [ISI] dan statusnya "menunggu data", bukan "gagal". Judul boleh diberikan dengan label sementara.</p></details>
+      <details><summary data-i18n="q4">Apakah harus Claude?</summary><p data-i18n="a4">Tidak. Di Claude Code dan Claude.ai ia berjalan sebagai skill. Di model lain, tempel isi SKILL.md sebagai instruksi, lalu file genre yang sesuai dan checklist.md.</p></details>
+      <details><summary data-i18n="q5">Bahasa Inggris didukung?</summary><p data-i18n="a5">Ya. Bila kamu menulis dalam bahasa Inggris, judul bagian dan tandanya ikut berbahasa Inggris: [FILL] dan [VERIFY].</p></details>
+      <details><summary data-i18n="q6">Sumbernya dari mana?</summary><p data-i18n="a6">Daftar sumber yang boleh dikutip tanpa tanda ada di references/sources.md. Teori bidang seperti TAM atau SERVQUAL sengaja tidak dimuat: namanya boleh disebut, tahunnya harus kamu cek sendiri.</p></details>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap row">
+    <div>Rangka · <span data-i18n="ft_lic">lisensi MIT</span> · <a href="https://github.com/bryankwandou/rangka">GitHub</a></div>
+    <div data-i18n="ft_src">Pola mind map → outline → checklist diadaptasi dari video pendek akun dafnisfaz_</div>
+  </div>
+</footer>
+
+<script>
+/* ---------- data ---------- */
+const GEN=[
+ {k:"riset",id:["Riset","Skripsi, tesis, proposal, artikel jurnal","references/genre-research.md",["Mind map: Das Sollen, Das Sein, dan kesenjangannya","Rumusan masalah dengan kata tanya yang tepat, diuji FINER","Outline 12 butir untuk proposal, atau struktur bab untuk skripsi utuh","Checklist mixed methods dan joint display","Judul dirumuskan paling akhir, tiga pilihan"]],
+  en:["Research","Thesis, dissertation, proposal, journal article","references/genre-research.md",["Mind map: Das Sollen, Das Sein, and the gap between them","Research questions with the right question word, tested with FINER","A 12-point outline for proposals, or chapter structure for a full thesis","Mixed methods and joint display checklist","Title written last, three options"]]},
+ {k:"laporan",id:["Laporan","Bisnis, magang, LPJ, policy brief, SOP","references/genre-report.md",["Ringkasan SCQA di halaman pertama","Temuan urut dari yang paling berpengaruh","Tabel target vs realisasi, rencana vs realisasi anggaran","Rekomendasi menyebut pelaku dan tenggat","Bagian pengesahan untuk LPJ"]],
+  en:["Report","Business, internship, accountability, policy brief, SOP","references/genre-report.md",["SCQA summary on the first page","Findings ordered by impact","Target vs actual tables, budget plan vs actual","Recommendations name an owner and a deadline","Sign-off section for accountability reports"]]},
+ {k:"persuasi",id:["Persuasi","Landing page, brosur, pamflet, iklan, pitch deck","references/genre-persuasion.md",["Kunci satu pembaca, satu tindakan, satu janji","Pilih AIDA, PAS, atau Before–After–Bridge","Bukti nyata atau ditandai, tanpa testimoni karangan","CTA sama di awal dan di akhir","Enam panel untuk brosur lipat tiga"]],
+  en:["Persuasion","Landing page, brochure, flyer, ads, pitch deck","references/genre-persuasion.md",["Lock one reader, one action, one promise","Pick AIDA, PAS, or Before–After–Bridge","Real evidence or marked, never invented testimonials","Same CTA at the top and the bottom","Six panels for a tri-fold brochure"]]},
+ {k:"teknis",id:["Teknis","README, spec, ADR, tutorial, referensi API","references/genre-technical.md",["Tentukan jenis Diátaxis dulu, jangan dicampur","Quick start dengan perintah yang benar-benar dijalankan","Non-tujuan dan metrik keberhasilan di spec","ADR: konteks, keputusan, konsekuensi","Tanpa kunci atau rahasia di contoh"]],
+  en:["Technical","README, spec, ADR, tutorial, API reference","references/genre-technical.md",["Decide the Diátaxis type first, never mix them","Quick start with commands that were actually run","Non-goals and success metrics in the spec","ADR: context, decision, consequences","No keys or secrets in examples"]]},
+ {k:"video",id:["Video","Video pendek dan panjang, podcast, sidang","references/genre-timed.md",["Satu kalimat: setelah menonton, pemirsa bisa …","Hook di tiga detik pertama, bukan perkenalan","Kolom visual, suara, dan teks layar","Slot waktu dalam persen, lalu dijumlahkan ke durasi target","Struktur baku sidang skripsi"]],
+  en:["Timed media","Short and long video, podcast, thesis defense","references/genre-timed.md",["One sentence: after watching, the viewer can …","Hook in the first three seconds, not an introduction","Visual, audio, and on-screen text columns","Time slots as percentages, summed to the target duration","Standard structure for a thesis defense"]]},
+ {k:"belajar",id:["Belajar","Mind map, ringkasan bab, persiapan ujian","references/genre-study.md",["Mode dari materi atau dari nol","Mind map Mermaid, tiga sampai tujuh cabang","Pertanyaan uji diri bertingkat: ingat, paham, terapkan","Konsep di luar materimu diberi label, bukan diselipkan","Rencana belajar dengan pengulangan berjarak"]],
+  en:["Study","Mind maps, chapter summaries, exam prep","references/genre-study.md",["From-your-material mode or from-scratch mode","Mermaid mind map, three to seven branches","Self-test questions at several levels: recall, understand, apply","Concepts outside your material are labeled, never slipped in","A study plan with spaced repetition"]]}
+];
+
+const CHK=[
+ ["U1","Pembaca spesifik","Bisa disebut dengan satu frasa yang bukan “semua orang”","Specific reader","Nameable in one phrase that is not “everyone”"],
+ ["U2","Gap nyata","Should dan Is berbeda, dan Is punya dasar atau ditandai [ISI]","Real gap","Should and Is differ, and Is has a basis or is marked [FILL]"],
+ ["U3","Klaim inti satu kalimat","Orang di luar bidang paham kalimatnya","One-sentence core claim","Someone outside the field understands it"],
+ ["U4","Tidak ada yatim","Tiap pertanyaan atau janji punya bagian yang menjawab dan bukti","No orphans","Every question or promise has a section answering it, plus evidence"],
+ ["U5","Tidak ada bagian tanpa tugas","Tiap bagian punya baris Tugas yang melayani U3 atau U4","No idle sections","Every section has a Job line serving U3 or U4"],
+ ["U6","Urutan sesuai kebutuhan pembaca","Baca judul bagian saja: alurnya masuk akal tanpa isi","Order fits the reader","Read only the headings: the flow makes sense without the body"],
+ ["U7","Tidak tumpang tindih","Dua bagian tidak menjawab hal yang sama (MECE)","No overlap","No two sections answer the same thing (MECE)"],
+ ["U8","Tindakan akhir jelas","Pembaca tahu apa yang harus dilakukan atau disimpulkan","Clear closing action","The reader knows what to do or conclude"],
+ ["U9","Nol fakta karangan","Tiap angka, nama, kutipan berasal darimu, dari sources.md, atau ditandai","Zero invented facts","Every number, name, quote comes from you, from sources.md, or is marked"],
+ ["U10","Aturan eksternal ditandai","Pedoman kampus, format klien, regulasi → [CEK]","External rules marked","Campus guides, client formats, regulations → [VERIFY]"],
+ ["U11","Panjang realistis","Jumlah petunjuk panjang tiap bagian sesuai batas total","Realistic length","The per-section length hints add up to the total limit"],
+ ["U12","Judul dari klaim inti","Ditulis terakhir, tidak menjanjikan lebih dari isi","Title from the core claim","Written last, promises no more than the content delivers"]
+];
+
+const INS=[
+ {id:["Claude Code","Salin folder skill ke direktori skill milikmu, lalu panggil dengan /rangka atau sebut saja tugasnya.","git clone https://github.com/bryankwandou/rangka ~/.claude/skills/rangka"],
+  en:["Claude Code","Copy the skill folder into your skills directory, then call /rangka or just describe the task.","git clone https://github.com/bryankwandou/rangka ~/.claude/skills/rangka"]},
+ {id:["Claude.ai","Unduh arsipnya, lalu unggah lewat Settings → Capabilities → Skills.","https://github.com/bryankwandou/rangka/archive/refs/heads/main.zip"],
+  en:["Claude.ai","Download the archive, then upload it under Settings → Capabilities → Skills.","https://github.com/bryankwandou/rangka/archive/refs/heads/main.zip"]},
+ {id:["ChatGPT, Gemini, lainnya","Tempel isi SKILL.md sebagai instruksi sistem, lalu satu file genre yang sesuai dan checklist.md. Tiga file sudah cukup.","SKILL.md  +  references/genre-*.md  +  references/checklist.md"],
+  en:["ChatGPT, Gemini, others","Paste SKILL.md as the system instruction, then one matching genre file and checklist.md. Three files is enough.","SKILL.md  +  references/genre-*.md  +  references/checklist.md"]}
+];
+
+/* outline skeletons for the builder */
+const SKEL={
+ riset:{id:["Latar belakang","Rumusan masalah","Tujuan penelitian","Manfaat","Tinjauan pustaka","Kerangka pikir","Metode","Instrumen","Rencana analisis"],
+   fill:["data yang menunjukkan kondisi nyata","jumlah dan cara pengambilan sampel","nama instrumen dan sumbernya"],
+   ver:["pedoman penulisan kampus","sumber asli teori yang dipakai"],
+   claim:"Kondisi di lapangan berbeda dari yang seharusnya, dan selisih itu belum pernah diukur."},
+ laporan:{id:["Ringkasan SCQA","Latar dan lingkup","Temuan 1 (paling berpengaruh)","Temuan 2","Temuan 3","Rekomendasi","Lampiran data"],
+   fill:["angka periode berjalan","target yang disepakati di awal"],ver:["format laporan yang diminta penerima"],
+   claim:"Ada satu keputusan yang harus diambil pembaca, dan datanya sudah cukup untuk itu."},
+ persuasi:{id:["Hook","Masalah yang dirasakan","Janji tunggal","Bukti","Penawaran","Keberatan yang dijawab","CTA"],
+   fill:["harga dan apa yang termasuk","bukti nyata: angka, testimoni asli, atau portofolio"],ver:["klaim yang diatur regulasi"],
+   claim:"Satu pembaca, satu tindakan, satu janji."},
+ teknis:{id:["Apa ini dan untuk siapa","Quick start","Konfigurasi","Cara pakai per tugas","Referensi","Batasan dan non-tujuan"],
+   fill:["versi minimum yang benar-benar diuji"],ver:["perintah quick start dijalankan di mesin bersih"],
+   claim:"Pembaca bisa menjalankannya sampai berhasil tanpa bertanya."},
+ video:{id:["Hook 0–3 detik","Konteks","Isi 1","Isi 2","Isi 3","Bayaran","CTA"],
+   fill:["durasi target dalam detik","footage atau visual yang tersedia"],ver:["klaim yang disebut di narasi"],
+   claim:"Setelah menonton, pemirsa bisa melakukan satu hal yang tadinya tidak bisa."},
+ belajar:{id:["Peta konsep (mind map)","Cabang 1","Cabang 2","Cabang 3","Pertanyaan uji diri","Rencana belajar"],
+   fill:["materi atau catatan yang kamu punya"],ver:["cakupan yang benar-benar diujikan"],
+   claim:"Materi terpetakan, dan kamu tahu bagian mana yang belum kamu kuasai."}
+};
+const SKEL_EN={
+ riset:{claim:"Field conditions differ from what they should be, and that gap has never been measured.",sec:["Background","Problem statement","Objectives","Significance","Literature review","Conceptual framework","Method","Instruments","Analysis plan"]},
+ laporan:{claim:"There is one decision the reader has to make, and the data is now enough to make it.",sec:["SCQA summary","Context and scope","Finding 1 (highest impact)","Finding 2","Finding 3","Recommendations","Data appendix"]},
+ persuasi:{claim:"One reader, one action, one promise.",sec:["Hook","The felt problem","Single promise","Evidence","Offer","Objections answered","CTA"]},
+ teknis:{claim:"A reader can run it to success without asking anyone.",sec:["What this is, and for whom","Quick start","Configuration","Task-based usage","Reference","Limits and non-goals"]},
+ video:{claim:"After watching, the viewer can do one thing they could not do before.",sec:["Hook 0–3 s","Context","Body 1","Body 2","Body 3","Payoff","CTA"]},
+ belajar:{claim:"The material is mapped, and you know which part you have not mastered yet.",sec:["Concept map","Branch 1","Branch 2","Branch 3","Self-test questions","Study plan"]}
+};
+
+const T={
+ nav_how:"How it works",nav_try:"Try it",nav_genre:"Genres",nav_check:"Checks",nav_install:"Install",
+ hero_eyebrow:"Open skill · MIT",
+ hero_h1:"Build the <em>frame</em> first.<br>The prose can wait.",
+ hero_lead:"Rangka is a skill for Claude and other AI models. Before a single paragraph is written, it maps the problem, drafts the outline section by section, then checks it against twelve items. It covers theses, reports, landing pages, brochures, READMEs, and video scripts.",
+ hero_cta1:"Install it",hero_cta2:"See the output",
+ stat1:"steps, the same for every type",stat2:"document families",stat3:"universal checks",stat4:"invented numbers",
+ why_eyebrow:"The problem",why_title:"Weak writing rarely fails at the sentence.",
+ why_lead:"It fails because nobody decided who the reader is, which problem is being answered, and what each section has to prove. Asking an AI to “write chapter one” skips all of those decisions.",
+ cmp_no:"Writing straight away",cmp_no1:"Three pages of background, a problem statement that does not follow from it",
+ cmp_no2:"Numbers and sources appear from nowhere",cmp_no3:"Chapter four never answers chapter one",
+ cmp_no4:"Revision means rebuilding, not editing",
+ cmp_yes:"Frame first",cmp_yes1:"The gap is stated before the first sentence",
+ cmp_yes2:"What has no data yet is marked, not invented",cmp_yes3:"Every section has a job you can check",
+ cmp_yes4:"Structural mistakes surface while they are still cheap",
+ steps_title:"Four steps, every kind of writing",
+ s1t:"Should vs is",s1p:"Das Sollen, Das Sein, the gap, the reader, the core claim, the evidence, the action you want.",
+ s2t:"Genre template",s2p:"Each section gets four lines: job, content, evidence, estimated length.",
+ s3t:"A table, not a claim",s3p:"Twelve universal items plus genre-specific ones. Only three statuses: pass, waiting on data, fail.",
+ s4t:"Title written last",s4p:"Derived from the core claim, plus the list of data you still have to supply.",
+ try_eyebrow:"Try it on this page",try_title:"This is the shape of the output.",
+ try_lead:"Fill in three fields and watch the empty frame assemble. This page only shows the shape; the content, the evidence, and the checking are done by the model.",
+ f_genre:"Document type",f_topic:"Topic",f_reader:"Reader",f_mode:"Mode",
+ f_hint:"Quick mode still runs every genre-specific check. Genre checks are never skipped.",
+ copy:"Copy",
+ gen_eyebrow:"Six families",gen_title:"Different structures, one workflow.",
+ gen_lead:"Each family has its own reference file with templates and checks. The model opens only the one it needs.",
+ chk_eyebrow:"Step 3",chk_title:"Twelve items, three statuses.",
+ chk_lead:"The check is always reported as a table. “Looks good” is not a valid status.",
+ th_item:"Item",th_how:"How to check",
+ stt:"The three valid statuses",st_ok:"satisfied.",
+ st_wait:"the structure is right but it needs data only you have. A provisional title is allowed.",
+ st_bad:"the structure is wrong. Fix the outline first; the title waits.",
+ mkt:"The two markers",
+ mk_isi:"data only you have. Never filled with a guess.",
+ mk_cek:"something you must confirm at the source before submitting.",
+ mk_en:"If you write in English, the output uses [FILL] and [VERIFY].",
+ hon_eyebrow:"Limits",hon_title:"What it will not do.",
+ hon1:"Write a whole thesis for you to submit",hon1b:"No. An outline, then section-by-section help using your data.",
+ hon2:"Guarantee a Turnitin or AI-detector score",hon2b:"No tool can guarantee that, including this one.",
+ hon3:"Invent numbers, respondents, or testimonials",hon3b:"Refused. Marked [FILL] so you know what to look for.",
+ hon4:"Cite a theory with a year it has not checked",hon4b:"The name is fine; the year and journal go through [VERIFY].",
+ hon5:"Polish your sentences",hon5b:"That is its companion skill, lugas.",
+ ins_eyebrow:"Install",ins_title:"Works with the tool you already use.",
+ ins_try:"Then just ask",
+ ins_prompt:"Draft a thesis outline on QRIS adoption in traditional markets in Yogyakarta.",
+ ins_prompt2:"Outline a landing page for high-school maths tutoring, quick mode.",
+ faq_title:"Before you try it.",
+ q1:"Does this write my thesis?",a1:"No. What you get is a frame: the problem map, the section structure, and a list of what you still have to find. The prose stays yours, written from your own data.",
+ q2:"Why is the title written last?",a2:"A title written first forces the content to chase a promise it may not be able to keep. Once the outline passes its checks, the title just summarises a core claim that already has evidence behind it.",
+ q3:"What if my data is incomplete?",a3:"The outline still gets built. Sections that need your data are marked [FILL] and their status is “waiting on data”, not “fail”. A provisional title is allowed.",
+ q4:"Does it have to be Claude?",a4:"No. On Claude Code and Claude.ai it runs as a skill. On other models, paste SKILL.md as the instruction, then the matching genre file and checklist.md.",
+ q5:"Is English supported?",a5:"Yes. If you write in English, the section headings and the markers follow: [FILL] and [VERIFY].",
+ q6:"Where do the sources come from?",a6:"The list of works that may be cited without a marker is in references/sources.md. Field theories such as TAM or SERVQUAL are deliberately left out: the name may be used, but you check the year yourself.",
+ ft_lic:"MIT licence",ft_src:"The mind map → outline → checklist pattern is adapted from short videos by the account dafnisfaz_",
+ b_reader:"Reader",b_should:"Should be",b_is:"Actually is",b_gap:"Gap",b_claim:"Core claim",
+ b_map:"1 · CORE MAP",b_out:"2 · OUTLINE",b_chk:"3 · CHECK",b_title:"4 · TITLE OPTIONS",b_need:"WHAT YOU SUPPLY",
+ b_job:"Job",b_content:"Content",b_ev:"Evidence",b_len:"Length",
+ b_prov:"provisional, pending data",b_mode_note:"Quick mode: U1, U2, U4, U8, U9 + all genre checks."
+};
+
+/* ---------- i18n ---------- */
+let lang="id";
+const orig=new Map();
+document.querySelectorAll("[data-i18n],[data-i18n-html]").forEach(el=>{
+  const k=el.dataset.i18n||el.dataset.i18nHtml;
+  orig.set(el,el.dataset.i18nHtml?el.innerHTML:el.textContent);
+});
+function applyLang(){
+  document.documentElement.lang=lang;
+  document.querySelectorAll("[data-i18n],[data-i18n-html]").forEach(el=>{
+    const html=!!el.dataset.i18nHtml, k=el.dataset.i18n||el.dataset.i18nHtml;
+    const v = lang==="id" ? orig.get(el) : (T[k]||orig.get(el));
+    if(html) el.innerHTML=v; else el.textContent=v;
+  });
+  document.getElementById("lang").textContent = lang==="id" ? "EN" : "ID";
+  buildTabs(); buildInstall(); buildChecks(); render();
+  try{localStorage.setItem("rangka-lang",lang)}catch(e){}
+}
+document.getElementById("lang").onclick=()=>{lang=lang==="id"?"en":"id";applyLang()};
+
+/* ---------- theme ---------- */
+const tbtn=document.getElementById("theme");
+function setTheme(t){
+  if(t) document.documentElement.setAttribute("data-theme",t);
+  else document.documentElement.removeAttribute("data-theme");
+  try{t?localStorage.setItem("rangka-theme",t):localStorage.removeItem("rangka-theme")}catch(e){}
+}
+tbtn.onclick=()=>{
+  const cur=document.documentElement.getAttribute("data-theme");
+  const dark=matchMedia("(prefers-color-scheme:dark)").matches;
+  setTheme(cur? (cur==="dark"?"light":"dark") : (dark?"light":"dark"));
+};
+try{
+  const s=localStorage.getItem("rangka-theme"); if(s) setTheme(s);
+  const l=localStorage.getItem("rangka-lang"); if(l==="en") lang="en";
+}catch(e){}
+
+/* ---------- genre tabs ---------- */
+const tabs=document.getElementById("tabs"),panel=document.getElementById("panel");
+let gi=0;
+function showGenre(i){
+  gi=i;
+  [...tabs.children].forEach((t,j)=>t.setAttribute("aria-selected",i===j));
+  const g=GEN[i][lang];
+  panel.innerHTML='<h3>'+g[1]+'</h3><p class="sub mono">'+g[2]+'</p><ol>'+g[3].map(x=>"<li>"+x+"</li>").join("")+'</ol>';
+}
+function buildTabs(){
+  tabs.innerHTML="";
+  GEN.forEach((g,i)=>{
+    const b=document.createElement("button");
+    b.className="tab";b.setAttribute("role","tab");b.textContent=g[lang][0];
+    b.onclick=()=>showGenre(i);tabs.appendChild(b);
+  });
+  showGenre(gi);
+}
+
+/* ---------- install tabs ---------- */
+const itabs=document.getElementById("itabs"),ipanel=document.getElementById("ipanel");
+let ii=0;
+function showInstall(i){
+  ii=i;
+  [...itabs.children].forEach((t,j)=>t.setAttribute("aria-selected",i===j));
+  const d=INS[i][lang];
+  ipanel.innerHTML='<h3>'+d[0]+'</h3><p class="sub">'+d[1]+'</p><pre class="code"><code>'+d[2]+'</code></pre>';
+  wireCopy(ipanel);
+}
+function buildInstall(){
+  itabs.innerHTML="";
+  INS.forEach((d,i)=>{
+    const b=document.createElement("button");
+    b.className="tab";b.setAttribute("role","tab");b.textContent=d[lang][0];
+    b.onclick=()=>showInstall(i);itabs.appendChild(b);
+  });
+  showInstall(ii);
+}
+
+/* ---------- checklist table ---------- */
+function buildChecks(){
+  const tb=document.querySelector("#chk tbody");
+  tb.innerHTML=CHK.map(r=>"<tr><td class='mono' style='color:var(--accent-ink)'>"+r[0]+"</td><td><b>"+(lang==="id"?r[1]:r[3])+"</b></td><td style='color:var(--muted)'>"+(lang==="id"?r[2]:r[4])+"</td></tr>").join("");
+}
+
+/* ---------- builder ---------- */
+const gsel=document.getElementById("b-genre"),
+      topic=document.getElementById("b-topic"),
+      reader=document.getElementById("b-reader"),
+      mode=document.getElementById("b-mode"),
+      out=document.getElementById("b-out");
+function buildSelect(){
+  const cur=gsel.value||"riset";
+  gsel.innerHTML=GEN.map(g=>'<option value="'+g.k+'">'+g[lang][0]+'</option>').join("");
+  gsel.value=cur;
+  mode.options[0].textContent=lang==="id"?"Cepat":"Quick";
+  mode.options[1].textContent=lang==="id"?"Lengkap":"Full";
+}
+function esc(s){return s.replace(/[&<>]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;"}[c]))}
+function mk(s){return esc(s).replace(/\[(ISI|FILL):[^\]]*\]/g,m=>'<span class="isi">'+m+'</span>').replace(/\[(CEK|VERIFY):[^\]]*\]/g,m=>'<span class="cek">'+m+'</span>')}
+function L(k,idText){return lang==="id"?idText:(T[k]||idText)}
+function render(){
+  buildSelect();
+  const k=gsel.value||"riset", s=SKEL[k];
+  const secs = lang==="id" ? s.id : SKEL_EN[k].sec;
+  const FILL=lang==="id"?"ISI":"FILL", VER=lang==="id"?"CEK":"VERIFY";
+  const t=topic.value.trim()|| (lang==="id"?"[ISI: topik]":"[FILL: topic]");
+  const r=reader.value.trim()|| (lang==="id"?"[ISI: pembaca]":"[FILL: reader]");
+  const quick=mode.value==="cepat";
+  const n=[];
+  n.push("# "+L("b_map","1 · PETA INTI"));
+  n.push(L("b_reader","Pembaca")+": "+r);
+  n.push(L("b_should","Seharusnya")+": ["+FILL+": kondisi ideal untuk "+t+"]");
+  n.push(L("b_is","Kenyataan")+": ["+FILL+": "+(lang==="id"?"data atau observasi yang kamu punya":"data or observation you already have")+"]");
+  n.push(L("b_gap","Kesenjangan")+": ["+FILL+": "+(lang==="id"?"selisih antara dua baris di atas":"the difference between the two lines above")+"]");
+  n.push(L("b_claim","Klaim inti")+": "+(lang==="id"?s.claim:SKEL_EN[k].claim));
+  n.push("");
+  n.push("# "+L("b_out","2 · KERANGKA"));
+  secs.forEach((sec,i)=>{
+    n.push((i+1)+". "+sec);
+    n.push("   "+L("b_job","Tugas")+"     : ["+FILL+": "+(lang==="id"?"apa yang dibuktikan bagian ini":"what this section proves")+"]");
+    n.push("   "+L("b_content","Isi")+"       : ["+FILL+": "+(lang==="id"?"poin utama":"main points")+"]");
+    n.push("   "+L("b_ev","Bukti")+"     : ["+FILL+": "+(lang==="id"?"sumber atau data":"source or data")+"]");
+    n.push("   "+L("b_len","Panjang")+"   : ["+FILL+": "+(lang==="id"?"perkiraan":"estimate")+"]");
+  });
+  n.push("");
+  n.push("# "+L("b_chk","3 · CEK"));
+  const items = quick ? CHK.filter(c=>["U1","U2","U4","U8","U9"].includes(c[0])) : CHK;
+  const w=lang==="id"?"Menunggu data":"Waiting on data";
+  items.forEach(c=>{ n.push(c[0].padEnd(4)+" "+(lang==="id"?c[1]:c[3]).padEnd(30).slice(0,30)+" "+w); });
+  n.push("+    "+(lang==="id"?"semua butir cek genre "+GEN.find(g=>g.k===k)[lang][0]:"all "+GEN.find(g=>g.k===k)[lang][0]+" genre checks"));
+  if(quick) n.push("("+L("b_mode_note","Mode cepat: U1, U2, U4, U8, U9 + semua butir genre.")+")");
+  n.push("");
+  n.push("# "+L("b_title","4 · PILIHAN JUDUL")+"  — "+L("b_prov","sementara, menunggu data"));
+  n.push("a) ["+FILL+": "+(lang==="id"?"judul diturunkan setelah klaim inti punya bukti":"title derived once the core claim has evidence")+"]");
+  n.push("");
+  n.push("# "+L("b_need","YANG HARUS KAMU LENGKAPI"));
+  s.fill.forEach(x=>n.push("["+FILL+": "+x+"]"));
+  s.ver.forEach(x=>n.push("["+VER+": "+x+"]"));
+  out.innerHTML=mk(n.join("\n"));
+}
+[gsel,topic,reader,mode].forEach(el=>el.addEventListener("input",render));
+document.getElementById("b-copy").onclick=function(){
+  navigator.clipboard.writeText(out.innerText).then(()=>{
+    const o=this.textContent;this.textContent=lang==="id"?"Tersalin":"Copied";
+    setTimeout(()=>this.textContent=o,1400);
+  }).catch(()=>{});
+};
+
+/* ---------- copy buttons ---------- */
+function wireCopy(root){
+  root.querySelectorAll("pre.code").forEach(p=>{
+    if(p.querySelector(".copy"))return;
+    const b=document.createElement("button");
+    b.className="copy";b.textContent=lang==="id"?"Salin":"Copy";
+    b.onclick=()=>navigator.clipboard.writeText(p.querySelector("code").innerText.trim()).then(()=>{
+      b.textContent=lang==="id"?"Tersalin":"Copied";
+      setTimeout(()=>b.textContent=lang==="id"?"Salin":"Copy",1400);
+    }).catch(()=>{});
+    p.appendChild(b);
+  });
+}
+
+/* ---------- scroll reveal + nav ---------- */
+const io=new IntersectionObserver(es=>es.forEach((e,k)=>{
+  if(e.isIntersecting){setTimeout(()=>e.target.classList.add("in"),k*70);io.unobserve(e.target)}
+}),{threshold:.14});
+document.querySelectorAll(".rv").forEach(s=>io.observe(s));
+addEventListener("scroll",()=>document.getElementById("nav").classList.toggle("stuck",scrollY>8),{passive:true});
+
+/* ---------- boot ---------- */
+applyLang();
+wireCopy(document);
+</script>
+</body>
+</html>

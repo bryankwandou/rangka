@@ -1,0 +1,171 @@
+---
+name: rangka
+description: Build the outline (kerangka) of any document before writing a single paragraph, then check it before drafting. Works for skripsi, tesis, proposal penelitian, laporan, makalah, website copy, landing page, README, technical spec, video script, marketing campaign, brosur, pamflet, pitch deck, email, and study mind maps. Indonesian first, English second. Use when the user says "susun kerangka", "buat outline", "outline dulu", "mind map penelitian", "cek kesiapan judul", "struktur laporan", "kerangka proposal", "outline landing page", "struktur video", "plan this document", "outline this", or asks for any long document where structure is not yet fixed. Do not use for a one-line caption or for polishing finished prose (that is the lugas skill).
+---
+
+# Rangka
+
+*Rangka* (Indonesian): the frame that holds a body up. Write the frame first.
+
+A weak document almost never fails at the sentence level. It fails because nobody
+decided, before writing, who reads it, what gap it closes, and what each section must
+prove. Rewriting sentences ten times does not fix that. Fixing the outline once does.
+
+This skill produces an outline, not finished prose. When the outline passes the check,
+hand drafting and wording to the `lugas` skill if it is installed.
+
+## Hard rules (read first, apply always)
+
+1. **Never invent facts.** No made-up numbers, sources, quotes, survey results, customer
+   names, or regulations. Anything the user must supply is written as `[ISI: ...]`.
+   Anything you are not sure of is written as `[CEK: ...]`.
+2. **Citations only from `references/sources.md`**, or sources the user gave. If a claim
+   needs a source that is not there, write `[CEK: sumber untuk ...]`. Never guess a year,
+   volume, or page.
+3. **Title last.** The title or headline is written after the outline and the check.
+   If checks fail only because the user's own data is missing (`[ISI]`), still give the
+   titles but label them **sementara** (provisional). If a check fails for a structural
+   reason (no gap, orphan question), fix the outline first; do not give titles.
+4. **Campus and client rules win.** Indonesian university guidelines (pedoman penulisan)
+   differ. When a structure is a convention, not a law, say so and add
+   `[CEK: pedoman kampus/klien]`.
+5. **No orphans.** Every question, claim, or promise in the outline must have a section
+   that answers it and evidence that supports it. Every section must serve one of them.
+6. **Ask at most one question before starting.** If information is missing, fill with
+   `[ISI: ...]` and keep going. The user should get a usable outline in one reply.
+
+## The workflow (same five steps for every genre)
+
+### Step 0 — Classify (silent, 10 seconds)
+
+Decide four things. Do not ask if the user already said them.
+
+| Decide | Options |
+|---|---|
+| Language | id / en / other (structure still works; wording rules are id/en only) |
+| Genre family | see table below |
+| Reader | dosen penguji, atasan, investor, calon pembeli, developer, pemirsa, pelajar |
+| Mode | **Dari nol** (user gives topic only) / **Dari materi** (user gives notes, data, draft) |
+
+| Genre family | Examples | Load |
+|---|---|---|
+| A. Riset | skripsi, tesis, disertasi, proposal penelitian, jurnal, makalah ilmiah | `references/genre-research.md` |
+| B. Laporan & dokumen kerja | laporan magang/KP, laporan kegiatan, laporan bisnis, policy brief, memo, SOP | `references/genre-report.md` |
+| C. Persuasi | landing page, website, iklan, brosur, pamflet, poster, email marketing, pitch deck, proposal bisnis/sponsor | `references/genre-persuasion.md` |
+| D. Teknis | README, dokumentasi, spec/PRD, ADR, tutorial, API docs | `references/genre-technical.md` |
+| E. Media waktu | video pendek, video YouTube, podcast, presentasi lisan, webinar | `references/genre-timed.md` |
+| F. Belajar | mind map materi kuliah, ringkasan bab, persiapan ujian | `references/genre-study.md` |
+
+If a request spans two families (e.g. a research-based landing page), use the family of
+the **final reader's action**, and borrow sections from the other.
+
+### Step 1 — Core map (the gap)
+
+Every useful document closes a gap between how things should be and how they are.
+Researchers in Indonesia call these *Das Sollen* and *Das Sein*. The same idea works
+everywhere. Fill this table before any outline:
+
+| Node | Research | Report | Persuasion | Technical | Video/Study |
+|---|---|---|---|---|---|
+| **Should** (Das Sollen) | theory, norm, regulation, target | plan, KPI, SOP | the life the buyer wants | the spec, expected behavior | what the viewer/learner should be able to do after |
+| **Is** (Das Sein) | field facts, data | what actually happened | the pain today | current behavior, bug, missing doc | what they can do now |
+| **Gap** | research problem | deviation to explain | the problem you solve | the change needed | the lesson |
+| **Reader** | penguji | decision maker | buyer | developer/user | viewer/learner |
+| **Core claim** | answer to RQ (unknown yet, so: what will be tested) | main finding | the promise | what this doc lets you do | the one takeaway |
+| **Proof** | method + data | data, evidence | proof points, testimonial, demo | code, examples | demo, examples |
+| **Action** | contribution, recommendation | decision requested | CTA | next command/step | next step, quiz |
+
+Rule: if Should and Is do not differ, there is no document yet. Say so and ask for a fact
+from the field, or propose two candidate gaps marked `[CEK]`.
+
+Write the core claim as one sentence a stranger understands. If you cannot, the outline
+is not ready. (This is Minto's governing thought; see `references/sources.md`.)
+
+### Step 2 — Outline from the genre template
+
+Open the genre file from Step 0 and fill its template. For each section write:
+
+- **Heading**
+- **Job**: what this section must make the reader believe or do (one line)
+- **Content points**: 2–5 bullets, facts or `[ISI: ...]`
+- **Evidence**: data, source, example, or `[ISI]`/`[CEK]`
+- **Length hint**: words, pages, seconds, or slides
+
+Order sections by what the reader needs next, not by the order you learned things.
+
+### Step 3 — Check (do not skip)
+
+Run `references/checklist.md`: the universal checks, then the genre checks. Report the
+result as a short table: item, pass/fail, fix. Fix failures in the outline, then re-run
+only the failed items. Two rounds maximum; if still failing, show what is blocked and why
+(usually missing user data).
+
+### Step 4 — Title/headline and handoff
+
+- Give 3 title or headline options, each built from the core claim. For research, follow
+  the pattern in `genre-research.md` §Judul.
+- List every `[ISI]` and `[CEK]` item in one block at the end, so the user knows exactly
+  what to bring.
+- One line: next step (e.g. "Konsultasikan ke dosen dengan lampiran catatan sumber",
+  "Kirim ke lugas untuk drafting").
+
+## Output format
+
+Use this skeleton. Keep it in the user's language. No emoji. No motivational filler.
+
+```
+## 1. Peta inti
+(table from Step 1)
+
+## 2. Kerangka
+(numbered sections, each with Job / Isi / Bukti / Panjang)
+
+## 3. Hasil cek
+| Butir | Status | Perbaikan |
+
+## 4. Opsi judul
+1. ...
+
+## 5. Yang perlu kamu lengkapi
+- [ISI: ...]
+- [CEK: ...]
+```
+
+If the user writes in English, translate the headers (Core map, Outline, Check,
+Title options, What you need to supply) and use `[FILL: ...]` / `[VERIFY: ...]`.
+Section fields are always **Tugas/Job, Isi/Content, Bukti/Evidence, Panjang/Length**.
+
+Section 4 is skipped for study outputs (family F) and for documents whose title is fixed
+by someone else (e.g. LPJ with a given event name); write "Judul mengikuti ..." instead.
+
+For study mind maps (family F), also output a Mermaid `mindmap` block. For research,
+also output the Mermaid flow in `genre-research.md` if the user wants a diagram.
+
+## Modes of depth
+
+- **Cepat** (default for persuasion, short reports, study maps, video under 3 minutes):
+  Step 1 table with 5 rows (Reader, Should, Is, Gap, Action), outline, checks U1, U2, U4,
+  U8, U9 **plus every check of the genre file**.
+- **Lengkap** (default for skripsi, tesis, proposal, technical spec, anything over ~10
+  pages): everything above.
+
+The user can override with "versi cepat" / "versi lengkap".
+
+## What this skill will not do
+
+- Write a full skripsi, tesis, or assignment for submission as the student's own work.
+  It builds the outline and explains the reasoning so the student can write it and defend
+  it. If asked to write the whole thing, build the outline and say plainly that the
+  student should draft it, with help per section if they want.
+- Promise a plagiarism or AI-detector score. Clean structure and honest wording lower
+  similarity; no tool can guarantee a number.
+- Fabricate data, respondents, or literature to fill a gap.
+
+## Files
+
+| File | When to read |
+|---|---|
+| `references/genre-*.md` | Step 2, only the one for the genre |
+| `references/checklist.md` | Step 3, every time |
+| `references/sources.md` | Any time a citation or framework name is used |
+| `references/examples.md` | When unsure what a finished outline looks like |

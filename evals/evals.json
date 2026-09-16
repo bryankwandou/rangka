@@ -1,0 +1,102 @@
+{
+  "skill_name": "rangka",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Tolong susun kerangka skripsi saya. Topiknya penggunaan QRIS di pasar tradisional Yogyakarta.",
+      "expected_output": "Peta Das Sollen/Das Sein, rumusan masalah bernomor, outline Bab 1-5 atau 12 butir, tabel hasil cek, opsi judul ditulis terakhir, daftar [ISI]/[CEK]. Tidak ada angka adopsi QRIS atau nama penelitian terdahulu yang dikarang.",
+      "assertions": [
+        "Contains a gap table with Das Sollen and Das Sein",
+        "Title options appear after the outline and checklist",
+        "Every statistic or prior study is either from the user or marked [ISI]/[CEK]",
+        "Mentions checking campus writing guidelines",
+        "Each research question maps to a results subsection"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Bikin outline landing page untuk aplikasi kasir UMKM namanya Kasirku.",
+      "expected_output": "Pembaca-tindakan-janji dikunci, section hero sampai footer dengan tugas masing-masing, bukti ditandai [ISI], satu CTA konsisten.",
+      "assertions": [
+        "Names one specific reader, one action, one promise",
+        "No invented testimonials, user counts, or client logos",
+        "CTA in hero matches closing CTA",
+        "Includes an objections/FAQ section"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Outline for a 60-second TikTok explaining why students should outline before choosing a thesis title.",
+      "expected_output": "Timed table with hook in first 3 seconds, visual/VO/on-screen text columns, single CTA, 'after watching, viewer can...' sentence.",
+      "assertions": [
+        "Hook occupies 0-3 seconds",
+        "Has on-screen text column for silent viewing",
+        "Durations sum to about 60 seconds",
+        "Exactly one call to action"
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Buatkan mind map untuk belajar materi fotosintesis buat ujian biologi SMA, saya tidak punya materinya.",
+      "expected_output": "Mode dari nol dinyatakan, Mermaid mindmap valid dengan 3-7 cabang, simpul pendek, pertanyaan uji diri bertingkat, tanda cocokkan dengan silabus.",
+      "assertions": [
+        "States the from-scratch mode and asks to verify against syllabus",
+        "Contains a valid mermaid mindmap block with one root",
+        "Includes self-test questions at more than one Bloom level"
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Tuliskan skripsi lengkap saya 5 bab tentang e-learning, langsung jadi siap dikumpulkan.",
+      "expected_output": "Membuat kerangka lengkap dan menjelaskan dengan jelas bahwa skill tidak menulis skripsi utuh untuk dikumpulkan sebagai karya sendiri, menawarkan bantuan per bagian.",
+      "assertions": [
+        "Does not produce a full ready-to-submit thesis",
+        "Still delivers a usable outline",
+        "Offers section-by-section drafting help without moralizing at length"
+      ]
+    },
+    {
+      "id": 6,
+      "prompt": "Buat struktur laporan pertanggungjawaban acara seminar himpunan mahasiswa.",
+      "expected_output": "Template LPJ dengan tabel target vs realisasi dan anggaran rencana vs realisasi, ringkasan di depan.",
+      "assertions": [
+        "Includes target-vs-actual table",
+        "Includes budget planned-vs-actual with variance explanation",
+        "Summary is placed first"
+      ]
+    },
+    {
+      "id": 7,
+      "prompt": "Outline a thesis proposal on remote work and employee burnout in Jakarta startups.",
+      "expected_output": "English headers, [FILL]/[VERIFY] markers, 12-point proposal template only, no invented prevalence statistics, provisional titles.",
+      "assertions": [
+        "Headers are in English",
+        "Uses [FILL]/[VERIFY] markers",
+        "No burnout prevalence number without a marker",
+        "Title options labeled provisional if data is missing",
+        "Does not show both the 12-point and the chapter outline"
+      ]
+    },
+    {
+      "id": 8,
+      "prompt": "Ini catatan kuliah saya: 'Inflasi = kenaikan harga umum. Jenis: demand-pull, cost-push. Diukur dengan IHK.' Buatkan mind map.",
+      "expected_output": "Mode dari materi; hanya konsep dari catatan; tambahan di cabang berlabel; Mermaid tanpa tanda kurung di simpul selain root.",
+      "assertions": [
+        "Uses only the three given concepts in main branches",
+        "Any extra concept sits under a branch labeled Tambahan di luar materi",
+        "No parentheses or brackets in mindmap nodes except root",
+        "No title options section"
+      ]
+    },
+    {
+      "id": 9,
+      "prompt": "Buat kerangka skripsi tentang penerimaan aplikasi PeduliLindungi pakai TAM, sertakan referensinya.",
+      "expected_output": "TAM disebut dengan [CEK: sumber asli TAM], tanpa tahun/jurnal karangan; Kelsen tidak dikutip.",
+      "assertions": [
+        "TAM citation carries a [CEK] marker and no unverified year",
+        "Kelsen is not cited in the background section",
+        "No invented prior-study table rows"
+      ]
+    }
+  ]
+}
