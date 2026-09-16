@@ -165,6 +165,7 @@ footer .row{display:flex;gap:18px;flex-wrap:wrap;justify-content:space-between}
       <a href="#coba" data-i18n="nav_try">Coba</a>
       <a href="#genre" data-i18n="nav_genre">Genre</a>
       <a href="#cek" data-i18n="nav_check">Cek</a>
+      <a href="#bukti" data-i18n="nav_proof">Bukti</a>
       <a href="#pasang" data-i18n="nav_install">Pasang</a>
       <a href="https://github.com/bryankwandou/rangka">GitHub</a>
     </nav>
@@ -341,6 +342,27 @@ footer .row{display:flex;gap:18px;flex-wrap:wrap;justify-content:space-between}
   </div>
 </section>
 
+<section class="alt" id="bukti">
+  <div class="wrap">
+    <div class="head">
+      <p class="eyebrow" data-i18n="pr_eyebrow">Bukti</p>
+      <h2 class="rv" style="margin-top:12px" data-i18n="pr_title">Diuji dengan kasus jebakan, dinilai tanpa konteks.</h2>
+      <p class="lead rv" data-i18n="pr_lead">Tiga prompt dirancang untuk memancing kesalahan yang paling sering: salah bahasa, konsep tambahan diam-diam, dan tahun teori yang dikarang. Agen baru tanpa riwayat percakapan menjalankan skill lalu menilai setiap butir dengan kutipan bukti.</p>
+    </div>
+    <div class="tablewrap rv">
+      <table>
+        <thead><tr><th>#</th><th data-i18n="pr_th1">Jebakan</th><th data-i18n="pr_th2">Yang diperiksa</th><th data-i18n="pr_th3">Hasil</th></tr></thead>
+        <tbody>
+          <tr><td class="mono">7</td><td data-i18n="pr_7a">Prompt bahasa Inggris, "thesis proposal"</td><td data-i18n="pr_7b">Judul bagian Inggris, tanda [FILL]/[VERIFY], tidak ada angka prevalensi tanpa tanda, judul berlabel sementara, hanya satu jenis kerangka</td><td><span class="st ok">5/5</span></td></tr>
+          <tr><td class="mono">8</td><td data-i18n="pr_8a">Mind map dari catatan kuliah tiga baris</td><td data-i18n="pr_8b">Cabang utama hanya dari catatan, tambahan diberi label, simpul Mermaid tanpa kurung, tanpa bagian judul</td><td><span class="st ok">4/4</span></td></tr>
+          <tr><td class="mono">9</td><td data-i18n="pr_9a">Skripsi TAM, "sertakan referensinya"</td><td data-i18n="pr_9b">TAM diberi [CEK] tanpa tahun, Kelsen tidak muncul di latar belakang, tabel penelitian terdahulu tidak diisi karangan</td><td><span class="st ok">3/3</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="hint rv" style="margin-top:14px" data-i18n="pr_note">Kasus dan butir penilaiannya ada di evals/evals.json. Setelah uji ini, tiga aturan tetap diperketat supaya lolosnya tidak bergantung pada urutan kata.</p>
+  </div>
+</section>
+
 <section>
   <div class="wrap">
     <div class="head">
@@ -438,7 +460,7 @@ const SKEL_EN={
 };
 
 const T={
- nav_how:"How it works",nav_try:"Try it",nav_genre:"Genres",nav_check:"Checks",nav_install:"Install",
+ nav_how:"How it works",nav_try:"Try it",nav_genre:"Genres",nav_check:"Checks",nav_install:"Install",nav_proof:"Proof",
  hero_eyebrow:"Open skill · MIT",
  hero_h1:"Build the <em>frame</em> first.<br>The prose can wait.",
  hero_lead:"Rangka is a skill for Claude and other AI models. Before a single paragraph is written, it maps the problem, drafts the outline section by section, then checks it against twelve items. It covers theses, reports, landing pages, brochures, READMEs, and video scripts.",
@@ -492,6 +514,13 @@ const T={
  q5:"Is English supported?",a5:"Yes. If you write in English, the section headings and the markers follow: [FILL] and [VERIFY].",
  q6:"Where do the sources come from?",a6:"The list of works that may be cited without a marker is in references/sources.md. Field theories such as TAM or SERVQUAL are deliberately left out: the name may be used, but you check the year yourself.",
  ft_lic:"MIT licence",ft_src:"The mind map → outline → checklist pattern is adapted from short videos by the account dafnisfaz_",
+ pr_eyebrow:"Proof",pr_title:"Tested on trap cases, graded without context.",
+ pr_lead:"Three prompts were built to provoke the most common failures: the wrong language, concepts slipped in unannounced, and invented theory years. A fresh agent with no conversation history ran the skill, then graded every item with a quoted line as evidence.",
+ pr_th1:"Trap",pr_th2:"What was checked",pr_th3:"Result",
+ pr_7a:"English prompt, “thesis proposal”",pr_7b:"English headings, [FILL]/[VERIFY] markers, no unmarked prevalence figure, provisional title label, only one outline type",
+ pr_8a:"Mind map from three lines of lecture notes",pr_8b:"Main branches come only from the notes, extras labeled, no brackets in Mermaid nodes, no title section",
+ pr_9a:"TAM thesis, “include the references”",pr_9b:"TAM marked [VERIFY] with no year, Kelsen absent from the background, prior-study table left for the user",
+ pr_note:"The cases and grading items are in evals/evals.json. After this run, three rules were still tightened so that passing does not depend on word order.",
  b_reader:"Reader",b_should:"Should be",b_is:"Actually is",b_gap:"Gap",b_claim:"Core claim",
  b_map:"1 · CORE MAP",b_out:"2 · OUTLINE",b_chk:"3 · CHECK",b_title:"4 · TITLE OPTIONS",b_need:"WHAT YOU SUPPLY",
  b_job:"Job",b_content:"Content",b_ev:"Evidence",b_len:"Length",
