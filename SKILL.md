@@ -1,6 +1,6 @@
 ---
 name: rangka
-description: Build the outline (kerangka) of any document before writing a single paragraph, then check it before drafting. Works for skripsi, tesis, proposal penelitian, laporan, makalah, website copy, landing page, README, technical spec, video script, marketing campaign, brosur, pamflet, pitch deck, email, and study mind maps. Indonesian first, English second. Use when the user says "susun kerangka", "buat outline", "outline dulu", "mind map penelitian", "cek kesiapan judul", "struktur laporan", "kerangka proposal", "outline landing page", "struktur video", "plan this document", "outline this", or asks for any long document where structure is not yet fixed. Do not use for a one-line caption or for polishing finished prose (that is the lugas skill).
+description: Build the outline (kerangka) of any document before writing a single paragraph, then check it before drafting. Also turns existing research files into one condensed outline (reverse outline). Works for skripsi, tesis, disertasi, usulan/proposal tugas akhir, laporan KKP/magang/PKL, makalah, proposal kegiatan, LPJ, SK, AD/ART, surat resmi, laporan, website copy, landing page, README, technical spec, video script, marketing campaign, brosur, pamflet, pitch deck, email, and study mind maps. Has built-in Universitas Atma Jaya Makassar (FTI) pedoman rules, plus an adapter for any other Indonesian or foreign university guideline, in any language. Indonesian first, English second. Use when the user says "susun kerangka", "buat outline", "outline dulu", "rangkum file ini jadi outline", "kerangka magang/KKP", "kerangka proposal", "kerangka tugas akhir", "bikin SK", "susun LPJ", "proposal kegiatan", "mind map penelitian", "cek kesiapan judul", "struktur laporan", "outline landing page", "struktur video", "plan this document", "outline this", or asks for any long document where structure is not yet fixed. Do not use for a one-line caption or for polishing finished prose (that is the lugas skill).
 ---
 
 # Rangka
@@ -43,15 +43,18 @@ Decide four things. Do not ask if the user already said them.
 
 | Decide | Options |
 |---|---|
-| Language | id / en / other (structure still works; wording rules are id/en only) |
+| Language | id / en / any other — see `references/languages.md` |
 | Genre family | see table below |
-| Reader | dosen penguji, atasan, investor, calon pembeli, developer, pemirsa, pelajar |
-| Mode | **Dari nol** (user gives topic only) / **Dari materi** (user gives notes, data, draft) |
+| Reader | dosen penguji, atasan, investor, calon pembeli, developer, pemirsa, pelajar, pemberi dana |
+| Mode | **Dari nol** (topic only) / **Dari materi** (notes, data, draft) / **Rangkum** (existing files → one outline, see `references/summarize-to-outline.md`) |
+| Institution | UAJM FTI → `uajm-*.md`. Any other campus → `references/pedoman-adapter.md`. Not academic → skip |
 
 | Genre family | Examples | Load |
 |---|---|---|
-| A. Riset | skripsi, tesis, disertasi, proposal penelitian, jurnal, makalah ilmiah | `references/genre-research.md` |
-| B. Laporan & dokumen kerja | laporan magang/KP, laporan kegiatan, laporan bisnis, policy brief, memo, SOP | `references/genre-report.md` |
+| A. Riset | skripsi, proposal penelitian, jurnal, makalah ilmiah | `references/genre-research.md` |
+| A+. Pascasarjana | tesis (S2), disertasi (S3) | `genre-research.md` **+** `references/genre-thesis.md` |
+| B. Laporan & dokumen kerja | laporan magang/KKP/KP/PKL, laporan kegiatan, laporan bisnis, policy brief, memo, SOP | `references/genre-report.md` |
+| G. Dokumen organisasi | proposal kegiatan, LPJ, SK, AD/ART, surat permohonan/tugas, notulen, berita acara | `references/genre-organizational.md` |
 | C. Persuasi | landing page, website, iklan, brosur, pamflet, poster, email marketing, pitch deck, proposal bisnis/sponsor | `references/genre-persuasion.md` |
 | D. Teknis | README, dokumentasi, spec/PRD, ADR, tutorial, API docs | `references/genre-technical.md` |
 | E. Media waktu | video pendek, video YouTube, podcast, presentasi lisan, webinar | `references/genre-timed.md` |
@@ -59,6 +62,34 @@ Decide four things. Do not ask if the user already said them.
 
 If a request spans two families (e.g. a research-based landing page), use the family of
 the **final reader's action**, and borrow sections from the other.
+
+#### Routing for Indonesian academic documents
+
+Genre family alone is not enough for campus documents — the *pedoman* decides the
+structure. Route by document, then by campus:
+
+| Document | Read |
+|---|---|
+| Laporan KKP / KP / PKL / magang, UAJM FTI | `references/uajm-kkp.md` |
+| Usulan/proposal TA or Ringkasan Kapasitas Diri, UAJM FTI | `references/uajm-usulan-ta.md` |
+| Skripsi / tugas akhir, UAJM FTI | `references/uajm-skripsi.md` |
+| Any of the above, **other campus** | `genre-research.md`/`genre-report.md` + `references/pedoman-adapter.md` |
+| Tesis / disertasi, any campus | `references/genre-thesis.md` + `pedoman-adapter.md` |
+| Formatting, citation style, or "berapa spasi / margin / gaya pustaka" (UAJM) | `references/uajm-format.md` |
+| Anything with lampiran | `references/appendices.md` |
+
+Always run `pedoman-adapter.md`'s 14 variables for academic work, and show the filled
+table to the user **before** the outline. If the campus is UAJM FTI, the `uajm-*.md`
+files already answer those variables — say so instead of asking.
+
+Never state a campus rule you have not read. Sources for UAJM are the 2015 FTI pedoman;
+everything beyond them is `[CEK: pedoman kampus]`.
+
+#### Mode Rangkum (files → one outline)
+
+If the user points at files, a folder, or a finished draft and wants it condensed into a
+single outline, follow `references/summarize-to-outline.md` instead of Steps 1–2. Steps
+3–4 still apply. Read the files; never summarise from the filename.
 
 ### Step 1 — Core map (the gap)
 
@@ -121,6 +152,10 @@ Use this skeleton. Keep it in the user's language. No emoji. No motivational fil
 ## 2. Kerangka
 (numbered sections, each with Job / Isi / Bukti / Panjang)
 
+## 2b. Kerangka lampiran        (dokumen akademik & organisasi saja)
+Lampiran n. Judul  [WAJIB/BIASANYA/JIKA ADA]
+  Tugas / Isi / Dirujuk dari / Kapan dikumpulkan
+
 ## 3. Hasil cek
 | Butir | Status | Perbaikan |
 
@@ -147,8 +182,11 @@ also output the Mermaid flow in `genre-research.md` if the user wants a diagram.
 - **Cepat** (default for persuasion, short reports, study maps, video under 3 minutes):
   Step 1 table with 5 rows (Reader, Should, Is, Gap, Action), outline, checks U1, U2, U4,
   U8, U9 **plus every check of the genre file**.
-- **Lengkap** (default for skripsi, tesis, proposal, technical spec, anything over ~10
-  pages): everything above.
+- **Lengkap** (default for skripsi, tesis, disertasi, proposal, laporan KKP, LPJ,
+  technical spec, anything over ~10 pages): everything above, plus §2b (lampiran) and
+  the mapping table required by the genre file — for UAJM skripsi that is
+  `rumusan → tujuan → bab → bukti → kesimpulan → saran`; for LPJ it is
+  `tujuan → indikator → realisasi → kendala → rekomendasi`.
 
 The user can override with "versi cepat" / "versi lengkap".
 
@@ -167,6 +205,19 @@ The user can override with "versi cepat" / "versi lengkap".
 | File | When to read |
 |---|---|
 | `references/genre-*.md` | Step 2, only the one for the genre |
+| `references/genre-thesis.md` | Tesis (S2) or disertasi (S3), after `genre-research.md` |
+| `references/genre-organizational.md` | Proposal kegiatan, LPJ, SK, AD/ART, surat, notulen |
+| `references/uajm-kkp.md` | Laporan KKP/magang at UAJM FTI |
+| `references/uajm-usulan-ta.md` | Usulan TA / proposal / Ringkasan Kapasitas Diri at UAJM FTI |
+| `references/uajm-skripsi.md` | Skripsi/TA at UAJM FTI — Bab I–V + 15 front-matter items |
+| `references/uajm-format.md` | Any UAJM formatting, citation style, or length question |
+| `references/pedoman-adapter.md` | Every academic document not covered by a `uajm-*` file |
+| `references/appendices.md` | Any document with lampiran — read at Step 2, not at the end |
+| `references/summarize-to-outline.md` | Mode Rangkum: existing files → one outline |
+| `references/languages.md` | Output language is not Indonesian, or is mixed |
 | `references/checklist.md` | Step 3, every time |
 | `references/sources.md` | Any time a citation or framework name is used |
 | `references/examples.md` | When unsure what a finished outline looks like |
+
+Read only what the routing tables call for. A landing page outline never needs the
+UAJM files; a KKP outline never needs the persuasion file.

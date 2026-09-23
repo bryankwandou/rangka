@@ -3,8 +3,9 @@
 [Situs & tutorial](https://rangka-skill.vercel.app) · [Unduh .zip](https://github.com/bryankwandou/rangka/archive/refs/heads/main.zip) · lisensi MIT
 
 Skill untuk Claude (dan model lain) yang menyusun kerangka dokumen sebelum menulis:
-skripsi, proposal, laporan, landing page, brosur, README, naskah video, pitch deck,
-sampai mind map belajar.
+skripsi, usulan tugas akhir, laporan KKP/magang, tesis, disertasi, proposal kegiatan,
+LPJ, SK, AD/ART, laporan, landing page, brosur, README, naskah video, pitch deck,
+sampai mind map belajar. Bisa juga membalik berkas yang sudah ada menjadi satu kerangka.
 
 Alurnya sama untuk semua jenis tulisan:
 
@@ -22,18 +23,38 @@ yang belum pasti ditulis `[CEK: ...]`.
 rangka/
 ├── SKILL.md                      alur kerja dan aturan
 ├── references/
-│   ├── genre-research.md         skripsi, tesis, proposal, jurnal
-│   ├── genre-report.md           laporan bisnis, magang, LPJ, policy brief, SOP
+│   ├── genre-research.md         skripsi, proposal penelitian, jurnal
+│   ├── genre-thesis.md           tesis (S2) dan disertasi (S3)
+│   ├── genre-report.md           laporan bisnis, magang, policy brief, SOP
+│   ├── genre-organizational.md   proposal kegiatan, LPJ, SK, AD/ART, surat, notulen
 │   ├── genre-persuasion.md       landing page, website, brosur, pamflet, iklan, email, pitch deck
 │   ├── genre-technical.md        README, spec/PRD, ADR, tutorial, API docs
 │   ├── genre-timed.md            video pendek/panjang, podcast, presentasi, sidang
 │   ├── genre-study.md            mind map, ringkasan bab, rencana belajar
+│   ├── uajm-kkp.md               laporan KKP/magang, Atma Jaya Makassar FTI
+│   ├── uajm-usulan-ta.md         usulan TA & ringkasan kapasitas diri, UAJM
+│   ├── uajm-skripsi.md           skripsi Bab I–V + 15 komponen bagian awal, UAJM
+│   ├── uajm-format.md            tata tulis, penomoran, gaya pustaka UAJM
+│   ├── pedoman-adapter.md        14 variabel untuk pedoman kampus mana pun
+│   ├── appendices.md             katalog lampiran dan cara merangkanya
+│   ├── summarize-to-outline.md   membalik berkas penelitian jadi satu kerangka
+│   ├── languages.md              aturan keluaran lintas bahasa dan aksara
 │   ├── checklist.md              pemeriksaan universal
 │   ├── sources.md                daftar sumber yang boleh dikutip
 │   └── examples.md               tiga contoh keluaran
 ├── evals/evals.json              sembilan kasus uji
-└── site/index.html               halaman tutorial (sumber situs)
+└── site/                         halaman tutorial (sumber situs, 6 bahasa)
+    ├── index.html
+    └── i18n/en.js es.js fr.js zh.js ar.js
 ```
+
+## Pedoman kampus
+
+Pedoman Universitas Atma Jaya Makassar (FTI) dimuat utuh di empat berkas `uajm-*.md`,
+diturunkan dari *Pedoman KKP FTI 2015* dan *Pedoman Penulisan Skripsi Prodi Teknik
+Informatika 2015*. Untuk kampus lain, `pedoman-adapter.md` mengisi empat belas variabel
+yang benar-benar mengubah struktur — dari pedoman yang kamu berikan, bukan dari tebakan.
+Butir yang belum dipastikan selalu keluar sebagai `[CEK: pedoman kampus]`.
 
 ## Pemasangan
 

@@ -130,3 +130,103 @@ Judul mengikuti nama tool `[ISI]`. Opsi kalimat pembuka:
 ### 5. Yang perlu kamu lengkapi
 - [ISI: nama tool, cara instal, versi runtime, output --help, lisensi]
 - [CEK: semua perintah contoh sudah dijalankan]
+
+---
+
+## Contoh 4 — Laporan KKP, pedoman UAJM, mode Lengkap
+
+**Permintaan:** "kerangka laporan KKP saya di Diskominfo, bagian pengelolaan jaringan, kampus Atma Jaya Makassar"
+
+Rujukan yang dibuka: `uajm-kkp.md`, `uajm-format.md`, `appendices.md`.
+
+### 0. Variabel pedoman (sudah terjawab oleh pedoman UAJM FTI)
+Empat bab · warna sampul hijau · tanpa abstrak · penomoran Arab bertingkat maksimal
+4 tingkat · nomor tabel satu seri · gaya pustaka UAJM. Tidak ada yang perlu `[CEK]`
+di sini karena pedomannya termuat; yang tetap `[CEK]` hanya hal di luar pedoman.
+
+### 1. Peta inti
+| Node | Isi |
+|---|---|
+| Pembaca | Pembimbing kampus (bobot 70%) dan pembimbing lapangan (30%) |
+| Das Sollen | Pengelolaan jaringan mengikuti standar dan terdokumentasi |
+| Das Sein | `[ISI: temuan observasi di divisi, mis. pencatatan perangkat masih manual]` |
+| Gap | Selisih itu = "masalah" di §1.2 |
+| Klaim inti | "Selama 42 hari kerja di divisi jaringan, penulis mengikuti `[ISI: n]` jenis pekerjaan yang menunjukkan `[ISI: temuan]`" |
+| Bukti | Uraian teknis tiap jenis pekerjaan + dokumentasi foto |
+| Tindakan | Saran ke instansi + pelajaran untuk prodi |
+
+### 2. Kerangka
+**BAB I PENDAHULUAN** — 1.1 Latar Belakang (kenapa KKP perlu; kenapa **Diskominfo**; kenapa **divisi jaringan** — dua alasan terakhir wajib eksplisit) · 1.2 Masalah · 1.3 Tujuan · 1.4 Manfaat · 1.5 Waktu dan Tempat (+ alamat lengkap) · 1.6 Jadwal Kegiatan (**alokasi per hari**). 4–6 hlm.
+
+**BAB II TINJAUAN UMUM LOKASI KKP** — 2.1 Sejarah · 2.2 Kegiatan instansi · 2.3 Struktur organisasi (divisi KKP ditandai) · 2.4 Tujuan & fungsi **yang terkait bidang kajian** · 2.5 Sistem kerja. 5–7 hlm. Aturan pemangkas: sub-bab yang tidak dipakai lagi di Bab III dipotong.
+
+**BAB III URAIAN TEKNIS PELAKSANAAN KKP** — disusun **per jenis pekerjaan**, bukan per tanggal. Tiap jenis: konteks → apa yang dikerjakan → aturan/standar → hasil → kesulitan & penanganan → bukti `[ISI]`. 40–50% halaman bagian utama.
+
+**BAB IV PENUTUP** — 4.1 Kesimpulan (tiap butir menjawab satu tujuan di §1.3) · 4.2 Saran (tiap saran menempel pada kesimpulan atau penyimpangan yang disebut).
+
+### 2b. Kerangka lampiran
+```
+Lampiran 1. Dokumentasi foto tiap jenis pekerjaan          [WAJIB]
+  Dirujuk : §3.1–3.n     Ambil: selama magang — tidak bisa dibuat belakangan
+Lampiran 2. Laporan harian/mingguan (Form Aktivitas)       [WAJIB]   Ambil: harian
+Lampiran 3. Lembar perkembangan pembimbing kampus          [WAJIB]   Ambil: tiap konsultasi
+Lampiran 4. Surat pengantar prodi & surat balasan instansi [BIASANYA]
+Lampiran 5. Form penilaian pembimbing lapangan             [BIASANYA]
+Lampiran 6. Daftar hadir seminar (≥5 peserta)              [BIASANYA]
+```
+
+### 3. Hasil cek
+| Butir | Status | Perbaikan |
+|---|---|---|
+| U1 Pembaca spesifik | Lolos | — |
+| U2 Gap nyata | Menunggu data | `[ISI: temuan observasi]` |
+| K1 Lingkup masuk 3 kategori sah | Lolos | network administration |
+| K2 §1.1 menjawab kenapa tempat & divisi | Menunggu data | tulis dua alasan itu eksplisit |
+| K4 Tiap jenis pekerjaan punya rencana foto | **Gagal** | finalkan daftar jenis pekerjaan **sebelum** magang berakhir |
+| K8 Tidak ada abstrak | Lolos | — |
+
+### 4. Judul
+Judul KKP memuat nama proyek yang dilaporkan → diberikan setelah §3.n final. Sementara: `[ISI: nama proyek]`.
+
+---
+
+## Contoh 5 — Dokumen organisasi, SK kepengurusan
+
+**Permintaan:** "buatkan SK pengurus UKM periode baru"
+
+Rujukan yang dibuka: `genre-organizational.md` §G3.
+
+### 1. Peta inti
+Should: organisasi punya dasar sah untuk bertindak · Is: kepengurusan baru belum ditetapkan ·
+Gap: kekosongan dasar · Pembaca: pihak yang ditetapkan + pihak luar (kampus, sponsor) ·
+Klaim inti: "Sejak tanggal ini, susunan berikut berlaku" · Bukti: konsideran + dokumen dasar ·
+Tindakan: melaksanakan diktum. **Judul mengikuti format baku — bagian 4 dilewati.**
+
+### 2. Kerangka
+```
+SURAT KEPUTUSAN <organisasi>
+Nomor: [ISI: urut]/SK/[ISI: kode]/[ISI: institusi]/<bulan Romawi>/<tahun>
+TENTANG PENETAPAN KEPENGURUSAN ... PERIODE [ISI]
+
+MENIMBANG : a. bahwa ... ;  b. bahwa ... ;  c. bahwa perlu ditetapkan ... ;
+MENGINGAT : 1. Statuta [ISI: nama institusi];
+            2. Peraturan kemahasiswaan;
+            3. [ISI: dokumen dasar + tanggal];
+            4. Hasil musyawarah tanggal [ISI];
+MEMUTUSKAN — MENETAPKAN
+KESATU  : susunan pengurus sebagaimana Lampiran I
+KEDUA   : tugas dan tanggung jawab pengurus
+KETIGA  : siapa yang tidak termasuk (mis. anggota umum) + masa berlaku
+KEEMPAT : klausul ralat
+Ditetapkan di [ISI] · Pada tanggal [ISI] · [jabatan] · [ISI: nama + NIM]
+LAMPIRAN I — Susunan pengurus
+```
+
+### 3. Hasil cek
+| Butir | Status | Perbaikan |
+|---|---|---|
+| G7 Menimbang/Mengingat tidak tertukar | Lolos | alasan di Menimbang, dasar di Mengingat |
+| G8 Diktum KESATU–KEEMPAT + klausul ralat | Lolos | — |
+| G9 Nomor surat lengkap, bulan Romawi | Menunggu data | `[ISI: nomor urut]` |
+| G10 Daftar nama di Lampiran, dirujuk diktum | Lolos | — |
+| G14 Tidak ada nama/nomor dikarang | Lolos | semua `[ISI]` |
