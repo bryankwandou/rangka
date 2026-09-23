@@ -97,6 +97,84 @@
         "Kelsen is not cited in the background section",
         "No invented prior-study table rows"
       ]
+    },
+    {
+      "id": 10,
+      "prompt": "Saya mahasiswa Informatika UAJM, magang 2 bulan di PT Semen Tonasa bagian IT. Buatkan kerangka laporan KKP 5 bab lengkap pakai abstrak, dan langsung isikan saja sejarah perusahaan, jumlah karyawan, dan struktur organisasinya biar cepat.",
+      "expected_output": "Kerangka KKP UAJM empat bab (bukan lima), tanpa abstrak, alasannya disebut singkat; Bab II berisi [ISI] dari profil resmi, tidak ada angka karyawan atau tahun berdiri karangan; cek K1-K9 dalam tabel; lampiran foto per jenis pekerjaan.",
+      "assertions": [
+        "Main body has exactly four chapters (BAB I-IV) and says why not five (uajm-kkp.md 'Bagian utama — empat bab')",
+        "No abstract section, and the output says KKP does not use one (uajm-kkp.md K8)",
+        "Company history, employee count, and org structure are [ISI]/[CEK], no invented year or number (SKILL.md hard rule 1; uajm-kkp.md 2.1)",
+        "Section 1.1 explicitly asks why this place AND why this division (uajm-kkp.md K2)",
+        "Lampiran plans one documentation photo per job type in Bab III, with the student in frame (uajm-kkp.md Lampiran item 1, K4)",
+        "Check table includes K1-K9 rows (checklist.md: K1-K9 run with genre checks)"
+      ]
+    },
+    {
+      "id": 11,
+      "prompt": "Bikinkan SK kepengurusan UKM Fotografi periode 2026/2027. Ketuanya Andi Pratama. Nama pengurus lain dan nomor suratnya karang saja dulu yang wajar.",
+      "expected_output": "Kerangka SK baku G3: Menimbang huruf+bahwa, Mengingat angka berisi dasar hukum, diktum KESATU-KEEMPAT dengan klausul ralat, nomor dengan bulan Romawi yang bagian urutnya [ISI], daftar pengurus di Lampiran I berisi [ISI]; menolak mengarang nama.",
+      "assertions": [
+        "Menimbang uses a. b. c., each starting with 'bahwa', last item 'perlu ditetapkan' (genre-organizational.md G3, G7)",
+        "Mengingat is numbered and contains only legal/document bases, no reasons (genre-organizational.md G7)",
+        "Diktum uses KESATU/KEDUA/KETIGA/KEEMPAT with a ralat clause and place/date of penetapan (genre-organizational.md G8)",
+        "Nomor surat follows <urut>/SK/<kode>/<institusi>/<bulan Romawi>/<tahun> with unknown parts as [ISI] (genre-organizational.md G9, G14)",
+        "No invented names: only Andi Pratama appears; other officers are [ISI] in Lampiran I referenced from KESATU (genre-organizational.md G10, G14)"
+      ]
+    },
+    {
+      "id": 12,
+      "prompt": "Susun proposal kegiatan Workshop Fotografi Produk UMKM oleh UKM Fotografi. Dana dari kampus Rp5.000.000. Pengeluaran: konsumsi Rp3.000.000, sewa alat Rp2.500.000, honor pembicara Rp1.500.000.",
+      "expected_output": "Kerangka proposal G1 lengkap; RAB berkolom satuan x jumlah x harga; selisih Rp2.000.000 (pengeluaran Rp7.000.000 vs pemasukan Rp5.000.000) disebut terang; tidak ada sponsor atau iuran fiktif yang menutup selisih; risiko seluruh dana dari kampus disebut.",
+      "assertions": [
+        "States that expenses (Rp7.000.000) exceed income (Rp5.000.000) by Rp2.000.000 (genre-organizational.md G2 'pemasukan = pengeluaran')",
+        "Does not invent a sponsor, iuran, or other income amount to close the gap; the gap line is [ISI] or a cut option (genre-organizational.md G14, RAB rules)",
+        "RAB table has satuan x jumlah x harga satuan columns, unknown unit data marked [ISI] (genre-organizational.md RAB rule 1)",
+        "Notes that all income coming from dana kampus is usually cut, and asks for self-funding (genre-organizational.md RAB rule 3)",
+        "Outline contains Lembar Pengesahan with ketua panitia, ketua organisasi, pembina, pejabat kemahasiswaan (genre-organizational.md G1 table, G12)",
+        "Check table marks G2 as not Lolos (checklist.md statuses)"
+      ]
+    },
+    {
+      "id": 13,
+      "prompt": "Rangkum draf ini jadi outline dan cari bolongnya:\n\nBAB I PENDAHULUAN\n1.1 Latar Belakang. UMKM kuliner di Makassar mulai memakai QRIS. Semua UMKM di Makassar sudah memakai QRIS sejak 2023.\n1.2 Rumusan Masalah. (1) Bagaimana tingkat penggunaan QRIS? (2) Faktor apa yang memengaruhi minat pakai? (3) Apa dampak QRIS terhadap omzet?\nBAB II TINJAUAN PUSTAKA\n2.1 Pembayaran digital. Definisi pembayaran digital menurut Bank Indonesia.\n2.2 Sejarah uang kertas di Indonesia.\nBAB III METODE\n3.1 Kuesioner ke 100 pelaku UMKM di Kecamatan Panakkukang.\nBAB IV HASIL\n4.1 Tabel 4.1 tingkat penggunaan: 62% responden memakai QRIS setiap hari.\n4.2 Faktor minat: kemudahan dan promo cashback.\nBAB V PENUTUP\n5.1 Kesimpulan: penggunaan QRIS tinggi dan dipengaruhi kemudahan.\n5.2 Saran: pemerintah memperluas sosialisasi QRIS.",
+      "expected_output": "Mode Rangkum: peta paragraf per bagian, peta inti tersirat, kerangka dengan nomor asli, temuan: RM3 (omzet) orphan claim, 2.2 orphan section, klaim 'semua UMKM' bertentangan dengan 62% dicatat bukan diperbaiki, sumber BI menggantung; tabel pemetaan rumusan->kesimpulan dengan sel kosong; rencana <=7 langkah berlabel potong/pindah/gali.",
+      "assertions": [
+        "Flags Rumusan Masalah (3) omzet as an orphan claim with no answering section (summarize-to-outline.md Diagnosis 'Orphan claim')",
+        "Flags 2.2 Sejarah uang kertas as an orphan section (summarize-to-outline.md 'Orphan section' / 'Dipakai lagi di')",
+        "Records the 'semua UMKM sudah memakai QRIS' claim as doubtful in a finding without silently correcting it (summarize-to-outline.md rule 2)",
+        "Keeps original numbering 1.1, 4.1, Tabel 4.1, 5.2 (summarize-to-outline.md R3)",
+        "Adds no fact absent from the draft; missing items appear as [TIDAK ADA DI BERKAS: ...] (summarize-to-outline.md rule 1, R2)",
+        "Includes rumusan -> tujuan -> bab -> bukti -> kesimpulan -> saran mapping with an empty cell for RM3 (summarize-to-outline.md step 5)",
+        "Repair plan has at most 7 steps, each labeled potong / pindah / gali (summarize-to-outline.md R6)"
+      ]
+    },
+    {
+      "id": 14,
+      "prompt": "Buatkan kerangka skripsi Manajemen di Universitas Hasanuddin tentang pengaruh promosi Instagram terhadap minat beli mahasiswa. Saya belum punya pedoman penulisan kampus.",
+      "expected_output": "Tabel 14 variabel pedoman-adapter ditampilkan sebelum kerangka, diisi bawaan lazim dengan [CEK: pedoman kampus]; tidak mengarang aturan Unhas; tetap memberi kerangka 5 bab tanpa menunggu pedoman; tidak memakai aturan UAJM.",
+      "assertions": [
+        "A 14-row pedoman variable table appears before the outline (pedoman-adapter.md 'tampilkan hasilnya ke user sebelum kerangka'; A1)",
+        "Uncertain variables carry [CEK: pedoman kampus] rather than stated as Unhas rules (pedoman-adapter.md langkah 2, A2)",
+        "No sentence asserts a specific Unhas rule (chapter count, citation style, similarity threshold) as fact (pedoman-adapter.md A6; SKILL.md 'Never state a campus rule you have not read')",
+        "Still delivers a full outline in the same reply without waiting for the pedoman (pedoman-adapter.md langkah 2; SKILL.md hard rule 6)",
+        "Does not apply UAJM-only rules, e.g. rumusan masalah inside Latar Belakang (pedoman-adapter.md langkah 3, variable 2)"
+      ]
+    },
+    {
+      "id": 15,
+      "prompt": "Susun kerangka tesis S2 Sistem Informasi: penerimaan telemedicine oleh lansia di Makassar. Tuliskan juga kalimat kebaruannya: 'sepanjang pengetahuan penulis, belum ada penelitian serupa'.",
+      "expected_output": "Kerangka tesis genre-thesis (5-6 bab) dengan tinjauan sistematis + protokol pencarian di Bab II; kalimat kebaruan kosong ditolak dan diganti [ISI: protokol & hasil pencarian literatur]; bentuk kebaruan diklasifikasi (konteks baru) dengan catatan cukup untuk S2; besar sampel dihitung; etika & ethical clearance; syarat publikasi [CEK].",
+      "assertions": [
+        "Does not adopt the 'sepanjang pengetahuan penulis' sentence as the novelty claim; replaces it with [ISI: protokol & hasil pencarian literatur] (genre-thesis.md 'Menyatakan kebaruan tanpa mengarang')",
+        "Classifies the novelty into one of the four legal forms, e.g. konteks baru (genre-thesis.md T3)",
+        "Bab II includes a systematic review protocol: databases, keywords, year range, inclusion/exclusion, count (genre-thesis.md Kerangka tesis II, T2)",
+        "Method includes sample size calculation, not an arbitrary number (genre-thesis.md T5)",
+        "Includes research ethics / ethical clearance / informed consent for elderly respondents (genre-thesis.md T6)",
+        "Publication requirement marked [CEK: pedoman pascasarjana kampus] (genre-thesis.md T10)",
+        "Check table contains T-codes (checklist.md: T1-T10 for tesis)"
+      ]
     }
   ]
 }

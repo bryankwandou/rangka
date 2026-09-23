@@ -99,7 +99,14 @@ salah tempat), **gali** (butuh data baru dari user).
 
 ## 6. Yang tidak ada di berkas
 - [TIDAK ADA DI BERKAS: ...]
+
+## 7. Hasil cek
+| Butir | Status | Perbaikan |   (R1–R7, plus U4 untuk naskahnya)
 ```
+
+Langkah 4 SKILL.md (judul) di mode ini: beri opsi judul hanya kalau user memintanya
+**dan** naskah tidak punya temuan Orphan claim/Putus; kalau ada, tulis satu kalimat
+bahwa judul menunggu temuan itu diperbaiki.
 
 ## Menggabungkan banyak berkas jadi satu kerangka
 

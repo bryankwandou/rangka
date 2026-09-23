@@ -42,6 +42,10 @@ Aturan RAB yang membuat proposal lolos atau ditolak:
 - sumber dana disebut (dana kemahasiswaan, iuran, sponsor, kas) — proposal yang
   seluruh pemasukannya "dana kampus" tanpa usaha mandiri biasanya dipotong;
 - tandai pos yang belum pasti `[ISI: harga penawaran vendor]` alih-alih menebak.
+- kalau angka dari user **tidak seimbang**, sebutkan selisihnya dalam rupiah di awal
+  jawaban, jangan menambah pemasukan karangan untuk menutupnya; beri baris
+  `[ISI: sumber dana untuk menutup Rp...]` atau opsi pos yang dipangkas, dan beri G2
+  status **Gagal** sampai user memilih.
 
 Untuk **proposal pembentukan organisasi/UKM** (bukan kegiatan), ganti §VI–IX dengan:
 rencana program kerja satu periode · struktur kepengurusan · draf AD/ART ·
