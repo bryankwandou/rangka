@@ -16,6 +16,18 @@ dan perbedaannya disebutkan terang-terangan.
    "Bawaan"), tandai setiap butir yang berisiko dengan `[CEK: pedoman kampus]`, dan
    teruskan. Jangan menghentikan pekerjaan hanya karena pedoman belum ada.
 3. **Kalau kampusnya UAJM FTI**, jangan pakai bawaan — pakai `uajm-*.md`.
+4. **Kalau kampusnya UI, UGM, ITB, atau Unhas**, baca `campus-ui.md`, `campus-ugm.md`,
+   `campus-itb.md`, atau `campus-unhas.md` dulu. Isi variabel dari berkas itu hanya untuk
+   aturan yang tertulis berlaku se-universitas; variabel yang di berkas itu disebut
+   "ditentukan fakultas/prodi" tetap `[CEK ke pedoman fakultas]` sampai user menyebut
+   fakultasnya. Ringkasnya:
+
+   | Kampus | Pedoman tingkat universitas? | Yang diatur fakultas/prodi |
+   |---|---|---|
+   | UI | Ya — pedoman teknis, SK Rektor 2143/2017 (format saja) | jumlah & nama bab, gaya sitasi, proposal |
+   | UGM | Tidak ditemukan — per fakultas/departemen | hampir semuanya, termasuk spasi (1,15 / 1,5 / 2) dan margin |
+   | ITB | S1 tidak ditemukan; tesis: SPs 2016 | S1: semuanya per prodi |
+   | Unhas | Ya — SK Rektor 10438/2023 (struktur **dan** format; tanpa bab Tinjauan Pustaka) | proposal; ambang kemiripan; fakultas yang masih memakai pedoman lama |
 
 ## Variabel yang benar-benar mengubah kerangka
 
