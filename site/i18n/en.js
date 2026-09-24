@@ -7,6 +7,7 @@ t:{
  hero_h1:"Build the <em>frame</em> first.<br>The prose can wait.",
  hero_lead:"Rangka is a skill for Claude and other AI models. Before a single paragraph is written, it maps the problem, drafts the outline section by section, then checks it against twelve items. It covers theses, internship reports, dissertations, event proposals, accountability reports, landing pages, READMEs, and video scripts.",
  hero_cta1:"Install it",hero_cta2:"See the output",
+ hv_map:"Map",hv_out:"Outline",hv_chk:"Check",demo_eyebrow:"Sample output",demo_title:"The outline takes shape, then gets checked item by item.",demo_lead:"Anything without data is marked [FILL]; anything to confirm at the source is marked [VERIFY]. Statuses come from the table, not from a feeling.",demo_replay:"Replay",
  stat1:"steps, the same for every type",stat2:"document families",stat3:"universal checks",stat4:"invented numbers",
  why_eyebrow:"The problem",why_title:"Weak writing rarely fails at the sentence.",
  why_lead:"It fails because nobody decided who the reader is, which problem is being answered, and what each section has to prove. Asking an AI to “write chapter one” skips all of those decisions.",

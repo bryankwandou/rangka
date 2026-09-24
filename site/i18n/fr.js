@@ -7,6 +7,7 @@ t:{
  hero_h1:"D'abord le <em>plan</em>.<br>La prose viendra après.",
  hero_lead:"Rangka est un skill pour Claude et d'autres modèles d'IA. Avant le premier paragraphe, il cartographie le problème, construit le plan section par section, puis le contrôle sur douze points. Mémoires, rapports de stage, thèses, propositions d'activité, rapports financiers, landing pages, README et scripts vidéo.",
  hero_cta1:"Installer",hero_cta2:"Voir le résultat",
+ hv_map:"Carte",hv_out:"Plan",hv_chk:"Contrôle",demo_eyebrow:"Exemple de sortie",demo_title:"Le plan prend forme, puis il est vérifié point par point.",demo_lead:"Ce qui n’a pas encore de données est marqué [FILL] ; ce qu’il faut confirmer à la source est marqué [VERIFY]. Les statuts viennent du tableau, pas d’une impression.",demo_replay:"Rejouer",
  stat1:"étapes, les mêmes pour tout type de texte",stat2:"familles de documents",stat3:"points de contrôle universels",stat4:"chiffres inventés",
  why_eyebrow:"Le problème",why_title:"Un texte faible échoue rarement à la phrase.",
  why_lead:"Il échoue parce que personne n'a décidé qui est le lecteur, quel problème est traité et ce que chaque section doit démontrer. Demander à une IA d'« écrire le chapitre un » saute toutes ces décisions.",

@@ -7,6 +7,7 @@ t:{
  hero_h1:"先搭<em>框架</em>，<br>文字可以等。",
  hero_lead:"Rangka 是给 Claude 和其他 AI 模型用的 skill。在写下第一段之前，它先梳理问题，逐节搭出提纲，再用十二个条目逐项检查。适用于毕业论文、实习报告、硕博论文、活动方案、结项报告、落地页、README 和视频脚本。",
  hero_cta1:"立即安装",hero_cta2:"看看输出",
+ hv_map:"导图",hv_out:"大纲",hv_chk:"检查",demo_eyebrow:"输出示例",demo_title:"大纲逐步成形，再逐项检查。",demo_lead:"还没有数据的地方标 [FILL]，需要回到原始来源确认的地方标 [VERIFY]。状态来自表格，而不是感觉。",demo_replay:"重播",
  stat1:"个步骤，任何文体都一样",stat2:"类文档",stat3:"个通用检查条目",stat4:"个编造的数字",
  why_eyebrow:"问题所在",why_title:"文章写得弱，很少是败在句子上。",
  why_lead:"它败在没人先决定读者是谁、回答的是哪个问题、每一节要证明什么。让 AI「写第一章」，等于把这些判断全部跳过。",

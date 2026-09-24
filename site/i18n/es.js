@@ -7,6 +7,7 @@ t:{
  hero_h1:"Primero el <em>esquema</em>.<br>La prosa puede esperar.",
  hero_lead:"Rangka es un skill para Claude y otros modelos de IA. Antes de escribir un solo párrafo, mapea el problema, arma el esquema sección por sección y lo revisa contra doce puntos. Sirve para tesis, informes de prácticas, propuestas de actividades, rendiciones de cuentas, landing pages, README y guiones de vídeo.",
  hero_cta1:"Instalar",hero_cta2:"Ver el resultado",
+ hv_map:"Mapa",hv_out:"Esquema",hv_chk:"Revisión",demo_eyebrow:"Salida de ejemplo",demo_title:"El esquema toma forma y luego se revisa punto por punto.",demo_lead:"Lo que aún no tiene datos se marca [FILL]; lo que hay que confirmar en la fuente se marca [VERIFY]. Los estados salen de la tabla, no de una impresión.",demo_replay:"Repetir",
  stat1:"pasos, iguales para todo tipo de texto",stat2:"familias de documentos",stat3:"puntos de revisión universales",stat4:"cifras inventadas",
  why_eyebrow:"El problema",why_title:"Un texto flojo rara vez falla en la frase.",
  why_lead:"Falla porque nadie decidió quién es el lector, qué problema responde y qué debe demostrar cada sección. Pedirle a una IA que “escriba el capítulo uno” se salta todas esas decisiones.",
