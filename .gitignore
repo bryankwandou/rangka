@@ -4,3 +4,4 @@ site/
 site-astro/
 vercel.json
 .claude/
+evals/site-compare/
