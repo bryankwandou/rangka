@@ -42,11 +42,9 @@ rangka/
 │   ├── checklist.md              pemeriksaan universal
 │   ├── sources.md                daftar sumber yang boleh dikutip
 │   └── examples.md               tiga contoh keluaran
-├── evals/evals.json              sembilan kasus uji
-(sumber situs tutorial: github.com/bryankwandou/rangka-site)
-    ├── index.html
-    └── i18n/en.js es.js fr.js zh.js ar.js
+└── evals/evals.json              sembilan kasus uji
 ```
+nSumber situs tutorial: github.com/bryankwandou/rangka-site
 
 ## Pedoman kampus
 
