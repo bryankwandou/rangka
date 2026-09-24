@@ -92,7 +92,10 @@ everything beyond them is `[CEK: pedoman kampus]`.
 For UI, UGM, ITB, and Unhas, the `campus-*.md` file says which rules are university-wide
 and which belong to the faculty or prodi. At all four, key rules (chapter count, citation
 style, proposal format) differ by faculty. If the user names the campus but not the
-faculty/prodi, that is the one question to ask (hard rule 6); if they do not answer, use
+faculty/prodi, that is the one question to ask (hard rule 6). Anything else that is
+unclear (which guideline edition applies, research start date, template version) is not a
+second question and is not bundled into the first: state the default you are using and
+mark it `[CEK ke pedoman fakultas]`. If they do not answer, use
 only the university-wide rules from the campus file, mark the rest
 `[CEK ke pedoman fakultas]`, and never present one faculty's rule as the campus's rule.
 

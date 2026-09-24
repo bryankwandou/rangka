@@ -14,9 +14,15 @@ Pedoman Rektor 2023 berlaku **seragam untuk semua fakultas**, tetapi menurut ber
 peluncurannya hanya untuk mahasiswa **yang belum memulai penelitian**; yang sudah meneliti
 dengan pedoman lama boleh tetap memakai format lama. Pedoman fakultas masih beredar (FH 2021
 dan FKM 2016 terbit sebelum SK; FT 2023 dan FISIP belum dibaca, hubungannya dengan SK
-`[CEK]`), dan yang sudah dibaca (FH 2021) **bertentangan** dengan pedoman Rektor. Maka
-tanyakan dua hal: **fakultas** dan **kapan mulai penelitian / pedoman mana yang dipakai
-prodi**. Tanpa jawaban, pakai pedoman Rektor 2023 dan tandai `[CEK ke pedoman fakultas]`.
+`[CEK]`), dan yang sudah dibaca (FH 2021) **bertentangan** dengan pedoman Rektor.
+
+Satu-satunya pertanyaan yang diajukan adalah **fakultas/prodi** (SKILL.md aturan keras 6).
+Edisi pedoman **tidak ditanyakan**; nyatakan sebagai bawaan tertulis, mis.: "Saya memakai
+Pedoman Rektor 2023 (SK 10438/UN4.1/KEP/2023), yang berlaku bagi mahasiswa yang belum
+memulai penelitian. `[CEK ke pedoman fakultas: bila penelitianmu sudah dimulai dengan
+pedoman lama, prodi boleh tetap memakai format lama]`." Butir ini juga masuk daftar
+§5 "Yang perlu kamu lengkapi". Tanpa jawaban soal fakultas, pakai pedoman Rektor 2023 dan
+tandai aturan tingkat fakultas `[CEK ke pedoman fakultas]`.
 
 ## Pedoman Rektor 2023 — ciri yang paling mengejutkan
 

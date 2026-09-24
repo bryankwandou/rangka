@@ -157,7 +157,7 @@
       "assertions": [
         "A 14-row pedoman variable table appears before the outline (pedoman-adapter.md A1)",
         "Every Unhas rule stated as fact is one written in campus-unhas.md and names SK 10438/UN4.1/KEP/2023 as its source (pedoman-adapter.md A6; SKILL.md 'Never state a campus rule you have not read')",
-        "Faculty-level items (FEB/Manajemen rules, similarity threshold, which pedoman edition applies) carry [CEK ke pedoman fakultas] (campus-unhas.md 'Peringatan: dua generasi aturan')",
+        "Faculty-level items (FEB/Manajemen rules, similarity threshold) carry [CEK ke pedoman fakultas], and the pedoman edition is stated as a default (Rektor 2023) marked [CEK ke pedoman fakultas] rather than asked (campus-unhas.md 'Peringatan: dua generasi aturan')",
         "Still delivers a full outline in the same reply without waiting for the pedoman (SKILL.md hard rule 6)",
         "Does not apply UAJM-only rules, e.g. rumusan masalah inside Latar Belakang with UAJM front matter (pedoman-adapter.md langkah 3)"
       ],
@@ -193,16 +193,18 @@
     {
       "id": 17,
       "prompt": "Susun kerangka proposal penelitian saya di Unhas: efektivitas pupuk organik cair terhadap pertumbuhan tanaman jagung.",
-      "expected_output": "Rute ke campus-unhas.md + genre-research A3 (proposal, 12 butir). Menyatakan Pedoman Rektor Unhas 2023 tidak mengatur format proposal, jadi struktur proposal = [CEK ke pedoman fakultas]; tidak memakai format proposal FH 2021 sebagai format Unhas; menyelaraskan dengan struktur skripsi Rektor 2023 (kajian pustaka di Pendahuluan, tanpa bab Tinjauan Pustaka) dan menyebutnya sebagai penyelarasan, bukan aturan; satu pertanyaan: fakultas dan edisi pedoman.",
+      "expected_output": "Rute ke campus-unhas.md + genre-research A3 (proposal, 12 butir). Menyatakan Pedoman Rektor Unhas 2023 tidak mengatur format proposal, jadi struktur proposal = [CEK ke pedoman fakultas]; tidak memakai format proposal FH 2021 sebagai format Unhas; menyelaraskan dengan struktur skripsi Rektor 2023 (kajian pustaka di Pendahuluan, tanpa bab Tinjauan Pustaka) dan menyebutnya sebagai penyelarasan, bukan aturan; satu pertanyaan saja: fakultas/prodi; edisi pedoman tidak ditanyakan, melainkan dinyatakan sebagai bawaan (Rektor 2023, bagi yang belum mulai meneliti) bertanda [CEK ke pedoman fakultas].",
       "assertions": [
         "States that the 2023 Unhas Rektor pedoman does not regulate proposal format and marks the proposal structure [CEK ke pedoman fakultas] (campus-unhas.md 'Proposal')",
         "Does not present the Fakultas Hukum 2021 proposal format as the Unhas proposal format (campus-unhas.md 'Jangan memakai struktur FH untuk fakultas lain')",
         "Places literature review inside Pendahuluan (no separate Tinjauan Pustaka chapter) and labels this as alignment with the 2023 skripsi structure, not a proposal rule (campus-unhas.md rule 1)",
         "Names SK 10438/UN4.1/KEP/2023 as the source for Unhas-wide rules it cites (pedoman-adapter.md A6)",
-        "Asks one question (faculty and which pedoman edition) and still delivers the outline (SKILL.md hard rule 6)",
+        "Asks exactly one question, the faculty/prodi only, and still delivers the outline (SKILL.md hard rule 6)",
+        "States the pedoman edition as a default (Rektor 2023 SK 10438, for students who have not started research) marked [CEK ke pedoman fakultas], rather than asking about it (campus-unhas.md 'Peringatan: dua generasi aturan')",
         "Uses the A3 12-item proposal template, not the A4 full-chapter skripsi template (genre-research.md 'Pilih template')",
         "No invented numbers such as doses, yields, or sample sizes; they are [ISI] (checklist.md U9)"
-      ]
+      ],
+      "note": "Revised 2026-09-24: one-question rule tightened; edition is a stated [CEK] default, not a question."
     }
   ]
 }
