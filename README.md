@@ -44,7 +44,8 @@ rangka/
 │   └── examples.md               tiga contoh keluaran
 └── evals/evals.json              sembilan kasus uji
 ```
-nSumber situs tutorial: github.com/bryankwandou/rangka-site
+
+Sumber situs tutorial: github.com/bryankwandou/rangka-site
 
 ## Pedoman kampus
 
