@@ -242,6 +242,18 @@
         "Marks 研究科-specific rules as [要確認] rather than inventing them",
         "States length in characters (字), not words"
       ]
+    },
+    {
+      "id": 21,
+      "prompt": "Buatkan kerangka skripsi saya di Universitas Brawijaya: pengaruh pemberian pakan fermentasi terhadap pertumbuhan ikan nila.",
+      "expected_output": "Rute ke campus-ub.md + genre-research. Menyatakan tidak ditemukan pedoman format skripsi tingkat UB; aturan yang dibaca hanya FPIK 2025 rev 1 dan disajikan berlabel FPIK + tahun, bukan sebagai aturan UB; satu pertanyaan saja: fakultas/prodi; edisi tidak ditanyakan, dinyatakan bawaan [CEK]; kerangka lengkap tetap diberikan; format FPIK (Arial 11, spasi 2, margin 3/4/3/3, APA 7) hanya dengan label FPIK.",
+      "assertions": [
+        "States no university-wide UB skripsi format was found (campus-ub.md Temuan utama)",
+        "Every FPIK rule it uses is labeled FPIK + 2025, never as a UB rule (campus-ub.md)",
+        "Asks exactly one question, faculty/prodi only, and still delivers the full outline (SKILL.md hard rule 6)",
+        "States the edition as a default marked [CEK], without asking about it",
+        "Unverified items (similarity threshold, other faculties) marked [CEK], not invented"
+      ]
     }
   ]
 }

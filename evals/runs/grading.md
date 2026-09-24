@@ -240,3 +240,14 @@ Graded by the same model that wrote the outputs; treat as self-assessment, not i
 | Length in characters | PASS | "分量：約 [要確認] 字" · "分量を字数で示す — 合格" |
 
 **Total: 16/16 pass.** Note on eval 20: section-share percentages (10%, 20%…) are stated as rough targets (目安), not rules.
+
+## Eval 21 — Skripsi UB, fakultas tidak disebut (self-graded: the same agent wrote campus-ub.md, ran the eval, and graded it)
+| Assertion | Result | Evidence |
+|---|---|---|
+| States no university-wide UB format found | PASS | "saya tidak menemukan pedoman format skripsi tingkat Universitas Brawijaya" |
+| FPIK rules labeled FPIK + 2025, never as UB | PASS | "Semua aturan di bawah berlabel **FPIK 2025** dan **bukan aturan UB**" · "## 2. Kerangka (struktur FPIK 2025 — bukan aturan UB)" · Sumber column every row "FPIK 2025, …" |
+| Exactly one question (faculty/prodi), full outline given | PASS | "**Satu pertanyaan:** kamu di fakultas/prodi apa? Kerangka lengkap tetap saya berikan di bawah." Bab I–V follow; no other question mark addressed to the user |
+| Edition stated as default [CEK], not asked | PASS | "**Edisi (bawaan, tidak ditanyakan):** FPIK 2025 rev 1 `[CEK edisi terbaru di fakultas]`" |
+| Unverified items [CEK], not invented | PASS | "Uji kemiripan \| ambang `[CEK ke pedoman fakultas]`"; no percentage given |
+
+**Total: 5/5.** Caveat: "Topikmu … kemungkinan besar di FPIK" is a guess; it is labeled "dugaan, bukan jawaban", so it does not replace the question. Self-grading is weaker than independent grading.

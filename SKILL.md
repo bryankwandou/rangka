@@ -1,6 +1,6 @@
 ---
 name: rangka
-description: Build the outline (kerangka) of any document before writing a single paragraph, then check it before drafting. Also turns existing research files into one condensed outline (reverse outline). Works for skripsi, tesis, disertasi, usulan/proposal tugas akhir, laporan KKP/magang/PKL, makalah, proposal kegiatan, LPJ, SK, AD/ART, surat resmi, laporan, website copy, landing page, README, technical spec, video script, marketing campaign, brosur, pamflet, pitch deck, email, and study mind maps. Has built-in Universitas Atma Jaya Makassar (FTI) pedoman rules, sourced notes for UI, UGM, ITB, Unhas, ITS, Binus, UNM, and UMI, thesis norms for US, UK, Europe, Australia, China, Japan, and the Arab world, plus an adapter for any other university guideline, in any language (section labels for 22 languages). Indonesian first, English second. Use when the user says "susun kerangka", "buat outline", "outline dulu", "rangkum file ini jadi outline", "kerangka magang/KKP", "kerangka proposal", "kerangka tugas akhir", "bikin SK", "susun LPJ", "proposal kegiatan", "mind map penelitian", "cek kesiapan judul", "struktur laporan", "outline landing page", "struktur video", "plan this document", "outline this", or asks for any long document where structure is not yet fixed. Do not use for a one-line caption or for polishing finished prose (that is the lugas skill).
+description: Build the outline (kerangka) of any document before writing a single paragraph, then check it before drafting. Also turns existing research files into one condensed outline (reverse outline). Works for skripsi, tesis, disertasi, usulan/proposal tugas akhir, laporan KKP/magang/PKL, makalah, proposal kegiatan, LPJ, SK, AD/ART, surat resmi, laporan, website copy, landing page, README, technical spec, video script, marketing campaign, brosur, pamflet, pitch deck, email, and study mind maps. Has built-in Universitas Atma Jaya Makassar (FTI) pedoman rules, sourced notes for UI, UGM, ITB, Unhas, ITS, Binus, UNM, UMI, Unair, and UB, thesis norms for US, UK, Europe, Australia, China, Japan, and the Arab world, plus an adapter for any other university guideline, in any language (section labels for 22 languages). Indonesian first, English second. Use when the user says "susun kerangka", "buat outline", "outline dulu", "rangkum file ini jadi outline", "kerangka magang/KKP", "kerangka proposal", "kerangka tugas akhir", "bikin SK", "susun LPJ", "proposal kegiatan", "mind map penelitian", "cek kesiapan judul", "struktur laporan", "outline landing page", "struktur video", "plan this document", "outline this", or asks for any long document where structure is not yet fixed. Do not use for a one-line caption or for polishing finished prose (that is the lugas skill).
 ---
 
 # Rangka
@@ -47,7 +47,7 @@ Decide four things. Do not ask if the user already said them.
 | Genre family | see table below |
 | Reader | dosen penguji, atasan, investor, calon pembeli, developer, pemirsa, pelajar, pemberi dana |
 | Mode | **Dari nol** (topic only) / **Dari materi** (notes, data, draft) / **Rangkum** (existing files → one outline, see `references/summarize-to-outline.md`) |
-| Institution | UAJM FTI → `uajm-*.md`. UI / UGM / ITB / Unhas / ITS / Binus / UNM / UMI → the matching `references/campus-*.md` **+** `pedoman-adapter.md`. Foreign campus → `references/international.md` **+** `pedoman-adapter.md`. Any other campus → `references/pedoman-adapter.md`. Not academic → skip |
+| Institution | UAJM FTI → `uajm-*.md`. UI / UGM / ITB / Unhas / ITS / Binus / UNM / UMI / Unair / UB → the matching `references/campus-*.md` **+** `pedoman-adapter.md`. Foreign campus → `references/international.md` **+** `pedoman-adapter.md`. Any other campus → `references/pedoman-adapter.md`. Not academic → skip |
 
 | Genre family | Examples | Load |
 |---|---|---|
@@ -78,7 +78,7 @@ structure. Route by document, then by campus:
 | Skripsi / proposal at **UGM** (Gadjah Mada) | `references/campus-ugm.md` + `pedoman-adapter.md` |
 | Tugas Akhir / tesis at **ITB** (Institut Teknologi Bandung) | `references/campus-itb.md` + `pedoman-adapter.md` |
 | Skripsi / tesis / proposal at **Unhas** (Universitas Hasanuddin) | `references/campus-unhas.md` + `pedoman-adapter.md` |
-| Skripsi / TA / proposal at **ITS**, **Binus**, **UNM**, **UMI** | `references/campus-its.md` / `campus-binus.md` / `campus-unm.md` / `campus-umi.md` + `pedoman-adapter.md` |
+| Skripsi / TA / proposal at **ITS**, **Binus**, **UNM**, **UMI**, **Unair**, **UB** | `references/campus-its.md` / `campus-binus.md` / `campus-unm.md` / `campus-umi.md` / `campus-unair.md` / `campus-ub.md` + `pedoman-adapter.md` |
 | Thesis / dissertation at a **foreign** university, or thesis by publication anywhere | `references/international.md` + `genre-thesis.md` + `pedoman-adapter.md` |
 | Tesis / disertasi, any campus | `references/genre-thesis.md` + `pedoman-adapter.md` |
 | Formatting, citation style, or "berapa spasi / margin / gaya pustaka" (UAJM) | `references/uajm-format.md` |
@@ -227,7 +227,7 @@ The user can override with "versi cepat" / "versi lengkap".
 | `references/uajm-usulan-ta.md` | Usulan TA / proposal / Ringkasan Kapasitas Diri at UAJM FTI |
 | `references/uajm-skripsi.md` | Skripsi/TA at UAJM FTI — Bab I–V + 15 front-matter items |
 | `references/uajm-format.md` | Any UAJM formatting, citation style, or length question |
-| `references/campus-ui.md`, `campus-ugm.md`, `campus-itb.md`, `campus-unhas.md`, `campus-its.md`, `campus-binus.md`, `campus-unm.md`, `campus-umi.md` | User names that campus — verified rules, sources, and what is faculty-specific |
+| `references/campus-ui.md`, `campus-ugm.md`, `campus-itb.md`, `campus-unhas.md`, `campus-its.md`, `campus-binus.md`, `campus-unm.md`, `campus-umi.md`, `campus-unair.md`, `campus-ub.md` | User names that campus — verified rules, sources, and what is faculty-specific |
 | `references/international.md` | Foreign university, thesis by publication, or a citation style question |
 | `references/pedoman-adapter.md` | Every academic document not covered by a `uajm-*` file |
 | `references/appendices.md` | Any document with lampiran — read at Step 2, not at the end |
