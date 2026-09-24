@@ -60,3 +60,13 @@ memakai sumber untuk klaim di luar kolom tersebut.
 - Pola kerja mind map → outline → checklist: diadaptasi dari video pendek akun
   dafnisfaz_ (media sosial). Tidak ada tanggal unggah yang dicatat; jangan dikutip
   sebagai sumber akademik.
+
+## Tesis internasional dan gaya sitasi (dipakai `international.md`)
+
+- QAA (2014). *The Frameworks for Higher Education Qualifications of UK Degree-Awarding Bodies* (FHEQ), deskriptor tingkat 8 (doktor). Quality Assurance Agency for Higher Education.
+- American Psychological Association (2020). *Publication Manual of the American Psychological Association* (ed. 7).
+- University of Chicago Press (2024). *The Chicago Manual of Style* (ed. 18).
+- Modern Language Association (2021). *MLA Handbook* (ed. 9).
+- Standardization Administration of China. GB/T 7713.1-2006 (penyusunan tesis/disertasi) dan GB/T 7714-2015 (daftar pustaka).
+- ICMJE. *Recommendations for the Conduct, Reporting, Editing, and Publication of Scholarly Work in Medical Journals*; Patrias, K. (2007). *Citing Medicine* (ed. 2). NLM.
+- ISO 214:1976. *Documentation — Abstracts for publications and documentation* (dirujuk petunjuk skripsi Binus).

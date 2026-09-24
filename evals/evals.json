@@ -205,6 +205,43 @@
         "No invented numbers such as doses, yields, or sample sizes; they are [ISI] (checklist.md U9)"
       ],
       "note": "Revised 2026-09-24: one-question rule tightened; edition is a stated [CEK] default, not a question."
+    },
+    {
+      "id": 18,
+      "prompt": "Saya mahasiswa Fikom UMI Makassar, mau ambil TA jalur magang skripsi di bank. Tolong buatkan kerangka laporannya.",
+      "expected_output": "Rute ke campus-umi.md. Mengenali jalur Non-Skripsi 'Magang Skripsi' (>= 6 bulan, mitra kerja sama, sertifikat, artikel ber-ISSN) dan memakai susunan laporan non-skripsi (Pelaksanaan Kegiatan/logbook, Hasil Pembelajaran), bukan 5 bab skripsi riset. Format Fikom: IEEE, A4, kiri 4 cm, spasi 1,15, abstrak <= 200 kata. Tidak bertanya karena fakultas sudah disebut.",
+      "assertions": [
+        "Identifies the Magang Skripsi non-skripsi track and its requirements (>= 6 months, partner institution, certificate, ISSN article) citing the Fikom UMI 2021 panduan",
+        "Uses the non-skripsi report body (Pelaksanaan Kegiatan with logbook, Hasil Pembelajaran) rather than the research 5-chapter skripsi body",
+        "States Fikom format rules: IEEE citation, left margin 4 cm, spacing 1.15, abstract <= 200 words",
+        "Asks no question (faculty already given) and marks unverified chapter titles [CEK]",
+        "Invents no bank-specific facts (names, figures) — uses [ISI] placeholders"
+      ]
+    },
+    {
+      "id": 19,
+      "prompt": "Outline my PhD thesis for a UK university: how remote work affects mid-career promotion in Indonesian banks. I plan three papers.",
+      "expected_output": "Rute ke international.md 2a (thesis by publication) + genre-thesis + pedoman-adapter. English labels and [FILL]/[VERIFY] markers. Kappa/introduction, three article chapters each with status and author-contribution statement, bridging text, general discussion, conclusion. UK doctoral standard: original contribution (QAA FHEQ level 8); word limit, number of published papers and co-authorship rules marked [VERIFY]. At most one question.",
+      "assertions": [
+        "Chooses the thesis-by-publication form and says why (three papers)",
+        "Includes an integrating introduction, three article chapters each with publication status and an author-contribution statement, linking text, general discussion, and conclusion",
+        "Names original contribution to knowledge as the UK doctoral bar, citing QAA FHEQ level 8",
+        "Marks institution-specific rules (word limit, papers required, co-authorship) as [VERIFY], not invented",
+        "Writes entirely in English with one marker style ([FILL]/[VERIFY])",
+        "Asks at most one question and still gives the full outline"
+      ]
+    },
+    {
+      "id": 20,
+      "prompt": "日本の大学院（修士）で、インドネシアの観光地におけるSNSマーケティングについて修士論文を書きます。構成案を作ってください。",
+      "expected_output": "Output fully in Japanese using the ja labels from languages.md (全体像, 構成案, チェック, タイトル案, ご自身で補う項目) and markers [記入]/[要確認]. Structure per international.md 2g: 序論, 先行研究, 研究方法, 結果, 考察, 結論, 参考文献, 謝辞; graduate-school-specific rules marked [要確認]; length stated in characters, not words.",
+      "assertions": [
+        "Entire output is in Japanese, including section labels from languages.md",
+        "Uses one marker pair consistently: [記入] and [要確認]",
+        "Follows the 序論→先行研究→研究方法→結果→考察→結論 structure with 参考文献 and 謝辞",
+        "Marks 研究科-specific rules as [要確認] rather than inventing them",
+        "States length in characters (字), not words"
+      ]
     }
   ]
 }
