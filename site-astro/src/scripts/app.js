@@ -69,7 +69,7 @@ function applyLang(){
   const meta=LANGS.find(l=>l.c===lang);
   document.getElementById("langcode").textContent=lang.toUpperCase();
   document.getElementById("langbtn").setAttribute("aria-label",(S("lang_label")||"Bahasa / Language")+" — "+meta.n);
-  buildLangMenu(); buildTabs(); buildInstall(); buildChecks(); render(); wireCopy(document); startDemo();
+  buildLangMenu(); buildTabs(); buildInstall(); buildChecks(); render(); wireCopy(document); startDemo(); hdRender();
   paintTheme();
 }
 
@@ -370,6 +370,51 @@ function startDemo(){
 }
 document.getElementById("d-replay").onclick=()=>{ dSeen=true; startDemo(); };
 new IntersectionObserver((es,o)=>{ if(es.some(e=>e.isIntersecting)){ dSeen=true; startDemo(); o.disconnect(); } },{threshold:.35}).observe(document.querySelector(".demo"));
+
+
+/* ═══ hero document mockup: tabs cycle through genres, outline assembles ═══ */
+const HD_KEYS=["riset","laporan","organisasi","persuasi","teknis"];
+let hdI=0, hdTimer=null, hdHover=false;
+function hdRender(){
+  const tabs=document.getElementById("hdoc-tabs"), body=document.getElementById("hdoc-body"), foot=document.getElementById("hdoc-foot");
+  if(!tabs) return;
+  const G=DATA("gen"), SK=DATA("skel"), k=HD_KEYS[hdI], s=SK[k];
+  tabs.innerHTML=HD_KEYS.map((key,i)=>{
+    const g=G.find(x=>x.k===key); return '<button type="button" tabindex="-1" data-i="'+i+'" class="'+(i===hdI?"on":"")+'">'+esc(g?g.t[0]:key)+'</button>';
+  }).join("");
+  const F=U("fill"), V=U("verify");
+  let h='<p class="hd-claim"><span>'+esc(U("b_claim"))+'</span>'+esc(s.claim)+'</p><ol class="hd-sec">';
+  s.sec.slice(0,6).forEach((t,i)=>{
+    let chip="";
+    if(i===1&&s.fill[0]) chip='<span class="isi">['+esc(F)+': '+esc(s.fill[0])+']</span>';
+    if(i===3&&s.ver[0]) chip='<span class="cek">['+esc(V)+': '+esc(s.ver[0])+']</span>';
+    h+='<li style="--d:'+(i*110+120)+'ms"><b>'+esc(t)+'</b><i class="bar" style="--w:'+(48+((i*37+hdI*23)%46))+'%"></i>'+chip+'</li>';
+  });
+  body.innerHTML=h+'</ol>';
+  const st=[["U1","ok"],["U2","wait"],["U4","ok"],["U9","ok"]];
+  foot.innerHTML=st.map(([id,c],i)=>'<span class="pill '+c+'" style="--d:'+(900+i*140)+'ms">'+id+' · '+esc(stLabel(c))+'</span>').join("");
+  const doc=document.getElementById("hdoc"); doc.classList.remove("play"); void doc.offsetWidth; doc.classList.add("play");
+}
+function hdNext(){ clearTimeout(hdTimer); if(RM.matches) return; hdTimer=setTimeout(()=>{ if(!hdHover&&!document.hidden){ hdI=(hdI+1)%HD_KEYS.length; hdRender(); } hdNext(); },5200); }
+(function(){
+  const tabs=document.getElementById("hdoc-tabs"), doc=document.getElementById("hdoc"); if(!tabs) return;
+  tabs.addEventListener("click",e=>{ const b=e.target.closest("button"); if(!b) return; hdI=+b.dataset.i; hdRender(); hdNext(); });
+  doc.addEventListener("mouseenter",()=>hdHover=true); doc.addEventListener("mouseleave",()=>hdHover=false);
+  hdNext();
+})();
+
+/* ═══ big numbers count up once ═══ */
+(function(){
+  const band=document.getElementById("bign"); if(!band||RM.matches) return;
+  const els=[...band.querySelectorAll("b[data-n]")];
+  const fmt=(el,v)=>el.textContent=v+(el.dataset.of?"/"+el.dataset.of:"");
+  els.forEach(el=>fmt(el,0));
+  new IntersectionObserver((es,o)=>{ if(!es.some(e=>e.isIntersecting)) return; o.disconnect();
+    const t0=performance.now();
+    (function f(t){ const p=Math.min(1,(t-t0)/1300), e=1-Math.pow(1-p,3);
+      els.forEach(el=>fmt(el,Math.round(+el.dataset.n*e))); if(p<1) requestAnimationFrame(f); })(t0);
+  },{threshold:.4}).observe(band);
+})();
 
 /* ═══ reveal, nav state, progress ═══ */
 const io=new IntersectionObserver(es=>es.forEach((e,k)=>{

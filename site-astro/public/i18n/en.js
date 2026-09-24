@@ -6,6 +6,7 @@ t:{
  hero_eyebrow:"Open skill · MIT",
  hero_h1:"Build the <em>frame</em> first.<br>The prose can wait.",
  hero_lead:"Rangka is a skill for Claude and other AI models. Before a single paragraph is written, it maps the problem, drafts the outline section by section, then checks it against twelve items. It covers theses, internship reports, dissertations, event proposals, accountability reports, landing pages, READMEs, and video scripts.",
+ h3_pre:"Start from ",h3_old:"a blank page",h3_new:"a frame",h3_post:".",doc_file:"outline.md",doc_live:"assembling",stat5:"languages on this site",stat6:"trap-eval assertions passed",stat_src:"Numbers from the repo (evals/runs/grading.md). Outputs were graded by the same model that wrote them.",mq1:"Undergraduate thesis",mq2:"Master's thesis",mq3:"Dissertation",mq4:"Internship report",mq5:"Proposal",mq6:"Accountability report",mq7:"Decree",mq8:"Bylaws",mq9:"Policy brief",mq10:"Landing page",mq11:"README",mq12:"ADR",mq13:"Pitch deck",mq14:"Video script",mq15:"Mind map",mq16:"Brochure",
  hero_cta1:"Install it",hero_cta2:"See the output",
  hv_map:"Map",hv_out:"Outline",hv_chk:"Check",demo_eyebrow:"Sample output",demo_title:"The outline takes shape, then gets checked item by item.",demo_lead:"Anything without data is marked [FILL]; anything to confirm at the source is marked [VERIFY]. Statuses come from the table, not from a feeling.",demo_replay:"Replay",
  stat1:"steps, the same for every type",stat2:"document families",stat3:"universal checks",stat4:"invented numbers",

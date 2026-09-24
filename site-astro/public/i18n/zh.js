@@ -6,6 +6,7 @@ t:{
  hero_eyebrow:"开源 skill · MIT",
  hero_h1:"先搭<em>框架</em>，<br>文字可以等。",
  hero_lead:"Rangka 是给 Claude 和其他 AI 模型用的 skill。在写下第一段之前，它先梳理问题，逐节搭出提纲，再用十二个条目逐项检查。适用于毕业论文、实习报告、硕博论文、活动方案、结项报告、落地页、README 和视频脚本。",
+ h3_pre:"从",h3_old:"空白页",h3_new:"提纲",h3_post:"开始。",doc_file:"提纲.md",doc_live:"生成中",stat5:"种网站语言",stat6:"条陷阱评测断言通过",stat_src:"数字来自仓库（evals/runs/grading.md）。输出由写出它们的同一个模型评分。",mq1:"本科论文",mq2:"硕士论文",mq3:"博士论文",mq4:"实习报告",mq5:"提案",mq6:"问责报告",mq7:"决定书",mq8:"章程",mq9:"政策简报",mq10:"落地页",mq11:"README",mq12:"ADR",mq13:"路演文稿",mq14:"视频脚本",mq15:"思维导图",mq16:"宣传册",
  hero_cta1:"立即安装",hero_cta2:"看看输出",
  hv_map:"导图",hv_out:"大纲",hv_chk:"检查",demo_eyebrow:"输出示例",demo_title:"大纲逐步成形，再逐项检查。",demo_lead:"还没有数据的地方标 [FILL]，需要回到原始来源确认的地方标 [VERIFY]。状态来自表格，而不是感觉。",demo_replay:"重播",
  stat1:"个步骤，任何文体都一样",stat2:"类文档",stat3:"个通用检查条目",stat4:"个编造的数字",
