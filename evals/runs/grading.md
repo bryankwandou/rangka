@@ -251,3 +251,22 @@ Graded by the same model that wrote the outputs; treat as self-assessment, not i
 | Unverified items [CEK], not invented | PASS | "Uji kemiripan \| ambang `[CEK ke pedoman fakultas]`"; no percentage given |
 
 **Total: 5/5.** Caveat: "Topikmu … kemungkinan besar di FPIK" is a guess; it is labeled "dugaan, bukan jawaban", so it does not replace the question. Self-grading is weaker than independent grading.
+
+---
+
+# Eval 22 (run 2026-09-24): IPB tesis, pola rangkaian penelitian
+
+Graded by the same model that wrote the output; treat as self-assessment, not independent review. Strict: a PASS needs a quoted line.
+
+| Assertion | Result | Evidence |
+|---|---|---|
+| No question (prodi given); edition stated as PPKI Edisi 4 default with [CEK], not asked | PASS | "Prodi sudah kamu sebut, jadi saya tidak bertanya apa pun." · "PPKI … **Edisi 4** (Peraturan Rektor 27/IT3/PP/2019). `[CEK: bila IPB sudah menerbitkan edisi yang lebih baru]`" |
+| Pola rangkaian: one chapter per article with Abstrak/Pendahuluan/Metode/Hasil dan Pembahasan/Simpulan, then Pembahasan Umum + Simpulan Umum dan Saran | PASS | "3.1 Abstrak · 3.2 Pendahuluan · 3.3 Metode … · 3.4 Hasil dan Pembahasan · 3.5 Simpulan" (same for IV) · "**V PEMBAHASAN UMUM**" · "**VI SIMPULAN UMUM DAN SARAN**" |
+| S2 must publish ≥ 1 article in reputable journal; PPKI does not set article format | PASS | "S2 **wajib ≥ 1 artikel di jurnal ilmiah bereputasi** sebagai syarat lulus; format artikel tidak diatur PPKI" |
+| Ringkasan/Summary (not 200-word abstrak), 20.000–30.000 words | PASS | "**Ringkasan + Summary**, masing-masing ≤ 2 halaman … (tesis tidak memakai abstrak 200 kata)" · "**20.000–30.000 kata**" |
+| Harvard name-year CSE 8; similarity mandatory, threshold [CEK] | PASS | "**Harvard nama-tahun, gaya CSE edisi 8**" · "**wajib** sebelum disahkan pembimbing; ambang `[CEK ke Sekolah Pascasarjana]`" |
+| No invented Cirata data | PASS | "`[ISI: data eutrofikasi/blooming di Cirata, tahun, sumber]`" · "stasiun `[ISI]`, periode `[ISI]`"; no numbers for the reservoir |
+
+Strict notes (not failures): Chapter numbering follows the Lamp. 11d example only when Bab II is dropped. The output keeps Bab II as a `[CEK]` choice, yet it numbers the article chapters III–IV, which assumes Bab II stays. It says so. The example article titles are marked "mis." (contoh), so they are not presented as facts.
+
+**Total: 6/6 PASS.**

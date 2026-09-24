@@ -254,6 +254,19 @@
         "States the edition as a default marked [CEK], without asking about it",
         "Unverified items (similarity threshold, other faculties) marked [CEK], not invented"
       ]
+    },
+    {
+      "id": 22,
+      "prompt": "Saya mahasiswa S2 IPB, prodi Ilmu Pengelolaan Sumberdaya Perairan. Susunkan kerangka tesis saya: dinamika fitoplankton dan kualitas air di Waduk Cirata. Rencananya dua artikel jurnal.",
+      "expected_output": "Rute ke campus-ipb.md + genre-thesis/genre-research. Tidak ada pertanyaan (prodi sudah disebut). Edisi dinyatakan bawaan PPKI Edisi 4 (Peraturan Rektor 27/IT3/PP/2019) dengan [CEK], tidak ditanyakan. Memilih pola rangkaian penelitian (dua artikel) sesuai Lamp. 11d: Pendahuluan umum, Bab topik 1 dan 2 masing-masing Abstrak-Pendahuluan-Metode-Hasil dan Pembahasan-Simpulan, Pembahasan Umum, Simpulan Umum dan Saran; menyebut pola umum sebagai alternatif. Menyebut kewajiban publikasi minimal satu artikel jurnal bereputasi, Ringkasan/Summary <= 2 halaman, 20.000-30.000 kata, sitasi nama-tahun CSE, uji kemiripan wajib dengan ambang [CEK].",
+      "assertions": [
+        "Asks no question because prodi is given; edition stated as PPKI Edisi 4 default marked [CEK], not asked",
+        "Uses pola rangkaian penelitian with one chapter per article, each with Abstrak/Pendahuluan/Metode/Hasil dan Pembahasan/Simpulan, then Pembahasan Umum and Simpulan Umum dan Saran (campus-ipb.md, Lamp. 11d)",
+        "States S2 must publish at least one article in a reputable journal as a graduation requirement, and that PPKI does not set the article format",
+        "Uses Ringkasan/Summary (not a 200-word abstrak) for the tesis, and 20.000-30.000 words",
+        "Citation is Harvard name-year following CSE 8th ed.; similarity check mandatory with threshold marked [CEK], not invented",
+        "No invented data about Waduk Cirata (stations, values, dates are [ISI])"
+      ]
     }
   ]
 }
