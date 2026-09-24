@@ -1,4 +1,5 @@
 ---
+import { campuses, stats } from "../data.js";
 // Hero. Text carries data-i18n keys; the client i18n engine swaps it per language.
 // The document mockup (#hdoc) is filled by app.js from the translated genre data.
 const MQ=["Skripsi","Tesis","Disertasi","KKP","Proposal","LPJ","SK","AD/ART","Policy brief","Landing page","README","ADR","Pitch deck","Naskah video","Mind map","Brosur"];
@@ -30,12 +31,12 @@ const MQ=["Skripsi","Tesis","Disertasi","KKP","Proposal","LPJ","SK","AD/ART","Po
  <div class="bign" id="bign">
   <div class="wrap wide">
    <div class="bign-row">
-    <div><b data-n="7">7</b><small data-i18n="stat2">keluarga dokumen</small></div>
-    <div><b data-n="12">12</b><small data-i18n="stat3">butir cek universal</small></div>
-    <div><b data-n="6">6</b><small data-i18n="stat5">bahasa di situs ini</small></div>
-    <div><b data-n="36" data-of="36">36/36</b><small data-i18n="stat6">asersi eval jebakan lolos</small></div>
+    <div><b data-n={campuses.length+1}>{campuses.length+1}</b><small data-i18n="stat7">pedoman kampus: UAJM utuh, sisanya catatan bersumber</small></div>
+    <div><b data-n={stats.langs}>{stats.langs}</b><small data-i18n="stat5">bahasa untuk label bagian</small></div>
+    <div><b data-n={stats.evals}>{stats.evals}</b><small data-i18n="stat8">kasus eval jebakan</small></div>
+    <div><b data-n={stats.pass}>{stats.pass}</b><small><span data-i18n="stat6">asersi lolos, dari</span> {stats.total}</small></div>
    </div>
-   <p class="bign-src" data-i18n="stat_src">Angka dari repo (evals/runs/grading.md). Keluaran dinilai oleh model yang sama yang menulisnya.</p>
+   <p class="bign-src" data-i18n="stat_src">Angka dari repo (references/, evals/evals.json, evals/runs/grading.md). Keluaran dinilai oleh model yang sama yang menulisnya.</p>
   </div>
  </div>
 </div>
