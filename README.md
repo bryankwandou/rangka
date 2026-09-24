@@ -43,7 +43,7 @@ rangka/
 │   ├── sources.md                daftar sumber yang boleh dikutip
 │   └── examples.md               tiga contoh keluaran
 ├── evals/evals.json              sembilan kasus uji
-└── site/                         halaman tutorial (sumber situs, 6 bahasa)
+(sumber situs tutorial: github.com/bryankwandou/rangka-site)
     ├── index.html
     └── i18n/en.js es.js fr.js zh.js ar.js
 ```
