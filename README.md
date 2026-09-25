@@ -76,5 +76,6 @@ Rangka berhenti di kerangka. Untuk menulis dan merapikan kalimat, pakai skill `l
 
 Dikembangkan dari draf lama `SKILL_kerangka_penelitian.md` (khusus penelitian RAG) dan
 pola mind map → outline → checklist dari video pendek akun dafnisfaz_. Seluruh isi draf
-lama dipertahankan di `genre-research.md`; yang ditambahkan adalah lima genre lain,
+lama dipertahankan di `genre-research.md` (contoh berjalannya diganti topik netral agar
+tidak memuat topik mahasiswa nyata); yang ditambahkan adalah lima genre lain,
 checklist universal, dan aturan anti-fabrikasi.

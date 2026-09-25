@@ -30,9 +30,15 @@ Pemicu: "rangkum file ini jadi outline", "gabung catatan-catatan ini jadi kerang
 6. **Berkas yang tidak terbaca disebutkan** (PDF pindaian tanpa teks, rusak, berkata
    sandi, format tak didukung, terlalu besar dan terpotong). Jangan mengarang isinya;
    minta versi teks atau tandai bagian yang terdampak.
-7. **Kontradiksi tidak dilebur.** Dua berkas berbeda soal fakta (angka, tanggal, nama,
-   jumlah responden) → `[KONFLIK: F1 bilang X; F4 bilang Y]`, dan user yang memilih.
-   Jangan memilih "yang lebih masuk akal", jangan merata-ratakan angka.
+7. **Kontradiksi tidak dilebur.** Dua berkas **atau dua bagian dalam satu berkas**
+   berbeda soal fakta (angka, tanggal, nama, jumlah responden, jumlah fase/tahap/modul,
+   nama instansi/perusahaan/klien, nama komponen atau agen) → `[KONFLIK: F1 bilang X;
+   F4 bilang Y]` atau `[KONFLIK: F1 §1.5 bilang X; F1 §3.2 bilang Y]`, dan user yang
+   memilih. Jangan memilih "yang lebih masuk akal", jangan merata-ratakan angka.
+   Kontradiksi dalam satu draf biasanya sisa revisi atau salinan template/laporan lama;
+   itu justru temuan paling merusak karena penguji membacanya di naskah yang sama.
+   Untuk R-draf, cocokkan setiap angka hitungan (jumlah fase, tahap, hipotesis, responden)
+   dan setiap nama diri antara abstrak, Bab I, bagan, Metode, dan jadwal.
 8. **Duplikat dihitung satu.** Poin yang sama di tiga berkas ditulis sekali dengan
    semua label asal `[F1][F3][F5]` — pengulangan bukan bukti tambahan.
 
@@ -112,7 +118,7 @@ Tiap bagian: **Tugas · Isi** (2–5 butir, tiap butir berlabel asal) **· Bukti
 | **Orphan claim** | dijanjikan di awal, tidak pernah dijawab |
 | **Orphan section** | ada isinya, tidak menjawab apa pun |
 | **Bukti hilang** | klaim tanpa data/sumber |
-| **Konflik** | dua berkas berbeda soal fakta yang sama |
+| **Konflik** | dua berkas **atau dua bagian dalam satu berkas** berbeda soal fakta yang sama (mis. 3 fase di Bab I vs 4 fase di Metode; nama instansi di pengesahan ≠ di Bab II) |
 | **Duplikasi** | isi sama di dua tempat |
 | **Urutan salah** | pembaca butuh B sebelum A |
 | **Timpang** | bagian inti lebih tipis dari pengantar |
@@ -191,7 +197,7 @@ menunggu temuan itu diselesaikan.
 | R4 | Berkas yang gagal dibaca disebutkan beserta bagian yang terdampak? |
 | R5 | Tiap temuan menunjuk bagian tertentu? |
 | R6 | Rencana perbaikan memakai potong/pindah/pilih/gali? |
-| R7 | Konflik antarberkas ditandai `[KONFLIK]`, tidak dilebur atau dirata-rata? |
+| R7 | Konflik antarberkas **dan antarbagian dalam satu berkas** (hitungan fase/tahap, nama instansi/komponen) ditandai `[KONFLIK]`, tidak dilebur atau dirata-rata? |
 | R8 | Hitungan poin: total = dipakai + tidak dipakai? |
 | R9 | Duplikat digabung jadi satu butir dengan semua label asal? |
 | R10 | Struktur mengikuti template dokumen target, bukan urutan catatan; bagian wajib yang kosong tertulis `TIDAK ADA DI BERKAS`? |

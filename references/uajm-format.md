@@ -63,6 +63,11 @@ administratif yang sering terlewat.
 - Persamaan: angka Arab **italic** dalam kurung, rapat ke sembir kanan.
 - Tabel & gambar: angka Arab, **satu seri dari awal sampai akhir naskah** (bukan per bab).
 
+Salinan **verbatim** di lampiran (transkrip wawancara, log, surat, keluaran program)
+tidak diubah: aturan rincian (bullet), bahasa lisan, dan kata ganti orang pertama berlaku
+untuk teks yang **ditulis penulis**, bukan untuk kutipan utuh. Jangan menandai transkrip
+sebagai pelanggaran format.
+
 Catatan untuk keluaran Rangka: kerangka di layar boleh memakai `-` sebagai struktur
 Markdown, tetapi setiap kerangka UAJM yang **akan disalin ke naskah** ditulis dengan
 penanda `a.` / `1.` supaya user tidak menyalin bullet.
@@ -202,6 +207,13 @@ anjuran Rangka, bukan aturan pedoman.**
 10. Saran yang tidak menempel pada butir kesimpulan mana pun.
 11. `5 (lima)` dan bilangan di awal kalimat yang tidak dieja.
 12. Lebih dari dua penulis tanpa `dkk.`/`et al.` dalam uraian.
+13. Daftar Tabel/Daftar Gambar tidak sama dengan nomor dan judul di isi (field Word tidak
+    diperbarui — semua tertulis "Tabel 1"/"Gambar 1", atau judul di daftar ≠ judul di isi).
+    Cocokkan satu per satu; nomor harus satu seri dari awal sampai akhir naskah.
+14. Nama prodi/instansi/pembimbing/judul berbeda antara sampul, halaman judul,
+    pengesahan, dan isi. "Informatika" (pedoman KKP 2015, nama sekarang) dan "Teknik
+    Informatika" (pedoman TA rev. Juni 2015) sama-sama diterima — yang salah adalah
+    **keduanya dipakai bergantian** di satu naskah.
 
 Butir 9 dan 10 adalah cacat **kerangka**, bukan cacat pengetikan — itu yang wajib
 ditangkap Rangka sebelum drafting. Lihat `checklist.md` §UAJM.

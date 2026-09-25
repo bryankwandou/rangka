@@ -5,22 +5,24 @@ Pola ini diadaptasi dari video pendek akun dafnisfaz_ ("kenapa harus bikin outli
 sebelum ngajuin judul"). Yang diambil hanya urutan dan struktur butir, bukan isi template
 berbayarnya.
 
-Contoh berjalan di file ini: *chatbot layanan pelanggan berbasis RAG untuk PDAM Kota
-Makassar*. Ganti dengan topik pengguna.
+Contoh berjalan di file ini: *sistem peminjaman alat laboratorium berbasis web dengan
+notifikasi surel pada `[Instansi]`* — topik netral rekaan, bukan milik mahasiswa mana
+pun. Ganti dengan topik pengguna. Jangan menyalin contoh ini ke keluaran sebagai saran
+judul, dan jangan memakai topik dari naskah pengguna lain sebagai contoh.
 
 ---
 
 ## A1. Mind map (isi sebelum outline)
 
-| Simpul | Pertanyaan pemandu | Contoh (RAG CS PDAM) |
+| Simpul | Pertanyaan pemandu | Contoh (peminjaman alat lab) |
 |---|---|---|
-| Das Sollen | Idealnya seperti apa menurut teori, norma, regulasi, target? | Layanan publik cepat, akurat, tersedia di luar jam kerja |
-| Das Sein | Faktanya di lapangan? Dari mana tahunya? | Pertanyaan pelanggan berulang, jawaban CS tidak seragam `[ISI: sumber observasi/wawancara]` |
-| Kesenjangan → masalah | Apa jarak keduanya, dan kenapa penting? | Belum ada kanal jawaban otomatis yang berpijak pada dokumen resmi |
-| Pertanyaan penelitian | Kata tanya sesuai tujuan (lihat A2) | *Bagaimana* merancang…; *Sejauh mana* akurasi jawabannya… |
-| Metodologi | Kuantitatif, kualitatif, R&D/design science, atau campuran? | Design science + evaluasi kuantitatif |
-| Data & metode | Terukur? Bisa dikerjakan dengan waktu dan izin yang ada? | `[ISI: jumlah FAQ]`, `[ISI: jumlah query uji]` |
-| Kontribusi | Untuk teori? Untuk praktik? | Pola grounding untuk layanan publik; prototipe untuk PDAM |
+| Das Sollen | Idealnya seperti apa menurut teori, norma, regulasi, target? | Alat tercatat, peminjam dan tenggat diketahui, pengembalian tepat waktu |
+| Das Sein | Faktanya di lapangan? Dari mana tahunya? | Peminjaman dicatat di buku, alat sering terlambat kembali atau hilang `[ISI: sumber observasi/wawancara laboran]` |
+| Kesenjangan → masalah | Apa jarak keduanya, dan kenapa penting? | Tidak ada catatan yang bisa dicari dan tidak ada pengingat tenggat |
+| Pertanyaan penelitian | Kata tanya sesuai tujuan (lihat A2) | *Bagaimana* merancang…; *Sejauh mana* keterlambatan pengembalian berkurang… |
+| Metodologi | Kuantitatif, kualitatif, R&D/design science, atau campuran? | Rekayasa (design science) + evaluasi kuantitatif |
+| Data & metode | Terukur? Bisa dikerjakan dengan waktu dan izin yang ada? | `[ISI: jumlah alat]`, `[ISI: data peminjaman N bulan]` |
+| Kontribusi | Untuk teori? Untuk praktik? | Pola pencatatan + pengingat untuk unit layanan kecil; prototipe untuk `[Instansi]` |
 
 Aturan: judul **tidak** ditulis di tahap ini.
 
@@ -89,9 +91,11 @@ Tujuan penelitian = pertanyaan yang diubah jadi kalimat pernyataan, satu lawan s
 | 11 | Etika & izin | Informed consent, anonimisasi, surat izin, data pribadi | UU 27/2022 (PDP) |
 | 12 | Rencana analisis | Response rate → deskriptif → uji instrumen → uji hipotesis/evaluasi → (kualitatif) coding tematik | |
 
-Contoh butir 12 untuk RAG: retrieval diukur dengan kecocokan kata kunci dan cosine
-similarity TF-IDF (Salton & Buckley 1988); jawaban diukur dengan faithfulness dan answer
-relevance (Es dkk. 2024); kepuasan pengguna dengan kuesioner Likert.
+Contoh butir 12 untuk contoh berjalan: fungsi diuji black-box per skenario (pinjam,
+kembali, terlambat, notifikasi); keterlambatan pengembalian dibandingkan sebelum dan
+sesudah sistem dipakai (uji statistik bila datanya berpasangan — maka hipotesis
+perbandingan sah, lihat `uajm-usulan-ta.md` tabel Konsekuensi); kepuasan laboran dan
+peminjam dengan kuesioner Likert (Likert 1932).
 
 Catatan ambang: α ≥ 0,70 adalah konvensi yang lazim, bukan aturan baku. Tulis begitu.
 
@@ -139,7 +143,7 @@ Pola yang umum dipakai:
 `[Luaran/variabel] + [metode/pendekatan bila pembeda] + [objek/konteks] + [lokasi/waktu bila perlu]`
 
 Contoh:
-- Rancang Bangun Chatbot Layanan Pelanggan Berbasis Retrieval-Augmented Generation pada PDAM Kota Makassar
+- Rancang Bangun Sistem Peminjaman Alat Laboratorium Berbasis Web dengan Notifikasi Surel pada `[Instansi]`
 - Pengaruh `[X]` terhadap `[Y]` pada `[populasi]` di `[lokasi]`
 - Studi Kasus `[fenomena]` di `[tempat]`
 

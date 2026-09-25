@@ -76,7 +76,7 @@ Konsekuensi yang wajib dipegang Rangka:
 
 | Jenis | Metode berisi | Hasil berisi | Hipotesis |
 |---|---|---|---|
-| Rekayasa forward | tahap plan/analysis/construct/applied, alat & bahan, rancangan uji | spesifikasi, hasil pengujian, perbandingan dengan persyaratan | umumnya **tidak ada** |
+| Rekayasa forward | tahap plan/analysis/construct/applied, alat & bahan, rancangan uji | spesifikasi, hasil pengujian, perbandingan dengan persyaratan | tidak ada, **kecuali** ada evaluasi komparatif (sistem vs baseline/metode pembanding) yang diuji statistik (mis. McNemar, Wilcoxon, uji-t berpasangan) — maka hipotesis perbandingan kinerja boleh, bahkan wajib bila uji itu ada di metode |
 | Rekayasa reverse/re-eng | objek yang dibedah, tahap abstraksi yang dituju | model/blueprint hasil + validasinya | tidak ada |
 | Eksperimental | perlakuan, kontrol, variabel | uji statistik | **wajib** |
 | Korelasional / kausal komparatif | variabel, instrumen, populasi & sampel | uji hubungan | wajib |
@@ -85,9 +85,48 @@ Konsekuensi yang wajib dipegang Rangka:
 
 Kesalahan klasik mahasiswa Informatika: mengambil penelitian rekayasa (bikin aplikasi)
 lalu memaksakan hipotesis dan uji-t. Kalau ini muncul, tolak dengan alasan, jangan
-ikuti.
+ikuti. Yang ditolak adalah uji-t pada fitur aplikasi **tanpa pembanding** (mis. "aplikasi
+berpengaruh terhadap kepuasan" dari satu kuesioner), **bukan** hipotesis perbandingan
+kinerja sistem terhadap baseline yang diuji statistik. Jangan buang H1–Hn yang
+berpasangan dengan uji statistik di Metode; cek saja bahwa tiap hipotesis punya uji,
+data, dan metrik yang cocok.
 
 ## Kerangka Usulan TA (proposal)
+
+**Dua bentuk yang beredar — pilih dulu.** Pedoman 2015 memakai susunan **a–f** (di
+bawah). Template prodi yang dipakai mahasiswa sekarang memakai **BAB I–V dengan subbab
+terpisah** plus abstrak dan daftar-daftar (lihat "Bentuk B"). Cara memilih:
+
+1. User membawa berkas (draf, template, contoh kakak tingkat) → **deteksi dari berkas**:
+   ada "BAB I" / "1.1" / "Daftar Isi" / "Abstrak" → Bentuk B; ada "a. Latar Belakang …
+   f. Jadwal" tanpa BAB → Bentuk A. Sebutkan dasar deteksinya dalam satu kalimat.
+2. Tak ada berkas → tanyakan satu kali: "Template prodi Anda BAB I–V (dengan Daftar
+   Isi/Abstrak) atau susunan a–f pedoman 2015?" Ini boleh menjadi satu-satunya pertanyaan
+   di muka bersama pertanyaan skema; gabungkan jadi satu kalimat.
+3. Tetap tak terjawab → keluarkan **Bentuk B** (lebih sering dipakai sekarang) dan beri
+   peta satu baris ke Bentuk A. `[CEK: template prodi yang berlaku]`.
+
+Isi wajib kedua bentuk sama; yang beda hanya letak dan tingkat heading.
+
+### Bentuk B — template prodi (BAB I–V), bukan teks pedoman 2015
+
+**Bagian awal:** Halaman Judul (label `Usulan/Proposal Tugas Akhir`) · Halaman
+Persetujuan · Abstrak & Abstract *(jika template memintanya)* · Daftar Isi · Daftar Tabel
+· Daftar Gambar · Daftar Lampiran · Daftar Arti Lambang dan Singkatan *(jika ada)*.
+
+| Bab | Subbab | Asal di Bentuk A |
+|---|---|---|
+| BAB I Pendahuluan | 1.1 Latar Belakang · 1.2 Rumusan Masalah · 1.3 Tujuan · 1.4 Luaran/Hasil yang Diharapkan · 1.5 Manfaat · 1.6 Batasan Masalah · 1.7 Keaslian Penelitian *(kerangka pikir boleh di 1.x atau di Bab II)* | §a |
+| BAB II Tinjauan Pustaka dan Landasan Teori | 2.1 Tinjauan Pustaka (penelitian terdahulu, tabel pembanding) · 2.2 Landasan Teori · 2.3 Kerangka Pikir (bagan) · 2.4 Hipotesis *(jika ada — lihat tabel Konsekuensi)* | §b, §c |
+| BAB III Metode Penelitian | 3.1 Objek/Jenis Penelitian · 3.2 Alat dan Bahan · 3.3 Rancangan dan Langkah Penelitian · 3.4 Metode Pengumpulan Data · 3.5 Analisis Data | §d |
+| BAB IV Konsideran Percobaan | 4.1 Data Masukan · 4.2 Penyusunan Model/Sistem · 4.3 Uji Kesahihan · 4.4 Analisa Kepekaan | §e |
+| BAB V Jadwal Pelaksanaan | tahap · rincian · durasi (tabel/Gantt) | §f |
+
+**Bagian akhir:** Daftar Pustaka · Lampiran (termasuk Daftar Riwayat Hidup bila template
+memintanya). Batas ≤30 lembar tetap berlaku; bagian awal yang lebih panjang memakan
+jatah itu.
+
+### Bentuk A — susunan pedoman 2015 (a–f)
 
 **Bagian awal**
 1. Halaman Judul — sama seperti halaman judul skripsi, **ditambah tulisan
@@ -157,12 +196,13 @@ kesombongan, itu isi dokumennya.
 |---|---|
 | P1 | Ketujuh pertanyaan penguji terjawab di kerangka? |
 | P2 | Jenis penelitian ditetapkan, dan metode + hasil konsisten dengan jenis itu? |
-| P3 | Hipotesis ada hanya jika jenis penelitiannya menuntut? |
+| P3 | Hipotesis ada hanya jika jenis penelitiannya menuntut — termasuk rekayasa yang membandingkan dengan baseline memakai uji statistik? Tiap hipotesis punya uji di Metode? |
 | P4 | **Keaslian** dinyatakan tegas (belum pernah dipecahkan, atau beda dengan yang ada)? |
 | P5 | Kerangka pikir tersedia **dalam bentuk bagan**? |
 | P6 | Batasan/ruang lingkup menutup penafsiran yang melebar? |
-| P7 | Konsideran memuat uji kesahihan dan analisa kepekaan? |
+| P7 | Konsideran memuat uji kesahihan dan analisa kepekaan **terhadap hasil** — baca isinya, bukan judulnya: parameter/masukan mana yang diubah, metrik mana yang diamati, rentangnya? Kelayakan TELOS/finansial, SWOT, atau uji fungsional *bukan* analisa kepekaan; kalau isinya begitu, tandai walau judul subbabnya benar. |
 | P8 | Jadwal punya tahap + rincian + durasi, dan muat dalam satu semester? |
 | P9 | Total ≤30 lembar? |
-| P11 | (RKD) Ada bagian **Kapasitas Diri**, dan tidak ada Hipotesa/Konsideran? |
 | P10 | Ketersediaan data/akses/perangkat sudah dibuktikan atau ditandai `[ISI]`? |
+| P11 | (RKD) Ada bagian **Kapasitas Diri**, dan tidak ada Hipotesa/Konsideran? |
+| P12 | Bentuk (A a–f atau B BAB I–V) sudah dipilih/dideteksi, dan dipakai konsisten dari daftar isi sampai isi? |

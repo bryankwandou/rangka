@@ -34,7 +34,7 @@ yang ada (mis. digitalisasi arsip → analisis sistem berjalan).
 ## Kerangka penuh
 
 ### Bagian awal
-1. Halaman Sampul Depan — **hijau** (4.1.5; tetapi 3.1.1 menulis "warna program studi" → `[CEK: warna sampul]`), tidak bercorak · judul (sesingkat mungkin, memuat **nama proyek** yang dilaporkan, huruf 14 bold, mulai tepat di sembir atas) · tulisan `LAPORAN KULIAH KERJA PROFESI` (huruf 20 bold menurut 3.1.1 b; paragraf penutup 3.1.1 menyebut "yang lainnya 12" → `[CEK: ukuran]`) · nama lengkap + NPM · lambang UAJM 5×5 cm hitam · `PROGRAM STUDI ...` · `FAKULTAS TEKNOLOGI INFORMASI` · `UNIVERSITAS ATMA JAYA` · `MAKASSAR` · bulan & tahun
+1. Halaman Sampul Depan — **hijau** (4.1.5; tetapi 3.1.1 menulis "warna program studi" → `[CEK: warna sampul]`), tidak bercorak · judul (sesingkat mungkin, memuat **nama proyek** yang dilaporkan, huruf 14 bold, mulai tepat di sembir atas) · tulisan `LAPORAN KULIAH KERJA PROFESI` (huruf 20 bold menurut 3.1.1 b; paragraf penutup 3.1.1 menyebut "yang lainnya 12" → `[CEK: ukuran]`) · nama lengkap + NPM · lambang UAJM 5×5 cm hitam · `PROGRAM STUDI [CEK: nama prodi resmi saat ini — pedoman KKP 2015 menulis "Informatika", pedoman TA rev. Juni 2015 menulis "Teknik Informatika"; keduanya diterima, asal sama di semua halaman]` · `FAKULTAS TEKNOLOGI INFORMASI` · `UNIVERSITAS ATMA JAYA` · `MAKASSAR` · bulan & tahun
 2. Halaman Judul — sama, kertas putih, halaman `i` (nomor tidak dicetak)
 3. Halaman Pengesahan — halaman `ii`; berlatar lambang UAJM biru langit 9×9 cm, bingkai ganda biru langit 24×16 cm; memuat `Disusun dan diajukan oleh:` · nama/NPM · `telah diperiksa dan disetujui melalui Seminar KKP` · tanggal · `dan dinyatakan telah memenuhi syarat` · `Menyetujui,` · dua pembimbing (kiri = ketua/pembimbing I, kanan = anggota/pembimbing II) — teks pedoman menulis "Pembimbing Akademik, dan Pembimbing Kampus", contoh Lampiran 2 menulis "Pembimbing Akademik" + "Pembimbing KKP" → `[CEK: label jabatan dua penanda tangan di template prodi]` · `Ketua Program Studi Informatika`. Nama bergaris bawah; judul terlalu panjang → jarak 4,5 spasi jadi 4
 4. Kata Pengantar — halaman `iii`; maksud penyusunan, penjelasan ringkas, ucapan terima kasih (pembimbing lebih dulu, lalu ketua & sekretaris prodi, lalu pihak lain); **tanpa hal ilmiah**; tempat & tanggal di kanan, `Penulis` di bawahnya
@@ -59,6 +59,12 @@ membedakan KKP dari skripsi.
 | 1.5 Waktu dan Tempat | kapan dan di mana | tanggal mulai–selesai, **alamat lengkap** | surat balasan instansi |
 | 1.6 Jadwal Kegiatan | tahap kegiatan + **alokasi waktu per hari** | tabel tahap × waktu | rencana yang disetujui pembimbing lapangan |
 
+Kalau instansi mewajibkan kerahasiaan (NDA, kode/data milik klien), tambahkan **1.7
+Batasan dan Kerahasiaan Laporan**: apa yang tidak dicantumkan (kode sumber, data
+pelanggan, nama klien) dan alasannya, serta bagaimana penggantinya (pseudokode, data
+tiruan, tangkapan layar yang disamarkan). Ini bukan aturan pedoman, praktik yang
+disarankan `[CEK: pembimbing]`; ia menentukan apa yang boleh masuk Bab III dan lampiran.
+
 Titik gagal paling umum: 1.1 menjelaskan pentingnya TIK secara umum tapi tidak pernah
 menjawab (c) dan (e). Pedoman menuntut keduanya secara eksplisit.
 
@@ -70,6 +76,7 @@ menjawab (c) dan (e). Pedoman menuntut keduanya secara eksplisit.
 | 2.3 Struktur organisasi | bagan + posisi divisi tempat KKP ditandai |
 | 2.4 Tujuan dan fungsi instansi **yang terkait bidang kajian** | bukan seluruh tupoksi — hanya yang menyambung ke Bab III |
 | 2.5 Sistem kerja | alur kerja divisi, sistem/aplikasi yang dipakai |
+| 2.6 Profil klien/proyek *(jika instansi vendor/konsultan TI mengerjakan proyek untuk pihak lain)* | hanya bagian klien yang menyambung ke Bab III (siapa klien, apa proyeknya, peran instansi) `[CEK: pembimbing; perhatikan kerahasiaan §1.7]` |
 
 Bab II sering membengkak jadi salinan company profile. Aturannya: setiap sub-bab
 harus dipakai lagi di Bab III. Kalau tidak dipakai, potong.
@@ -111,6 +118,13 @@ potongan kode, tabel uji) `[ISI]`.
   III yang tidak punya foto, lampiran dianggap tidak lengkap.** Karena itu daftar jenis
   pekerjaan di Bab III harus difinalkan *sebelum* KKP berakhir, bukan sesudah.
 
+  **KKP jarak jauh (remote/daring).** Pedoman 2015 tidak mengaturnya, dan syarat "mahasiswa
+  ikut terfoto" tidak bisa dipenuhi apa adanya. Bukti proses yang setara: tangkapan layar
+  sesi daring yang memperlihatkan mahasiswa (rapat, pair programming) + log commit/merge
+  request/tiket bertanggal atas nama mahasiswa + Form Aktivitas Harian yang ditandatangani
+  pembimbing lapangan. Tulis `[CEK: persetujuan prodi untuk KKP jarak jauh dan bentuk
+  dokumentasinya]`. Jangan menyarankan foto rekayasa di lokasi fisik.
+
 ## Tanggal KKP vs hari ini (cek sebelum menulis lampiran)
 
 Bandingkan tanggal KKP dengan **tanggal hari ini** sebelum memberi saran lampiran:
@@ -148,5 +162,8 @@ Bandingkan tanggal KKP dengan **tanggal hari ini** sebelum memberi saran lampira
 | K7 | Durasi ≥42 hari kerja dan log harian mencukupi? |
 | K8 | Tidak ada abstrak (KKP tidak memakainya)? |
 | K9 | Jadwal §1.6 berisi alokasi waktu **per hari**, bukan hanya per minggu? |
-| K11 | Tanggal KKP dibandingkan dengan hari ini; saran lampiran sesuai (belum selesai: jadwalkan; sudah selesai: inventaris yang ada + jalan jujur)? |
 | K10 | Semua **data wajib identitas** ada atau ditandai `[ISI]`: nama instansi + alamat lengkap, divisi, tanggal mulai–selesai, nama pembimbing kampus & lapangan, nama proyek untuk judul? Yang kosong **tidak boleh diisi tebakan** — dan kalau yang kosong menentukan lulus/tidaknya syarat (durasi, lingkup), K7/K1 berstatus *Menunggu data*, bukan Lolos. |
+| K11 | Tanggal KKP dibandingkan dengan hari ini; saran lampiran sesuai (belum selesai: jadwalkan; sudah selesai: inventaris yang ada + jalan jujur)? |
+| K12 | Nama prodi, nama instansi, nama pembimbing, dan judul tertulis **sama persis** di sampul, halaman judul, pengesahan, kata pengantar, dan isi (Bab I–II)? "Informatika" dan "Teknik Informatika" sama-sama diterima, tapi harus satu bentuk di semua halaman. Nama instansi yang berbeda antarbagian (sisa template/laporan lama) = temuan berat. |
+| K13 | KKP jarak jauh: bukti proses pengganti foto (tangkapan layar sesi daring + log bertanggal) ada, dan persetujuan prodi ditandai `[CEK]`? |
+| K14 | Ada kerahasiaan instansi/klien → §1.7 ada, dan Bab III/lampiran tidak memuat kode/data yang dilarang? Instansi vendor → §2.6 profil klien ada bila Bab III bekerja untuk klien? |

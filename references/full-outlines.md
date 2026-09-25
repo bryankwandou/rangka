@@ -58,7 +58,7 @@ BAB II TINJAUAN PUSTAKA
       2.2.1 [ISI: teori/konsep 1] — dipakai lagi di Bab III/IV
       2.2.2 [ISI: teori/konsep 2]
   2.3 Kerangka Pikir          — bagan masalah → teori → metode → luaran
-  2.4 Hipotesis               (hanya penelitian eksperimental/korelasional/kausal)
+  2.4 Hipotesis               (eksperimental/korelasional/kausal, atau rekayasa yang membandingkan dengan baseline memakai uji statistik)
 
 BAB III METODE PENELITIAN
   3.1 Jenis dan Pendekatan Penelitian

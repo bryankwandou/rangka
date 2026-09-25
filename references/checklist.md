@@ -8,9 +8,9 @@ berkas itu dipakai:
 
 | Berkas | Kode | Kapan dijalankan |
 |---|---|---|
-| `uajm-kkp.md` | K1–K11 | laporan KKP/magang UAJM |
-| `uajm-usulan-ta.md` | P1–P11 | usulan TA / proposal / RKD |
-| `uajm-skripsi.md` | S1–S12 | skripsi/TA |
+| `uajm-kkp.md` | K1–K14 | laporan KKP/magang UAJM |
+| `uajm-usulan-ta.md` | P1–P12 | usulan TA / proposal / RKD |
+| `uajm-skripsi.md` | S1–S14 | skripsi/TA |
 | `genre-thesis.md` | T1–T10 | tesis & disertasi |
 | `genre-organizational.md` | G1, G11–G14 | semua dokumen organisasi |
 | `org-proposal-kegiatan.md` | OP1–OP6 | proposal kegiatan |
@@ -45,10 +45,13 @@ U12 dicek setelah judul ditulis (Step 4), bukan sebelumnya.
 | U10 | Aturan eksternal ditandai | Pedoman kampus, format klien, regulasi → `[CEK]` bila belum dipastikan |
 | U11 | Panjang realistis | Jumlah petunjuk panjang tiap bagian sesuai batas total |
 | U12 | Judul/headline dari core claim | Ditulis terakhir, tidak menjanjikan lebih dari isi |
+| U13 | Konsisten di dalam satu naskah | Hitungan (jumlah fase, tahap, hipotesis, responden) dan nama diri (instansi, prodi, komponen, pembimbing) sama di semua bagian: sampul, pengesahan, abstrak, isi, bagan, jadwal. Beda = `[KONFLIK]` |
+| U14 | Daftar sinkron dengan isi | Daftar Isi/Tabel/Gambar/Lampiran cocok nomor dan judulnya dengan isi; bukan semua "Tabel 1" |
+| U15 | Isi sesuai judul bagian | Untuk bagian wajib, baca isinya, bukan hanya judulnya (mis. "Analisa Kepekaan" yang isinya TELOS = Gagal) |
 
 ## Versi cepat
 
-Untuk mode Cepat: U1, U2, U4, U8, U9, **ditambah semua butir cek genre**. Butir genre tidak pernah dilewati.
+Untuk mode Cepat: U1, U2, U4, U8, U9, U13, **ditambah semua butir cek genre**. Butir genre tidak pernah dilewati.
 
 ## Kegagalan yang paling sering dan perbaikannya
 

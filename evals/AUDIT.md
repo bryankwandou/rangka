@@ -106,8 +106,51 @@ Details and quoted evidence: `evals/runs/grading-23-26.md`.
 
 ## Still open
 
-1. Brackets around Arabic placeholders inside Mermaid nodes render mirrored in the HTML.
+1. ~~Brackets around Arabic placeholders inside Mermaid nodes render mirrored in the HTML.~~ Fixed 2026-09-25 (see below).
 2. The only UAJM pedoman available is from 2015; a newer edition would override parts of this audit.
 3. The regulation numbers for tata naskah dinas (ANRI, Permendagri) are deliberately not cited; `[CEK]` stays until someone checks the current texts.
 4. Runs for evals 7–9 are still missing from `evals/runs/`.
 5. No human has reviewed any of the grades.
+
+## Real-document test fixes (2026-09-25)
+
+Three real UAJM Informatika documents (two usulan TA, one laporan KKP) were outlined
+blind from the title only, then compared with the actual headings. The documents stay
+outside the repo. No names, addresses, phone numbers or topics from them were copied
+in. The old running example in `genre-research.md` matched one document's real topic,
+so it was replaced with a neutral made-up one.
+
+| Code | Fix | File |
+|---|---|---|
+| B1 | Engineering research may have comparative hypotheses (system vs baseline with a statistical test); P3 updated | `uajm-usulan-ta.md`, `full-outlines.md` |
+| B2 | Usulan TA has two layouts: B = BAB I–V template (abstrak, daftar isi/tabel/gambar/lampiran/singkatan, Konsideran = Bab IV, Jadwal = Bab V) and A = 2015 a–f; detect from the user's files, else ask, else B; P12 | `uajm-usulan-ta.md`, `SKILL.md` routing row |
+| B4 | Contradictions inside one file (phase counts, company/agency names) are handled the same as contradictions across files: rule 7, the Konflik diagnosis, R7, new U13 | `summarize-to-outline.md`, `checklist.md` |
+| B5 | Daftar Tabel/Gambar must match the body numbering: U14, S13, format item 13 | `checklist.md`, `uajm-skripsi.md`, `uajm-format.md` |
+| B6 | P-check order fixed (P9, P10, P11); K10/K11 order fixed too | `uajm-usulan-ta.md`, `uajm-kkp.md` |
+| B7/B8 | KKP slots: 2.6 Profil Klien, 1.7 Batasan dan Kerahasiaan; K14 | `uajm-kkp.md` |
+| B9 | Both "Informatika" and "Teknik Informatika" are accepted; they must be consistent across cover, pengesahan and body (K12, S14, format item 14) | `uajm-kkp.md`, `uajm-skripsi.md`, `uajm-format.md` |
+| B10 | Verbatim transcripts/logs in appendices are exempt from the bullet/language rules | `uajm-format.md` |
+| B11 | Remote KKP: screenshot + dated commit-log evidence instead of the photo rule; K13 | `uajm-kkp.md` |
+| B12 | Running example and A6 title replaced by a neutral topic (lab equipment loan system) | `genre-research.md`, `sources.md`, `README.md` |
+| B13 | P7 / U15 read the *content* of the sensitivity analysis, not the heading (TELOS, SWOT or functional tests fail) | `uajm-usulan-ta.md`, `checklist.md` |
+| Bidi | `fixBidi()` sets `dir="rtl"` on every Mermaid label that contains RTL script | `assets/flowchart-template.html`, `evals/runs/eval-26-flowchart.html` |
+
+Bidi verification (headless Chrome 2x): a test diagram with labels `[أكمل: العدد] مشاركًا`,
+`المدة [أكمل: 8 أسابيع]` and `النموذج [تحقق: ADDIE]`. The old template put the bracket of a
+line-initial placeholder on the wrong side. The new template matches a plain `dir="rtl"`
+reference paragraph on all three labels, with no Mermaid errors. The earlier eval-26
+labels render the same both ways (all-Arabic text inside the brackets, preceded by
+Arabic), so that eval could not show the bug.
+
+Blind "from title" scores (same counting as the test README: one unit per front-matter
+component, level-2 subsection, chapter without subsections, reference list and KKP
+appendix, matched by function):
+
+| Document | Before | After | What changed |
+|---|---|---|---|
+| 1 Usulan TA (engineering, compared with baselines) | 26/34 = 76% | 34/34 = 100% | layout B adds 7 front-matter parts; hypotheses no longer dropped |
+| 2 Laporan KKP | 33/43 = 77% | 35/43 = 81% | 1.7 Kerahasiaan + 2.6 Profil Klien slots; the remaining 8 are Bab III jobs and appendices that cannot be known from a title |
+| 3 Usulan TA | 24/30 = 80% (inflated by the leaked example) | 30/30 = 100% | layout B adds 6 front-matter parts; the score no longer depends on the topic |
+
+Caveat: self-graded and rescored against the section inventory, not a fresh cold run.
+The 100% scores measure structure only. They do not measure content quality.

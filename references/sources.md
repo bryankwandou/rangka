@@ -33,7 +33,7 @@ memakai sumber untuk klaim di luar kolom tersebut.
 | Anderson, L. W., & Krathwohl, D. R. (Eds.). (2001). *A Taxonomy for Learning, Teaching, and Assessing: A Revision of Bloom's Taxonomy of Educational Objectives*. Longman. | tingkatan berpikir untuk pertanyaan uji diri |
 | Undang-Undang Republik Indonesia Nomor 27 Tahun 2022 tentang Pelindungan Data Pribadi. | kewajiban pelindungan data pribadi responden/pelanggan |
 
-## Contoh domain (RAG, dipakai di contoh berjalan)
+## Contoh domain: temu-kembali informasi (sumber umum, bukan contoh berjalan)
 
 | Sumber | Dipakai untuk |
 |---|---|

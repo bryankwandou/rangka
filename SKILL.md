@@ -75,7 +75,7 @@ structure. Route by document, then by campus:
 | Document | Read |
 |---|---|
 | Laporan KKP / KP / PKL / magang, UAJM FTI | `references/uajm-kkp.md` |
-| Usulan/proposal TA or Ringkasan Kapasitas Diri, UAJM FTI | `references/uajm-usulan-ta.md` |
+| Usulan/proposal TA or Ringkasan Kapasitas Diri, UAJM FTI (two layouts: BAB I–V template or 2015 a–f; detect from files or ask) | `references/uajm-usulan-ta.md` |
 | Skripsi / tugas akhir, UAJM FTI | `references/uajm-skripsi.md` |
 | Any of the above, **other campus** | `genre-research.md`/`genre-report.md` + `references/pedoman-adapter.md` |
 | Skripsi / TA / tesis / proposal at **UI** (Universitas Indonesia) | `references/campus-ui.md` + `pedoman-adapter.md` |

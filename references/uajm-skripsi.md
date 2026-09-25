@@ -31,11 +31,11 @@ sidang → `[CEK: jumlah penguji sidang di SK Dekan]`.
 
 | # | Komponen | Hlm. | Catatan dari pedoman |
 |---|---|---|---|
-| 1 | Sampul Depan | — | **hijau muda polos**; judul Indonesia (spasi 1,5, dari sembir atas) · **judul Inggris miring**, 3 spasi di bawahnya · `NAMA LENGKAP / STAMBUK` · lambang UAJM 5×5 cm hitam · `PROGRAM STUDI TEKNIK INFORMATIKA / FAKULTAS TEKNOLOGI INFORMASI / UNIVERSITAS ATMA JAYA / MAKASSAR` · bulan & tahun **lulus ujian** di sembir bawah; kapital, simetris |
+| 1 | Sampul Depan | — | **hijau muda polos**; judul Indonesia (spasi 1,5, dari sembir atas) · **judul Inggris miring**, 3 spasi di bawahnya · `NAMA LENGKAP / STAMBUK` · lambang UAJM 5×5 cm hitam · `PROGRAM STUDI [CEK: nama prodi resmi saat ini — "INFORMATIKA" atau "TEKNIK INFORMATIKA" (pedoman rev. Juni 2015); keduanya diterima, asal sama di semua halaman] / FAKULTAS TEKNOLOGI INFORMASI / UNIVERSITAS ATMA JAYA / MAKASSAR` · bulan & tahun **lulus ujian** di sembir bawah; kapital, simetris |
 | 2 | Halaman Judul | i | isi sama, HVS putih; judul singkat, padat, spesifik; **singkatan di judul ditulis kepanjangannya** |
 | 3 | Halaman Pengajuan | ii | judul · `Skripsi` · `Sebagai salah satu syarat untuk mencapai gelar Sarjana Komputer` · `Disusun dan diajukan oleh:` · nama/stambuk · `kepada` · prodi/fakultas/universitas/kota · bulan-tahun `[CEK: contoh Lampiran 3 menulis "Sarjana Teknik Informatika" — ikuti gelar resmi saat ini]` |
 | 4 | Lembar Pernyataan Tidak Plagiat | iii | nama, NIM, judul; 3 butir pernyataan (karya sendiri; kutipan dirujuk; bersedia menerima sanksi pencabutan gelar); tanggal; tanda tangan di atas **meterai** (contoh 2015: Rp6.000 → `[CEK: meterai Rp10.000 yang berlaku sekarang]`) |
-| 5 | Halaman Persetujuan/Pengesahan | iv | `Skripsi` · judul · `Disusun dan diajukan oleh:` · nama/NPM · `telah dipertahankan di depan Panitia Ujian Skripsi` · `pada tanggal ...` · `dan dinyatakan telah memenuhi syarat` · `Menyetujui,` · **Pembimbing I (kiri) & Pembimbing II (kanan)** · **Ketua Program Studi Teknik Informatika**. Latar lambang UAJM biru langit 9×9 cm, bingkai ganda biru langit 24×16 cm. Tidak ada tanda tangan panitia ujian |
+| 5 | Halaman Persetujuan/Pengesahan | iv | `Skripsi` · judul · `Disusun dan diajukan oleh:` · nama/NPM · `telah dipertahankan di depan Panitia Ujian Skripsi` · `pada tanggal ...` · `dan dinyatakan telah memenuhi syarat` · `Menyetujui,` · **Pembimbing I (kiri) & Pembimbing II (kanan)** · **Ketua Program Studi [CEK: Informatika / Teknik Informatika — sama dengan sampul]**. Latar lambang UAJM biru langit 9×9 cm, bingkai ganda biru langit 24×16 cm. Tidak ada tanda tangan panitia ujian |
 | 6 | Pedoman Penggunaan Skripsi | v | skripsi tersedia di perpustakaan; hak cipta pada pengarang (HaKI); kutipan/ringkasan dengan izin pengarang; memperbanyak dengan izin Ketua Prodi |
 | 7 | Peruntukan | vi | **tidak wajib** ("bukan halaman yang diharuskan"); kalau ada, satu kalimat persembahan, bukan ucapan terima kasih |
 | 8 | Kata Pengantar | vii | maksud penyusunan, penjelasan ringkas, terima kasih: pembimbing → ketua & sekretaris prodi → pihak lain; tanpa hal ilmiah; tempat-tanggal kanan, `Penulis` di bawahnya |
@@ -228,3 +228,5 @@ NASKAH JURNAL (berkas terpisah)
 | S10 | Setiap saran menempel pada satu butir kesimpulan? |
 | S11 | Daftar lampiran sinkron dengan lampiran yang benar-benar direncanakan? |
 | S12 | Kerangka naskah jurnal sudah diturunkan dari kerangka TA? |
+| S13 | Daftar Tabel dan Daftar Gambar sama dengan nomor + judul di isi (satu seri, tidak semua "Tabel 1")? |
+| S14 | Nama prodi, judul, nama pembimbing sama persis di sampul, halaman judul, pengajuan, pengesahan, dan abstrak? |

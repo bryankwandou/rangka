@@ -8,6 +8,10 @@
        es/fr/zh/ar translate the UI + headings/captions and show English diagram text.
     3. Keep: theme default "light", the print CSS, the dual light/dark render, dir="rtl" for ar.
   Everything the user must supply stays as [ISI: ...] / [FILL: ...] inside node text.
+  RTL diagram text (Arabic, Persian, Urdu, Hebrew): write it normally, brackets included
+  (e.g. [أكمل: العدد]). fixBidi() gives every label that contains RTL script dir="rtl"
+  after Mermaid renders; without it Mermaid's LTR layout puts the brackets on the wrong
+  sides. Do not remove fixBidi() or the matching CSS rule.
 -->
 <html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Bagan Skripsi Antrean</title>
@@ -25,7 +29,7 @@ h1{font-size:1.5rem;margin:0 0 4px}p.sub{color:var(--muted);margin:0 0 24px}
 section{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px;margin-bottom:24px;overflow-x:auto}
 h2{font-size:1.1rem;margin:0 0 12px}figure{margin:0}figcaption{text-align:center;color:var(--muted);font-size:.9rem;margin-top:8px}
 .d{display:flex;justify-content:center}
-.d foreignObject div,.d foreignObject span,.d foreignObject p{unicode-bidi:plaintext} /* Arabic node text keeps its own direction */
+.d foreignObject [dir="rtl"]{direction:rtl;unicode-bidi:isolate} /* set by fixBidi(): RTL node labels get an RTL paragraph, so [placeholder] brackets land on the correct sides */
 .v-dark{display:none}
 :root[data-theme="dark"] .v-light{display:none}
 :root[data-theme="dark"] .v-dark{display:block}
@@ -184,10 +188,23 @@ let n = 0;
 
 async function svgFor(code,dark){
   mermaid.initialize({startOnLoad:false,theme:dark?"dark":"default",securityLevel:"strict"});
-  try{ return (await mermaid.render("m"+(n++),code)).svg; }
+  try{ return fixBidi((await mermaid.render("m"+(n++),code)).svg); }
   catch(e){ return `<pre class="err">Mermaid error — ${String(e.message||e).replace(/</g,"&lt;")}
 
 ${code.replace(/</g,"&lt;")}</pre>`; }
+}
+// Mermaid lays labels out LTR. A label whose text contains RTL script gets its own RTL
+// paragraph direction, so paired brackets and trailing punctuation render on the right sides.
+const RTL = /[֐-ࣿיִ-﷿ﹰ-﻿]/;
+function fixBidi(svg){
+  const box=document.createElement("div"); box.innerHTML=svg;
+  box.querySelectorAll("foreignObject div, foreignObject span, foreignObject p").forEach(el=>{
+    if(RTL.test(el.textContent)) el.setAttribute("dir","rtl");
+  });
+  box.querySelectorAll("text").forEach(el=>{ // SVG-text labels (edge labels without htmlLabels)
+    if(RTL.test(el.textContent)){ el.setAttribute("direction","rtl"); el.setAttribute("unicode-bidi","embed"); }
+  });
+  return box.innerHTML;
 }
 async function render(){
   const t=T[lang];
