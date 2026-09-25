@@ -1,6 +1,7 @@
 # UAJM — Kerangka Laporan KKP (magang / kerja praktek)
 
-Sumber: *Pedoman Kuliah Kerja Profesi FTI UAJM*, Prodi Informatika, 18 Januari 2015.
+Sumber: *Pedoman Kuliah Kerja Profesi FTI UAJM*, Prodi Informatika, 18 Januari 2015
+(Bab I–III), dicek ulang kalimat per kalimat 2026-09-25.
 Format naskah: baca `uajm-format.md`. Bacaan ini hanya soal **struktur**.
 
 KKP di UAJM adalah nama resmi untuk magang/kerja praktek. Kalau user menyebut
@@ -16,9 +17,12 @@ lampiran, jadi konfirmasikan lebih dulu (atau tulis `[ISI: ...]`).
 | SKS | minimal 122 sks lulus | — |
 | Durasi | min. 2 bulan berturut-turut, maks. 3 bulan; **min. setara 42 hari kerja penuh** (lokasi dalam kota) | jumlah entri log harian, rentang di §1.5 |
 | Lingkup sah | (a) analisis & perancangan perangkat lunak/SI/jaringan, (b) pemrograman, (c) network administration | menentukan isi Bab III |
-| Pembimbing | dosen pembimbing kampus + pembimbing lapangan | dua tanda tangan di pengesahan |
-| Seminar | dihadiri pembimbing kampus + **minimal 5 peserta** | daftar hadir wajib jadi lampiran |
-| Nilai | lapangan 30% (kinerja, inovasi, kerja sama, kedisiplinan) + kampus 70% (materi, penguasaan, bahasa, tata tulis, presentasi) | bobot 70% ada di laporan → Bab III harus tebal |
+| Pembimbing | dosen pembimbing kampus (min. S-1, kompetensi sesuai materi) + pembimbing lapangan (ditunjuk pejabat instansi) | lihat catatan tanda tangan di Halaman Pengesahan |
+| Seminar | setelah laporan disetujui pembimbing kampus; tim penilai = 1 dosen pembimbing kampus (ditunjuk kaprodi) + audiens **minimal 5 mahasiswa**; seminar **sebelum** dijilid dan disahkan | daftar hadir jadi lampiran `[CEK]` |
+| Prosedur awal | observasi tempat → minta surat pengantar ke ketua prodi (lampirkan fotokopi KSM + form Permohonan Kerja Praktek) → serahkan ke instansi → serahkan **surat persetujuan penerimaan** ke prodi; kalau ditolak, surat pengantar baru wajib melampirkan **surat penolakan** | surat-surat ini masuk lampiran |
+| Selama KKP | isi **Form Aktivitas Harian**; beri **Form Penilaian** ke pembimbing lapangan; orientasi, rencana kegiatan, catat struktur organisasi, analisis sistem berjalan, konsultasi, kumpulkan data | bahan Bab II–III |
+| Nilai | lapangan 30% (kinerja, inovasi, kerja sama, kedisiplinan) + dosen pembimbing kampus 70% (materi, penguasaan materi, bahasa, tata penulisan, presentasi) | bobot 70% ada di laporan → Bab III harus tebal |
+| Lingkup | instansi yang memakai TIK secara intensif; skala & kedalaman menimbang kontribusi pada bidang ilmu dan ketepatan waktu | — |
 | Batas waktu | seluruh KKP maksimal satu semester, lewat → input ulang MK | jadwal di §1.6 harus realistis |
 
 Kalau lingkup pekerjaan di lapangan tidak masuk salah satu dari tiga kategori
@@ -30,9 +34,9 @@ yang ada (mis. digitalisasi arsip → analisis sistem berjalan).
 ## Kerangka penuh
 
 ### Bagian awal
-1. Halaman Sampul Depan — judul (singkat, memuat **nama proyek** yang dilaporkan, huruf 14 bold) · tulisan `LAPORAN KULIAH KERJA PROFESI` (huruf 20 bold) · nama lengkap + NPM · lambang UAJM 5×5 cm hitam · `PROGRAM STUDI ...` · `FAKULTAS TEKNOLOGI INFORMASI` · `UNIVERSITAS ATMA JAYA` · `MAKASSAR` · bulan & tahun
+1. Halaman Sampul Depan — **hijau** (4.1.5; tetapi 3.1.1 menulis "warna program studi" → `[CEK: warna sampul]`), tidak bercorak · judul (sesingkat mungkin, memuat **nama proyek** yang dilaporkan, huruf 14 bold, mulai tepat di sembir atas) · tulisan `LAPORAN KULIAH KERJA PROFESI` (huruf 20 bold menurut 3.1.1 b; paragraf penutup 3.1.1 menyebut "yang lainnya 12" → `[CEK: ukuran]`) · nama lengkap + NPM · lambang UAJM 5×5 cm hitam · `PROGRAM STUDI ...` · `FAKULTAS TEKNOLOGI INFORMASI` · `UNIVERSITAS ATMA JAYA` · `MAKASSAR` · bulan & tahun
 2. Halaman Judul — sama, kertas putih, halaman `i` (nomor tidak dicetak)
-3. Halaman Pengesahan — halaman `ii`; berlatar lambang UAJM biru langit 9×9 cm, bingkai ganda biru langit 24×16 cm; memuat `Disusun dan diajukan oleh:` · nama/NPM · `telah diperiksa dan disetujui melalui Seminar KKP` · tanggal · `dan dinyatakan telah memenuhi syarat` · tanda tangan Pembimbing Akademik & Pembimbing Kampus · Ketua Program Studi
+3. Halaman Pengesahan — halaman `ii`; berlatar lambang UAJM biru langit 9×9 cm, bingkai ganda biru langit 24×16 cm; memuat `Disusun dan diajukan oleh:` · nama/NPM · `telah diperiksa dan disetujui melalui Seminar KKP` · tanggal · `dan dinyatakan telah memenuhi syarat` · `Menyetujui,` · dua pembimbing (kiri = ketua/pembimbing I, kanan = anggota/pembimbing II) — teks pedoman menulis "Pembimbing Akademik, dan Pembimbing Kampus", contoh Lampiran 2 menulis "Pembimbing Akademik" + "Pembimbing KKP" → `[CEK: label jabatan dua penanda tangan di template prodi]` · `Ketua Program Studi Informatika`. Nama bergaris bawah; judul terlalu panjang → jarak 4,5 spasi jadi 4
 4. Kata Pengantar — halaman `iii`; maksud penyusunan, penjelasan ringkas, ucapan terima kasih (pembimbing lebih dulu, lalu ketua & sekretaris prodi, lalu pihak lain); **tanpa hal ilmiah**; tempat & tanggal di kanan, `Penulis` di bawahnya
 5. Daftar Isi
 6. Daftar Tabel
@@ -71,7 +75,8 @@ Bab II sering membengkak jadi salinan company profile. Aturannya: setiap sub-bab
 harus dipakai lagi di Bab III. Kalau tidak dipakai, potong.
 
 **BAB III URAIAN TEKNIS PELAKSANAAN KKP** — inti laporan, porsi terbesar
-(indikasi 40–50% halaman bagian utama). Memuat:
+(indikasi 40–50% halaman bagian utama — **anjuran Rangka, bukan pedoman**; pedoman
+hanya menuntut "detail dan mendalam"). Memuat:
 - pekerjaan-pekerjaan yang **diikuti**, diuraikan detail dan mendalam (bukan daftar);
 - aturan/standar yang digunakan;
 - perhitungan-perhitungan;
@@ -106,6 +111,18 @@ potongan kode, tabel uji) `[ISI]`.
   III yang tidak punya foto, lampiran dianggap tidak lengkap.** Karena itu daftar jenis
   pekerjaan di Bab III harus difinalkan *sebelum* KKP berakhir, bukan sesudah.
 
+## Tanggal KKP vs hari ini (cek sebelum menulis lampiran)
+
+Bandingkan tanggal KKP dengan **tanggal hari ini** sebelum memberi saran lampiran:
+- **KKP belum selesai** → jadwalkan foto tiap jenis pekerjaan, Form Aktivitas Harian,
+  dan Form Penilaian sebelum tanggal selesai.
+- **KKP sudah selesai** → jangan menyuruh "ambil foto sebelum selesai". Katakan terus
+  terang lampiran mutlak mana yang mungkin sudah tidak bisa dibuat, dan tawarkan jalan
+  yang jujur: kumpulkan foto yang sudah ada per jenis pekerjaan, minta izin instansi untuk
+  foto susulan di lokasi, konsultasikan kekurangan ke pembimbing kampus. Jangan
+  menyarankan foto rekayasa atau log harian yang ditulis ulang seolah-olah harian.
+- Hitung juga batas **satu semester** (KKP 2.2 n): kalau lewat, MK harus diinput ulang.
+
 ## Peta inti khas KKP
 
 | Node | Isi |
@@ -131,3 +148,5 @@ potongan kode, tabel uji) `[ISI]`.
 | K7 | Durasi ≥42 hari kerja dan log harian mencukupi? |
 | K8 | Tidak ada abstrak (KKP tidak memakainya)? |
 | K9 | Jadwal §1.6 berisi alokasi waktu **per hari**, bukan hanya per minggu? |
+| K11 | Tanggal KKP dibandingkan dengan hari ini; saran lampiran sesuai (belum selesai: jadwalkan; sudah selesai: inventaris yang ada + jalan jujur)? |
+| K10 | Semua **data wajib identitas** ada atau ditandai `[ISI]`: nama instansi + alamat lengkap, divisi, tanggal mulai–selesai, nama pembimbing kampus & lapangan, nama proyek untuk judul? Yang kosong **tidak boleh diisi tebakan** — dan kalau yang kosong menentukan lulus/tidaknya syarat (durasi, lingkup), K7/K1 berstatus *Menunggu data*, bukan Lolos. |

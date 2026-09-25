@@ -1,6 +1,6 @@
 ---
 name: rangka
-description: Build and check the outline (kerangka) of any document before drafting, or condense existing research files into one outline. Covers skripsi, tesis, disertasi, proposal/usulan TA, laporan KKP/magang, makalah, proposal kegiatan, LPJ, SK, AD/ART, surat, laporan, landing page, README, spec, video script, pitch deck, brosur, email, and study mind maps. Built-in Universitas Atma Jaya Makassar pedoman, sourced notes for 22 Indonesian campuses (UI, UGM, ITB, ITS, Unhas, UNM, UMI, UIN Alauddin, IPB, and more), foreign thesis norms, and an adapter for any guideline in any language. Use for "susun kerangka", "buat outline", "rangkum file jadi outline", "kerangka magang/KKP/proposal/tugas akhir", "bikin SK", "susun LPJ", "proposal kegiatan", "cek kesiapan judul", "struktur laporan/video/landing page", "outline this", or any long document without a fixed structure. Not for one-line captions or polishing finished prose (use lugas).
+description: Build and check the outline (kerangka) of any document before drafting, or condense existing research files into one outline. Covers skripsi, tesis, disertasi, proposal/usulan TA, laporan KKP/magang, makalah, proposal kegiatan, LPJ, SK, AD/ART, surat, laporan, landing page, README, spec, video script, pitch deck, brosur, email, and study mind maps. Built-in Universitas Atma Jaya Makassar pedoman, sourced notes for 22 Indonesian campuses (UI, UGM, ITB, ITS, Unhas, UNM, UMI, UIN Alauddin, IPB, and more), foreign thesis norms, and an adapter for any guideline in any language. Use for "susun kerangka", "buat outline", "rangkum file jadi outline", "kerangka magang/KKP/proposal/tugas akhir", "bikin SK", "susun LPJ", "proposal kegiatan", "cek kesiapan judul", "struktur laporan/video/landing page", "outline this", or any long document without a fixed structure. Flowcharts ship as HTML with language/theme switch and light print. Not for one-line captions or polishing finished prose (use lugas).
 ---
 
 # Rangka
@@ -54,11 +54,15 @@ Decide four things. Do not ask if the user already said them.
 | A. Riset | skripsi, proposal penelitian, jurnal, makalah ilmiah | `references/genre-research.md` |
 | A+. Pascasarjana | tesis (S2), disertasi (S3) | `genre-research.md` **+** `references/genre-thesis.md` |
 | B. Laporan & dokumen kerja | laporan magang/KKP/KP/PKL, laporan kegiatan, laporan bisnis, policy brief, memo, SOP | `references/genre-report.md` |
-| G. Dokumen organisasi | proposal kegiatan, LPJ, SK, AD/ART, surat permohonan/tugas, notulen, berita acara | `references/genre-organizational.md` |
+| G. Dokumen organisasi | proposal kegiatan, LPJ, SK, surat penugasan, AD/ART, surat permohonan, notulen, berita acara | `references/genre-organizational.md` (index) **+** `org-proposal-kegiatan.md` / `org-lpj.md` / `org-sk.md` |
 | C. Persuasi | landing page, website, iklan, brosur, pamflet, poster, email marketing, pitch deck, proposal bisnis/sponsor | `references/genre-persuasion.md` |
 | D. Teknis | README, dokumentasi, spec/PRD, ADR, tutorial, API docs | `references/genre-technical.md` |
 | E. Media waktu | video pendek, video YouTube, podcast, presentasi lisan, webinar | `references/genre-timed.md` |
 | F. Belajar | mind map materi kuliah, ringkasan bab, persiapan ujian | `references/genre-study.md` |
+
+If the user gives dates (KKP period, event date, deadline), compare them with **today's
+date** before advising what to collect or schedule: advice for a finished activity differs
+from advice for a running one.
 
 If a request spans two families (e.g. a research-based landing page), use the family of
 the **final reader's action**, and borrow sections from the other.
@@ -83,6 +87,9 @@ structure. Route by document, then by campus:
 | Tesis / disertasi, any campus | `references/genre-thesis.md` + `pedoman-adapter.md` |
 | Formatting, citation style, or "berapa spasi / margin / gaya pustaka" (UAJM) | `references/uajm-format.md` |
 | Anything with lampiran | `references/appendices.md` |
+| "Kerangka lengkap / dari sampul sampai lampiran" for skripsi, tesis, disertasi | `references/full-outlines.md` (UAJM: the tree in `uajm-skripsi.md`) |
+| Thesis in Arabic or at an Arab university | `international.md` §2h + `languages.md` + `genre-thesis.md` |
+| Proposal kegiatan · LPJ · SK / surat penugasan | `org-proposal-kegiatan.md` · `org-lpj.md` · `org-sk.md` |
 
 Always run `pedoman-adapter.md`'s 14 variables for academic work, and show the filled
 table to the user **before** the outline. If the campus is UAJM FTI, the `uajm-*.md`
@@ -183,6 +190,11 @@ Lampiran n. Judul  [WAJIB/BIASANYA/JIKA ADA]
 - [CEK: ...]
 ```
 
+**Output language follows the user.** Write in the language of the user's sentences,
+and say so in one line at the top of the first reply, with the offer to switch, e.g.
+"Kerangka ditulis dalam bahasa Indonesia; bilang kalau mau versi English/العربية/…".
+Campus-mandated names (bab, bagian) stay in the guideline's language.
+
 If the user writes in English, translate the headers (Core map, Outline, Check,
 Title options, What you need to supply) and use `[FILL: ...]` / `[VERIFY: ...]`.
 Section fields are always **Tugas/Job, Isi/Content, Bukti/Evidence, Panjang/Length**.
@@ -192,6 +204,24 @@ by someone else (e.g. LPJ with a given event name); write "Judul mengikuti ..." 
 
 For study mind maps (family F), also output a Mermaid `mindmap` block. For research,
 also output the Mermaid flow in `genre-research.md` if the user wants a diagram.
+
+## Diagram and flowchart output (HTML)
+
+When the output includes a diagram, flowchart, kerangka pikir, alur penelitian, or mind
+map as an **HTML page**, build it from `assets/flowchart-template.html`. Non-negotiable:
+
+1. **Language switch** — diagram text in at least id and en; UI, headings, and captions
+   in id/en/es/fr/zh/ar; `dir="rtl"` for Arabic. Set `DEFAULT_LANG` to the user's language.
+2. **Theme switch defaulting to light** (saves printer ink), with dark and "follow
+   system" options. Never default to dark.
+3. **Print stylesheet that always prints light**, whatever the screen theme: both light
+   and dark SVGs are rendered up front and print shows the light one; the print CSS
+   uses `!important` and lets tall diagrams fit an A4 page.
+4. Node text keeps `[ISI]`/`[FILL]` markers; no invented numbers inside diagrams.
+
+After delivering, state in one line: default is light theme and print is always light;
+language and theme can be switched from the top bar. If the user only wants Mermaid in
+chat, give the Mermaid block and offer the HTML version in one line.
 
 ## Modes of depth
 
@@ -222,7 +252,12 @@ The user can override with "versi cepat" / "versi lengkap".
 |---|---|
 | `references/genre-*.md` | Step 2, only the one for the genre |
 | `references/genre-thesis.md` | Tesis (S2) or disertasi (S3), after `genre-research.md` |
-| `references/genre-organizational.md` | Proposal kegiatan, LPJ, SK, AD/ART, surat, notulen |
+| `references/genre-organizational.md` | Index for family G; AD/ART, surat, notulen |
+| `references/org-proposal-kegiatan.md` | Proposal kegiatan + RAB |
+| `references/org-lpj.md` | LPJ + tabel realisasi anggaran |
+| `references/org-sk.md` | SK (menimbang/mengingat/memutuskan), surat penugasan, surat pengantar SK |
+| `references/full-outlines.md` | Full outline trees: front matter → Bab I–V/VII → lampiran, for skripsi/tesis/disertasi |
+| `assets/flowchart-template.html` | Any diagram/flowchart delivered as HTML |
 | `references/uajm-kkp.md` | Laporan KKP/magang at UAJM FTI |
 | `references/uajm-usulan-ta.md` | Usulan TA / proposal / Ringkasan Kapasitas Diri at UAJM FTI |
 | `references/uajm-skripsi.md` | Skripsi/TA at UAJM FTI — Bab I–V + 15 front-matter items |

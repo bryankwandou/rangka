@@ -1,142 +1,197 @@
-# Merangkum berkas penelitian menjadi satu kerangka (reverse outline)
+# Mode Rangkum: banyak berkas → satu kerangka
 
-Mode ini kebalikan dari alur biasa. Biasanya Rangka menyusun kerangka **sebelum**
-naskah ada. Di sini naskah sudah ada — satu berkas atau satu folder — dan yang diminta
-adalah kerangkanya: apa sebenarnya yang tertulis di situ, dan di mana bolongnya.
+Dua situasi yang berbeda, dan keduanya masuk ke sini:
 
-Teknik ini dikenal sebagai *reverse outlining*: baca yang sudah ditulis, catat
-kerja tiap bagian, lalu nilai kerangkanya — bukan kalimatnya.
+| Situasi | Bahan | Hasil yang diminta |
+|---|---|---|
+| **R-draf** (reverse outline) | satu naskah/draf yang sudah berbentuk bab | kerangka apa adanya + diagnosis bolong |
+| **R-catatan** (sintesis) | banyak berkas berantakan: catatan kuliah, hasil wawancara, potongan jurnal, chat, draf setengah jadi, tabel data | **satu** kerangka dokumen target (skripsi, laporan KKP, proposal, LPJ, ...) yang diisi dari berkas itu |
 
-Gunakan saat user berkata: "rangkum file ini jadi outline", "ringkas skripsiku",
-"ini draf saya, benerin strukturnya", "bikin kerangka dari folder ini", "gabung
-beberapa file jadi satu kerangka".
+Tentukan situasinya di baris pertama keluaran. Kalau campuran (ada draf + catatan),
+draf = tulang punggung, catatan = sisipan (lihat §Penggabungan).
+
+Pemicu: "rangkum file ini jadi outline", "gabung catatan-catatan ini jadi kerangka",
+"ini draf saya, benerin strukturnya", "bikin kerangka dari folder ini".
 
 ## Aturan yang tidak boleh dilanggar
 
-1. **Hanya dari isi berkas.** Tidak ada penambahan fakta, angka, atau sumber dari luar.
-   Kalau bagian yang seharusnya ada ternyata tidak ada di berkas, tulis
-   `[TIDAK ADA DI BERKAS: ...]` — jangan diisi dari pengetahuan umum.
-2. **Klaim tetap milik penulisnya.** Rangkuman menuliskan apa yang *diklaim* naskah,
-   bukan apa yang benar. Kalau klaimnya meragukan, catat di kolom Catatan, jangan
-   diam-diam diperbaiki.
-3. **Pertahankan nomor asli.** Nomor bab/sub-bab/tabel/gambar dari berkas dibawa apa
-   adanya, supaya user bisa balik ke sumbernya.
-4. **Berkas yang tidak terbaca disebutkan.** Kalau PDF hasil pindaian tanpa lapisan
-   teks, atau berkas rusak, katakan — jangan mengarang isinya.
+1. **Baca berkasnya, bukan namanya.** Setiap berkas dibuka dan dibaca seluruhnya
+   sebelum dipakai. Nama berkas (`final_FIX_bgt.docx`) tidak dianggap bukti isi atau urutan.
+2. **Hanya dari isi berkas.** Tidak ada fakta, angka, nama, atau sumber dari luar.
+   Bagian target yang tidak punya bahan → `[TIDAK ADA DI BERKAS: ...]` (en:
+   `[NOT IN SOURCE: ...]`). Jangan mengisinya dari pengetahuan umum — dan jangan
+   memakai `[ISI]` untuk menyamarkan bahwa berkasnya diam.
+3. **Setiap butir isi membawa label asal** `[F2]` atau `[F2 §3]` / `[F2 baris 14]`.
+   Butir tanpa label asal = butir karangan → hapus. Ini satu-satunya cara user bisa
+   memeriksa rangkuman.
+4. **Klaim tetap milik penulisnya.** Tulis apa yang *diklaim* berkas. Klaim meragukan
+   dicatat di kolom Catatan, tidak diperbaiki diam-diam.
+5. **Pertahankan nomor asli** bab/tabel/gambar dari berkas (R-draf).
+6. **Berkas yang tidak terbaca disebutkan** (PDF pindaian tanpa teks, rusak, berkata
+   sandi, format tak didukung, terlalu besar dan terpotong). Jangan mengarang isinya;
+   minta versi teks atau tandai bagian yang terdampak.
+7. **Kontradiksi tidak dilebur.** Dua berkas berbeda soal fakta (angka, tanggal, nama,
+   jumlah responden) → `[KONFLIK: F1 bilang X; F4 bilang Y]`, dan user yang memilih.
+   Jangan memilih "yang lebih masuk akal", jangan merata-ratakan angka.
+8. **Duplikat dihitung satu.** Poin yang sama di tiga berkas ditulis sekali dengan
+   semua label asal `[F1][F3][F5]` — pengulangan bukan bukti tambahan.
 
 ## Langkah
 
-### 1. Inventaris
-Daftar semua berkas: nama, jenis, perkiraan panjang, dan dugaan peran (draf bab,
-data, instrumen, jurnal acuan, catatan). Untuk folder besar, kelompokkan dulu; jangan
-membaca acak.
+### 1. Inventaris (selalu tampil sebagai tabel pertama)
 
-Prioritas baca: naskah utama → abstrak/pendahuluan → daftar isi → penutup → metode →
-sisanya. Daftar isi dan penutup memberi kerangka paling cepat.
+| ID | Berkas | Jenis | Panjang | Tanggal (dari isi, bukan nama) | Terbaca? | Peran |
+|---|---|---|---|---|---|---|
+| F1 | `...` | catatan/draf/data/transkrip/rujukan/chat | kata/hlm | `[tidak tertulis]` bila tak ada | ya / sebagian / tidak | tulang punggung · sisipan · varian · bahan · **di luar topik** |
 
-### 2. Peta paragraf (inti teknik ini)
-Untuk tiap bagian naskah, catat satu baris:
+- Berkas **di luar topik** tetap dicantumkan dengan peran itu, lalu tidak dipakai.
+- Folder besar (>15 berkas): kelompokkan per jenis dulu, baca urut prioritas
+  (draf utama → pendahuluan/abstrak → daftar isi → penutup → metode → data → sisanya).
+- Kalau ada dua versi berkas yang sama, tentukan yang terbaru dari **tanggal atau
+  penanda versi di dalam isi**; kalau tidak ada penanda, keduanya varian dan user memilih.
+
+### 2. Kartu poin (inti mode R-catatan)
+
+Pecah semua berkas menjadi poin atomik — satu gagasan, fakta, angka, atau kutipan per
+baris:
 
 ```
-§2.3 (hal. 14-17) | Tugas: membangun definisi X | Klaim: X terdiri atas 3 komponen
-                  | Bukti: kutipan Sari 2021, Tabel 2.1 | Dipakai lagi di: §4.2
+P07 [F3 baris 12-15] Fakta   : antrean rata-rata 2 jam (klaim narasumber, tanpa data)
+P08 [F5 §2]          Fakta   : antrean 45 menit (log sistem Maret)      → KONFLIK dgn P07
+P09 [F1][F4]         Teori   : model FIFO (tanpa sumber pustaka)       → butuh sumber
+P10 [F2]             Tugas   : "cari 3 jurnal pembanding"               → bukan isi, catatan kerja
 ```
 
-Kolom **Tugas** ditulis dengan kata kerja ("membuktikan", "membandingkan",
-"mendefinisikan"). Kalau tugas sebuah bagian tidak bisa dirumuskan dalam satu kata
-kerja, itu sendiri sudah temuan: bagian itu belum punya pekerjaan yang jelas.
+Jenis poin: **Fakta · Data · Teori/Sumber · Metode · Ide/Klaim · Pertanyaan terbuka ·
+Catatan kerja (to-do)**. Catatan kerja dan pertanyaan terbuka tidak masuk kerangka;
+kumpulkan di blok akhir.
 
-Kolom **Dipakai lagi di** adalah detektor orphan.
+Untuk R-draf, kartu poin diganti **peta paragraf**, satu baris per bagian:
+```
+§2.3 (hlm. 14-17) | Tugas: mendefinisikan X | Klaim: X terdiri atas 3 komponen
+                  | Bukti: Sari 2021, Tabel 2.1 | Dipakai lagi di: §4.2
+```
+Tugas yang tidak bisa ditulis dengan satu kata kerja = temuan (bagian tanpa pekerjaan).
 
-### 3. Rekonstruksi peta inti
-Dari peta paragraf, isi tabel Peta Inti (Should / Is / Gap / Reader / Core claim /
-Proof / Action) — **sebagaimana tersirat di naskah**, bukan sebagaimana seharusnya.
-Kalau core claim tidak bisa ditarik jadi satu kalimat, katakan: naskah ini belum
-punya klaim tunggal, dan tunjukkan dua atau tiga klaim yang bersaing di dalamnya.
+### 3. Pilih kerangka target
 
-### 4. Kerangka hasil rangkuman
-Keluarkan kerangka bernomor mengikuti struktur asli, tiap bagian: Tugas · Isi (2–5
-butir, ringkas) · Bukti · Panjang asli (halaman/kata).
+- User menyebut dokumennya (skripsi UAJM, laporan KKP, LPJ, ...) → ambil template dari
+  berkas genre/kampus yang sesuai (routing SKILL.md). **Struktur dari template, isi dari
+  kartu poin.** Jangan menurunkan struktur dari urutan catatan.
+- User tidak menyebut → tebak dari isi, nyatakan tebakan itu sebagai bawaan
+  ("Kerangka: skripsi 5 bab, dari isi F1–F3") dan lanjutkan. Tidak bertanya lebih dari satu
+  hal (hard rule 6).
 
-### 5. Diagnosis
-Tabel temuan, diurut dari yang paling merusak:
+### 4. Petakan poin → bagian (matriks cakupan)
+
+| Bagian target | Poin | Berkas | Status |
+|---|---|---|---|
+| 1.1 Latar Belakang | P01, P07, P08 | F1, F3, F5 | **konflik** (P07/P08) |
+| 2.2 Landasan Teori | P09 | F1, F4 | ada, **tanpa sumber** |
+| 3.3 Populasi & Sampel | — | — | **TIDAK ADA DI BERKAS** |
+
+Status yang boleh: `cukup` · `tipis` (1 poin) · `tanpa sumber` · `konflik` · `TIDAK ADA DI
+BERKAS`. Setiap poin berjenis Fakta/Data/Teori/Metode/Ide harus masuk tepat satu baris,
+atau masuk daftar **Tidak dipakai** dengan alasan (di luar topik, duplikat, catatan kerja).
+Hitung: jumlah poin = dipakai + tidak dipakai. Kalau selisih, ada poin yang hilang —
+cari sebelum lanjut.
+
+### 5. Rekonstruksi peta inti
+Isi Peta Inti (Should / Is / Gap / Reader / Core claim / Proof / Action) **dari poin
+yang ada**, masing-masing berlabel asal. Kalau berkas memuat dua atau tiga klaim inti
+yang bersaing, tampilkan semuanya dan jangan memilihkan — itu temuan paling penting.
+
+### 6. Kerangka hasil
+Kerangka bernomor mengikuti template target (R-catatan) atau struktur asli (R-draf).
+Tiap bagian: **Tugas · Isi** (2–5 butir, tiap butir berlabel asal) **· Bukti · Panjang**.
+
+### 7. Diagnosis
 
 | Jenis temuan | Artinya |
 |---|---|
 | **Orphan claim** | dijanjikan di awal, tidak pernah dijawab |
 | **Orphan section** | ada isinya, tidak menjawab apa pun |
 | **Bukti hilang** | klaim tanpa data/sumber |
-| **Duplikasi** | isi sama muncul di dua tempat |
-| **Urutan salah** | pembaca butuh B sebelum A, tapi A duluan |
-| **Timpang** | bagian inti lebih pendek daripada bagian pengantar |
+| **Konflik** | dua berkas berbeda soal fakta yang sama |
+| **Duplikasi** | isi sama di dua tempat |
+| **Urutan salah** | pembaca butuh B sebelum A |
+| **Timpang** | bagian inti lebih tipis dari pengantar |
 | **Putus** | rumusan masalah ≠ kesimpulan |
-| **Sumber menggantung** | dirujuk di teks, tidak ada di daftar pustaka (atau sebaliknya) |
+| **Sumber menggantung** | dirujuk di teks, tidak ada di pustaka (atau sebaliknya) |
+| **Kosong** | bagian wajib template tanpa satu poin pun |
 
-Untuk naskah akademik Indonesia, jalankan juga tabel pemetaan:
-`rumusan masalah → tujuan → bab penjawab → bukti → kesimpulan → saran`.
-Sel kosong = temuan.
+Untuk naskah akademik Indonesia, tambah tabel `rumusan → tujuan → bab → bukti →
+kesimpulan → saran`. Sel kosong = temuan.
 
-### 6. Rencana perbaikan
-Maksimal 7 langkah, diurut berdasar dampak, tiap langkah menyebut bagian mana yang
-dipindah/dipotong/ditambah. Bedakan tegas: **potong** (buang), **pindah** (sudah ada,
-salah tempat), **gali** (butuh data baru dari user).
+### 8. Rencana perbaikan (maksimal 7 langkah, urut dampak)
+Tiap langkah memakai satu kata kerja: **potong** (buang) · **pindah** (sudah ada, salah
+tempat) · **pilih** (selesaikan konflik/varian) · **gali** (butuh data baru dari user).
+
+## Penggabungan banyak berkas
+
+1. Tentukan **satu** tulang punggung (paling lengkap/terbaru menurut isi) dan
+   nyatakan alasannya. Untuk R-catatan tanpa draf, tulang punggungnya adalah
+   **template target**, bukan berkas mana pun.
+2. Berkas lain: **sisipan** (mengisi bagian kosong), **varian** (versi lain dari bagian
+   yang sama), **bahan** (data/lampiran), atau **di luar topik**.
+3. Varian ditampilkan berdampingan satu baris dan **user memilih**.
+4. Konflik fakta → `[KONFLIK: ...]` di kerangka **dan** di blok akhir.
 
 ## Format keluaran
 
 ```
+Mode: Rangkum — R-catatan (5 berkas → kerangka <dokumen target>)
+
 ## 1. Berkas yang dibaca
-| Berkas | Jenis | Panjang | Peran |
+| ID | Berkas | Jenis | Panjang | Tanggal | Terbaca? | Peran |
 
-## 2. Peta inti (sebagaimana tersirat di naskah)
+## 2. Peta inti (dari berkas, berlabel asal)
 
-## 3. Kerangka hasil rangkuman
-(bernomor sesuai naskah asli)
+## 3. Kerangka hasil
+(template target; tiap butir berlabel [Fn])
 
-## 4. Temuan
+## 4. Matriks cakupan
+| Bagian | Poin | Berkas | Status |
+Poin: N total = X dipakai + Y tidak dipakai
+
+## 5. Temuan
 | Bagian | Jenis temuan | Akibat | Perbaikan |
 
-## 5. Rencana perbaikan (maksimal 7 langkah)
+## 6. Rencana perbaikan (≤7, potong/pindah/pilih/gali)
 
-## 6. Yang tidak ada di berkas
+## 7. Tidak ada di berkas / konflik / tidak dipakai / catatan kerja
 - [TIDAK ADA DI BERKAS: ...]
+- [KONFLIK: ...]
+- Tidak dipakai: P.. (alasan)
+- Catatan kerja user yang ditemukan: ...
 
-## 7. Hasil cek
-| Butir | Status | Perbaikan |   (R1–R7, plus U4 untuk naskahnya)
+## 8. Hasil cek
+| Butir | Status | Perbaikan |   (R1–R10, plus U4 dan cek genre target)
 ```
 
-Langkah 4 SKILL.md (judul) di mode ini: beri opsi judul hanya kalau user memintanya
-**dan** naskah tidak punya temuan Orphan claim/Putus; kalau ada, tulis satu kalimat
-bahwa judul menunggu temuan itu diperbaiki.
+Judul (Step 4 SKILL.md): beri opsi judul hanya bila user memintanya **dan** tidak ada
+temuan Orphan claim/Putus/Konflik pada klaim inti; selain itu satu kalimat bahwa judul
+menunggu temuan itu diselesaikan.
 
-## Menggabungkan banyak berkas jadi satu kerangka
+## Turunan setelah kerangka jadi
 
-Kalau berkasnya beberapa (bab terpisah, versi berbeda, catatan tercecer):
-1. Tentukan **satu** berkas sebagai tulang punggung — biasanya yang paling lengkap atau
-   paling baru. Nyatakan pilihan itu terang-terangan.
-2. Berkas lain dipetakan sebagai: **sisipan** (mengisi bagian kosong), **varian**
-   (versi lain dari bagian yang sama), atau **bahan** (data/lampiran).
-3. Untuk tiap varian, tampilkan bedanya dalam satu baris dan **biarkan user yang
-   memilih** — jangan menggabung dua versi diam-diam.
-4. Kalau ada dua berkas yang saling bertentangan soal fakta, tandai
-   `[KONFLIK: berkas A bilang ..., berkas B bilang ...]`.
-
-## Meringkas jadi bentuk lain
-
-Setelah kerangka rangkuman jadi, turunannya murah:
-- **Naskah jurnal** — ambil §Hasil terbesar, mampatkan pendahuluan (rasio di
-  `uajm-format.md`);
-- **Slide seminar** — satu slide per bagian tingkat 1, judul = kolom Tugas;
-- **Abstrak** — masalah → tujuan → metode → hasil, dari peta inti;
-- **Mind map** — keluarkan blok Mermaid `mindmap` bercabang sesuai kerangka.
+- **Naskah jurnal** — ambil §Hasil, mampatkan pendahuluan (UAJM: `uajm-format.md`).
+- **Slide seminar** — satu slide per bagian tingkat 1, judul = Tugas.
+- **Abstrak** — masalah → tujuan → metode → hasil, dari peta inti.
+- **Mind map / bagan** — blok Mermaid; kalau diminta HTML, pakai
+  `assets/flowchart-template.html` (lihat SKILL.md §Keluaran diagram).
 
 ## Cek rangkuman
 
 | Kode | Cek |
 |---|---|
-| R1 | Setiap bagian naskah punya satu baris di peta paragraf? |
-| R2 | Tidak ada fakta di kerangka yang tidak ada di berkas? |
-| R3 | Nomor bab/tabel/gambar asli dipertahankan? |
-| R4 | Berkas yang gagal dibaca disebutkan? |
-| R5 | Tiap temuan menunjuk bagian tertentu, bukan keluhan umum? |
-| R6 | Rencana perbaikan membedakan potong / pindah / gali? |
-| R7 | Konflik antarberkas ditandai, bukan dilebur? |
+| R1 | Setiap berkas ada di inventaris, termasuk yang tak terbaca dan yang di luar topik? |
+| R2 | Tidak ada fakta di kerangka tanpa label asal `[Fn]`? |
+| R3 | Nomor bab/tabel/gambar asli dipertahankan (R-draf)? |
+| R4 | Berkas yang gagal dibaca disebutkan beserta bagian yang terdampak? |
+| R5 | Tiap temuan menunjuk bagian tertentu? |
+| R6 | Rencana perbaikan memakai potong/pindah/pilih/gali? |
+| R7 | Konflik antarberkas ditandai `[KONFLIK]`, tidak dilebur atau dirata-rata? |
+| R8 | Hitungan poin: total = dipakai + tidak dipakai? |
+| R9 | Duplikat digabung jadi satu butir dengan semua label asal? |
+| R10 | Struktur mengikuti template dokumen target, bukan urutan catatan; bagian wajib yang kosong tertulis `TIDAK ADA DI BERKAS`? |

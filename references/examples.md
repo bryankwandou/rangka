@@ -194,7 +194,7 @@ Judul KKP memuat nama proyek yang dilaporkan → diberikan setelah §3.n final. 
 
 **Permintaan:** "buatkan SK pengurus UKM periode baru"
 
-Rujukan yang dibuka: `genre-organizational.md` §G3.
+Rujukan yang dibuka: `org-sk.md`.
 
 ### 1. Peta inti
 Should: organisasi punya dasar sah untuk bertindak · Is: kepengurusan baru belum ditetapkan ·
@@ -225,8 +225,8 @@ LAMPIRAN I — Susunan pengurus
 ### 3. Hasil cek
 | Butir | Status | Perbaikan |
 |---|---|---|
-| G7 Menimbang/Mengingat tidak tertukar | Lolos | alasan di Menimbang, dasar di Mengingat |
-| G8 Diktum KESATU–KEEMPAT + klausul ralat | Lolos | — |
-| G9 Nomor surat lengkap, bulan Romawi | Menunggu data | `[ISI: nomor urut]` |
-| G10 Daftar nama di Lampiran, dirujuk diktum | Lolos | — |
+| SK1 Menimbang/Mengingat tidak tertukar | Lolos | alasan di Menimbang, dasar di Mengingat |
+| SK3 Diktum KESATU–KEEMPAT + klausul ralat | Lolos | — |
+| SK5 Nomor mengikuti pola lembaga, tidak dikarang | Menunggu data | `[ISI: nomor urut]` |
+| SK6 Daftar nama di Lampiran, dirujuk diktum | Lolos | — |
 | G14 Tidak ada nama/nomor dikarang | Lolos | semua `[ISI]` |

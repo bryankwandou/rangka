@@ -16,11 +16,12 @@ dan perbedaannya disebutkan terang-terangan.
    "Bawaan"), tandai setiap butir yang berisiko dengan `[CEK: pedoman kampus]`, dan
    teruskan. Jangan menghentikan pekerjaan hanya karena pedoman belum ada.
 3. **Kalau kampusnya UAJM FTI**, jangan pakai bawaan — pakai `uajm-*.md`.
-4. **Kalau kampusnya UI, UGM, ITB, atau Unhas**, baca `campus-ui.md`, `campus-ugm.md`,
-   `campus-itb.md`, atau `campus-unhas.md` dulu. Isi variabel dari berkas itu hanya untuk
+4. **Kalau kampusnya punya berkas `campus-*.md`** (22 kampus: UI, UGM, ITB, ITS, Unhas,
+   Binus, UNM, UMI, Unair, UB, IPB, Unpad, UIN Alauddin, Unismuh, Undip, UNS, UPI, UNY,
+   UII, UMY, Telkom, UIN Jakarta), baca berkas itu dulu. Isi variabel dari berkas itu hanya untuk
    aturan yang tertulis berlaku se-universitas; variabel yang di berkas itu disebut
    "ditentukan fakultas/prodi" tetap `[CEK ke pedoman fakultas]` sampai user menyebut
-   fakultasnya. Ringkasnya:
+   fakultasnya. Contoh empat kampus:
 
    | Kampus | Pedoman tingkat universitas? | Yang diatur fakultas/prodi |
    |---|---|---|
@@ -28,6 +29,25 @@ dan perbedaannya disebutkan terang-terangan.
    | UGM | Tidak ditemukan — per fakultas/departemen | hampir semuanya, termasuk spasi (1,15 / 1,5 / 2) dan margin |
    | ITB | S1 tidak ditemukan; tesis: SPs 2016 | S1: semuanya per prodi |
    | Unhas | Ya — SK Rektor 10438/2023 (struktur **dan** format; tanpa bab Tinjauan Pustaka) | proposal; ambang kemiripan; fakultas yang masih memakai pedoman lama |
+
+5. **Kalau pedomannya berbahasa asing** (Inggris, Arab, Mandarin, Belanda, ...) atau
+   kampusnya di luar negeri: baca pedoman itu dalam bahasa aslinya, isi 14 variabel
+   dengan **kutipan pendek + nomor halaman/pasal** dari pedoman (bahasa asli, lalu
+   terjemahan kerja dalam kurung), dan pakai **nama bagian persis seperti pedoman**
+   (mis. `الفصل الأول: الإطار العام للدراسة`, `Chapter 2 Literature Review`) — terjemahan
+   kerja hanya sebagai keterangan. Bentuk bawaan per tradisi ada di `international.md`.
+6. **Kalau dua pedoman bertentangan** (pedoman universitas vs template prodi, edisi
+   lama vs baru, teks vs contoh lampiran di pedoman yang sama): terapkan urutan
+   kewenangan di atas, sebutkan kedua bunyinya, dan tandai `[CEK: ...]`. Jangan memilih
+   diam-diam. Contoh nyata: pedoman KKP UAJM menulis sampul "warna program studi" di
+   3.1.1 dan "hijau" di 4.1.5.
+7. **Kalau tidak ada pedoman sama sekali dan kampusnya tidak dikenal**: pakai bawaan,
+   tulis satu baris "Kerangka ini memakai bawaan umum karena pedoman kampus belum
+   ada" di atas tabel variabel, dan jadikan "unggah/sebutkan pedoman" butir pertama di
+   blok akhir.
+
+Setiap nilai variabel di tabel yang ditampilkan ke user diberi **asal**: `pedoman (hlm.
+n)` · `campus-*.md` · `bawaan [CEK]`. Nilai tanpa asal tidak boleh muncul.
 
 ## Variabel yang benar-benar mengubah kerangka
 
@@ -105,3 +125,5 @@ sebagai bawaan, dan tandai selebihnya `[VERIFY: department handbook]`.
 | A4 | Istilah lokal dipakai sesuai kampus (KKP vs KP vs PKL, dst.)? |
 | A5 | Gaya sitasi konsisten di seluruh kerangka? |
 | A6 | Tidak ada aturan kampus yang dikarang? |
+| A7 | Tiap nilai variabel diberi asal (pedoman + halaman / campus file / bawaan [CEK])? |
+| A8 | Pedoman berbahasa asing: nama bagian dipakai dalam bahasa asli pedoman, konflik antarpedoman disebut? |

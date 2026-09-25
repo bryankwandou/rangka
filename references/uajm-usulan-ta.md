@@ -11,7 +11,7 @@ Mahasiswa memilih **salah satu**; dokumen yang disusun berbeda total.
 |---|---|---|
 | Diusulkan oleh | mahasiswa | mahasiswa ikut penelitian dosen/industri |
 | Dokumen awal | **Usulan TA (proposal)** | **Ringkasan Kapasitas Diri (RKD)** |
-| Diuji oleh | seminar judul, **min. 4 dosen penguji** | ketua tim peneliti (evaluasi + wawancara) |
+| Diuji oleh | seminar usulan judul, **min. 4 dosen penguji** (setuju/tolak/revisi); kaprodi mengesahkan | ketua tim peneliti (evaluasi + wawancara) |
 | Pembimbing | ditetapkan kaprodi | ketua tim = pembimbing I, anggota tim = pembimbing II |
 | Evaluasi tengah | seminar hasil (penelitian sudah tahap akhir) | seminar kemajuan (**≥75%** dari tahap rencana) |
 | Kehadiran panitia | ≥75%, min. 1 pembimbing + 2 penguji | min. 1 pembimbing + 1 penguji di luar tim |
@@ -33,8 +33,8 @@ datanya bergeser: yang harus dijaga adalah tujuan, bukan kalimat judul.
 
 ## Batas fisik
 
-Usulan TA dan RKD: **tidak lebih dari 30 lembar.** Ini mengikat pembagian panjang
-kerangka. Pembagian yang aman untuk usulan: Latar Belakang 4–6 · Tinjauan Pustaka &
+Usulan TA dan RKD: **tidak lebih dari 30 lembar** (TA 2.3, 3.2). Ini mengikat pembagian
+panjang kerangka. Pembagian berikut adalah **anjuran Rangka, bukan pedoman**: Latar Belakang 4–6 · Tinjauan Pustaka &
 Landasan Teori 8–12 · Metode 5–7 · Konsideran 2–3 · Jadwal 1 · sisanya bagian awal
 dan daftar pustaka.
 
@@ -129,11 +129,23 @@ Lima pertanyaan dasarnya:
    yang jadi prasyarat keterlibatan?
 5. Berapa lama waktu yang diperlukan?
 
-Struktur: Halaman Judul (+ tulisan `Ringkasan Kapasitas Diri Tugas Akhir` pada sembir
-atas) · Halaman Persetujuan · Latar Belakang (pemahaman materi, alasan kapasitas
-dipandang layak, pemahaman tujuan penelitian **terhadap rentang waktu yang disepakati**,
-luaran, manfaat) · Tinjauan Pustaka & Landasan Teori · Metode · Konsideran ·
-Jadwal · Daftar Pustaka. Maksimal 30 lembar.
+Struktur (TA Bab III, 3.2):
+
+| Bagian | Isi | Beda dengan Usulan TA |
+|---|---|---|
+| Halaman Judul | sama dengan halaman judul skripsi + tulisan `Ringkasan Kapasitas Diri Tugas Akhir` pada sembir atas, bold + italic, simetris | label berbeda |
+| Halaman Persetujuan | pembimbing I, pembimbing II, ketua prodi + tanda tangan & tanggal | sama |
+| a. Latar Belakang | pemahaman materi · alasan **kapasitas mahasiswa** dipandang layak · pemahaman tujuan penelitian **terhadap rentang waktu yang disepakati** · luaran · manfaat (bagi ilmu & pengembangan penelitian) · batasan/ruang lingkup · **kerangka pikir dalam bentuk bagan** | tanpa keaslian/novelty — masalahnya milik tim peneliti |
+| b. Tinjauan Pustaka (+ landasan teori) | menunjukkan mahasiswa **memahami** permasalahan; landasan teori menunjukkan kompetensi diri | fungsi berbeda: bukti paham, bukan bukti celah |
+| c. Metode Penulisan/Penelitian | pemahaman atas 5 unsur: objek/jenis · alat · rancangan & langkah · pengumpulan data · analisis data | sama, dinyatakan sebagai "pemahaman" |
+| d. **Kapasitas Diri** | pemahaman, pengetahuan, dan pengalaman mahasiswa sebagai landasan keterlibatan | **menggantikan Konsideran Percobaan** |
+| e. Jadwal Pelaksanaan | tahap · rincian kegiatan · waktu | sama |
+| Bagian akhir | Daftar Pustaka + Lampiran (jika ada) | sama |
+
+RKD **tidak memuat Hipotesa dan tidak memuat Konsideran Percobaan**. Maksimal 30 lembar.
+Setelah RKD: ketua tim peneliti mengevaluasi + mewawancarai; ketua prodi mengesahkan;
+ketua tim = pembimbing I, anggota tim = pembimbing II. Keterlibatan boleh berubah/batal
+dengan persetujuan ketua tim, disampaikan ke ketua prodi.
 
 Perbedaan nada yang harus dijaga: RKD boleh — bahkan harus — menyatakan bekal konkret
 pengusul (mata kuliah, proyek, bahasa pemrograman, pengalaman kerja). Itu bukan
@@ -152,4 +164,5 @@ kesombongan, itu isi dokumennya.
 | P7 | Konsideran memuat uji kesahihan dan analisa kepekaan? |
 | P8 | Jadwal punya tahap + rincian + durasi, dan muat dalam satu semester? |
 | P9 | Total ≤30 lembar? |
+| P11 | (RKD) Ada bagian **Kapasitas Diri**, dan tidak ada Hipotesa/Konsideran? |
 | P10 | Ketersediaan data/akses/perangkat sudah dibuktikan atau ditandai `[ISI]`? |

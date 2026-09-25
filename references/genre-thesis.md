@@ -1,7 +1,18 @@
 # Tesis (S2) dan disertasi (S3)
 
 Perluasan `genre-research.md`. Bacalah yang itu dulu; berkas ini hanya memuat yang
-**berbeda** pada jenjang magister dan doktor.
+**berbeda** pada jenjang magister dan doktor. Pohon kerangka penuh (bagian awal → bab →
+lampiran) ada di `full-outlines.md` §B–D; kampus luar negeri atau naskah berbahasa
+asing → `international.md` (bentuk & nama bab) + `pedoman-adapter.md` langkah 5.
+
+Urutan kerja untuk tesis/disertasi:
+1. Tetapkan jenjang dan **bentuk** (monograf / berbasis artikel) — dari user, pedoman,
+   atau bawaan bidang, dinyatakan dengan asalnya.
+2. Isi 14 variabel pedoman (dengan asal) → tampilkan.
+3. Ambil pohon dari `full-outlines.md`, ganti nama bab sesuai pedoman/tradisi bahasa.
+4. Isi Tugas/Isi/Bukti tiap sub-bab; kebaruan hanya dari protokol pencarian (§Menyatakan
+   kebaruan).
+5. Jalankan T1–T10 + F1–F6 (+ N1–N7 bila luar negeri).
 
 Kekeliruan paling mahal di jenjang ini bukan soal format, melainkan **kadar
 kontribusi**. Skripsi boleh menerapkan yang sudah ada; tesis harus menguji atau

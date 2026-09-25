@@ -69,11 +69,53 @@ Pola umum: 序論 → 先行研究 → 研究方法 → 結果 → 考察 → �
 berbasis artikel terbit (論文博士/課程博士, persyaratan publikasi per 研究科). Panjang
 dihitung dalam karakter (lihat `languages.md`).
 
-### 2h. Timur Tengah & dunia Arab
-Pola umum: المقدمة (latar, masalah, pertanyaan, tujuan, signifikansi, batasan, definisi
-istilah) → الإطار النظري والدراسات السابقة → منهجية البحث → النتائج ومناقشتها → الخاتمة
-والتوصيات. *Muqaddimah* dan ucapan pembuka lebih panjang (lihat `languages.md`). Banyak kampus
-meminta abstrak Arab + Inggris `[CEK]`.
+### 2h. Timur Tengah & dunia Arab (رسالة ماجستير / أطروحة دكتوراه)
+
+Istilah: tesis magister = **رسالة ماجستير**, disertasi = **أطروحة دكتوراه**; kadang
+keduanya disebut رسالة. Tidak ada standar pan-Arab; tiap كلية الدراسات العليا menerbitkan
+دليل كتابة الرسائل sendiri `[تحقق: دليل الكلية]`. Pola yang paling umum (lima bab):
+
+```
+الصفحات التمهيدية
+  صفحة العنوان · إجازة/قرار لجنة المناقشة · الإقرار (pernyataan keaslian) ·
+  الإهداء (opsional) · الشكر والتقدير · المستخلص بالعربية · Abstract بالإنجليزية ·
+  فهرس المحتويات · فهرس الجداول · فهرس الأشكال · فهرس الملاحق
+الفصل الأول: الإطار العام للدراسة (مشكلة الدراسة وأهميتها)
+  المقدمة · مشكلة الدراسة · أسئلة الدراسة · فرضيات الدراسة (jika ada) · أهداف الدراسة ·
+  أهمية الدراسة (النظرية والتطبيقية) · حدود الدراسة (الموضوعية، المكانية، الزمانية، البشرية) ·
+  مصطلحات الدراسة (التعريفات الإجرائية)
+الفصل الثاني: الإطار النظري والدراسات السابقة
+  الإطار النظري · الدراسات السابقة (العربية ثم الأجنبية) · التعقيب على الدراسات السابقة
+  (posisi penelitian = research gap)
+الفصل الثالث: منهجية الدراسة وإجراءاتها
+  منهج الدراسة · مجتمع الدراسة وعينتها · أداة الدراسة · صدق الأداة وثباتها ·
+  إجراءات الدراسة · المعالجة الإحصائية
+الفصل الرابع: عرض النتائج ومناقشتها (per سؤال)
+الفصل الخامس: الخلاصة والتوصيات والمقترحات
+قائمة المراجع (العربية ثم الأجنبية) · الملاحق
+```
+
+Ciri yang mengubah kerangka:
+- **Arah RTL**; nomor bab ditulis kata ordinal (`الفصل الأول`), sub-bab sering tanpa
+  nomor desimal `[تحقق]`. Angka: Arab-Hindi (١٢٣) atau Barat (123) — ikuti دليل; jangan
+  mencampur dalam satu naskah.
+- **Daftar pustaka dipisah**: rujukan Arab dulu, lalu asing. Gaya paling sering APA
+  (diadaptasi); banyak fakultas syariah/humaniora memakai catatan kaki `[تحقق]`.
+- **التعقيب على الدراسات السابقة** (komentar atas studi terdahulu: kesamaan, perbedaan,
+  yang dimanfaatkan, yang membedakan studi ini) hampir selalu diminta; itulah tempat
+  research gap.
+- **حدود الدراسة** dirinci empat (topik, tempat, waktu, manusia) — lebih rinci daripada
+  "batasan" versi Indonesia.
+- Tanggal kerap ganda Hijriah/Masehi `[تحقق]`.
+- Di Indonesia, tesis berbahasa Arab (PTKIN, prodi Pendidikan Bahasa Arab) mengikuti
+  **pedoman kampus Indonesia** untuk struktur dan bagian awal (pengesahan, pernyataan
+  bermeterai, transliterasi) — pola Arab di atas hanya dipakai untuk nama bab dan gaya
+  bahasa kalau pedoman kampus mengizinkan `[CEK: pedoman pascasarjana]`.
+
+Keluaran Rangka untuk tesis berbahasa Arab: label dari `languages.md` (ar), penanda
+`[أكمل: ...]` / `[تحقق: ...]` konsisten, nama bab persis seperti di atas atau seperti
+دليل user; kalau keluaran berupa HTML, `dir="rtl"` dan `lang="ar"` (lihat
+`assets/flowchart-template.html`).
 
 ## 3. Peta gaya sitasi
 
@@ -100,3 +142,5 @@ contoh yang dikarang.
 | N3 | Bagian wajib tradisi setempat ada (declaration, Eidesstattliche Erklärung, 中英文摘要, statement of authorship)? |
 | N4 | Gaya sitasi disebut dan cocok dengan bidang? |
 | N5 | Bahasa label & panjang mengikuti `languages.md`? |
+| N6 | Nama bab ditulis dalam bahasa dan bentuk tradisi/pedoman (mis. `الفصل الأول ...`), bukan terjemahan dari template Indonesia? |
+| N7 | Jenjang dibedakan (رسالة ماجستير vs أطروحة دكتوراه; master vs PhD) dan kadar kontribusinya sesuai `genre-thesis.md`? |
